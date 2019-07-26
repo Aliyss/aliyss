@@ -15,6 +15,7 @@ function runFile(file) {
 
 config.main_directory = __dirname.replace(/\\/g, "/");
 
+
 fs.readdir('./clients', function(err, items) {
 
 	for (let i = 0; i < items.length; i++) {
