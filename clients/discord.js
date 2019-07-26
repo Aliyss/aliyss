@@ -17,7 +17,7 @@ function runFile(file, object) {
 }
 
 /*Local Variables*/
-const token = process.env.token || config.token;
+const token = config.token;
 
 exports.run = () => {
 
