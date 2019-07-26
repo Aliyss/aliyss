@@ -5,6 +5,5 @@
 	"options": {
 		"type": "discord",
 		"_return": "/clients/config/discord/_return/"
-	},
-	
+	}
 }
