@@ -68,3 +68,8 @@ fabric.properties
 /all-aliyss.iml
 /package-lock.json
 /node_modules/
+/.idea/$PRODUCT_WORKSPACE_FILE$
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/jsLibraryMappings.xml
+/.idea/vcs.xml
