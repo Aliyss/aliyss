@@ -1,0 +1,10 @@
+{
+	"name": "discord",
+	"version": "1.0.0",
+	"dependencies": {},
+	"session": {},
+	"options": {
+		"type": "whatsapp",
+		"_return": "/clients/config/whatsapp/_return/"
+	}
+}
