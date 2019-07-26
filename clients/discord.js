@@ -5,6 +5,7 @@ const client = new Discord.Client();
 
 /*Local Packages*/
 const config = require('./config/discord/config.json');
+const tsconfig = require('./config/discord/ltsconfig.json');
 const aliyssium = require('../config/aliyssium.json');
 
 /*Local Functions*/

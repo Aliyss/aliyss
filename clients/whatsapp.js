@@ -5,6 +5,7 @@ const { Client } = require('whatsapp-web.js');
 
 /*Local Packages*/
 const config = require('./config/whatsapp/config.json');
+const tsconfig = require('./config/discord/ltsconfig.json');
 const aliyssium = require('../config/aliyssium.json');
 const client = new Client({
 	puppeteer: {headless: false},
