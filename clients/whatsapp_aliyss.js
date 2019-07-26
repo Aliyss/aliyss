@@ -23,31 +23,31 @@ function runFile(file, object) {
 exports.run = () => {
 
 	client.initialize().then(() => {
-		console.log('WHATSAPP: Initialization complete.');
+		console.log('WHATSAPP_aliyss: Initialization complete.');
 	});
 
 	client.on('qr', (qr) => {
 		// NOTE: This event will not be fired if a session is specified.
-		console.log('WHATSAPP: QR received.', qr);
+		console.log('WHATSAPP_aliyss: QR received.', qr);
 	});
 
 	client.on('authenticated', (session) => {
-		console.log('----- WHATSAPP -----');
-		console.log('WHATSAPP: Authentication successful.');
+		console.log('----- WHATSAPP_aliyss -----');
+		console.log('WHATSAPP_aliyss: Authentication successful.');
 		config.session = session;
 		fs.writeFile('./clients/config/whatsapp/config.json', JSON.stringify(config, null, 4), function (err) {
 			if (err) return console.log(err);
-			console.log('WHATSAPP: Client Session has been updated.')
+			console.log('WHATSAPP_aliyss: Client Session has been updated.')
 		});
 	});
 
 	client.on('auth_failure', message => {
 		// Fired if session restore was unsuccessful
-		console.error('WHATSAPP: Authentication failure.', message);
+		console.error('WHATSAPP_aliyss: Authentication failure.', message);
 	});
 
 	client.on('ready', () => {
-		console.log('WHATSAPP: Ready.');
+		console.log('WHATSAPP_aliyss: Ready.');
 		config.options._return = aliyssium.main_directory + config.options._return
 	});
 

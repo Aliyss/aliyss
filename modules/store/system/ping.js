@@ -9,5 +9,9 @@ function runFile(file, content, message, client) {
 }
 
 exports.run = (options, message, args, client) => {
-	runFile(options._return + "send.js", "Pong", message, client)
+	let content = "Pong!";
+	if (client.ping) {
+		content += " " + client.ping
+	}
+	runFile(options._return + "send.js", content, message, client)
 };

@@ -74,5 +74,4 @@ fabric.properties
 /.idea/jsLibraryMappings.xml
 /.idea/vcs.xml
 
-/clients/config/discord/config.json
-/clients/config/whatsapp/config.json
+/config/aliyssium.json

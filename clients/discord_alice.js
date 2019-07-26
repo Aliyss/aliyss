@@ -1,7 +1,7 @@
 
 /*Global Packages*/
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const discord_alice = require('discord.js');
+const client = new discord_alice.Client();
 
 /*Local Packages*/
 const config = require('./config/discord/config.json');
@@ -17,7 +17,7 @@ function runFile(file, object) {
 }
 
 /*Local Variables*/
-const token = config.token;
+const token = config.token["alice"];
 
 exports.run = () => {
 
@@ -26,29 +26,26 @@ exports.run = () => {
 
 	});
 
-
 	//Client: leaves a server
 	client.on("guildDelete", guild => {
 
 	});
-
 
 	//Client: receives a message
 	client.on('message', message => {
 		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message)
 	});
 
-
 	//Client: is ready
 	client.on('ready', async () => {
-		console.log('DISCORD: Ready.');
-		console.log('DISCORD: Initialization complete.');
+		console.log('DISCORD_alice: Ready.');
+		console.log('DISCORD_alice: Initialization complete.');
 		config.options._return = aliyssium.main_directory + config.options._return
 	});
 
 	//Client: login
 	client.login(token).then(() => {
-		console.log('----- DISCORD -----');
-		console.log("DISCORD: Authentication successful.")
+		console.log('----- DISCORD_alice -----');
+		console.log("DISCORD_alice: Authentication successful.")
 	});
 };
