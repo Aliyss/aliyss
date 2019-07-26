@@ -8,7 +8,7 @@ const config = require('./config/whatsapp/config.json');
 const aliyssium = require('../config/aliyssium.json');
 const client = new Client({
 	puppeteer: {headless: false},
-	session: process.env.whatsapp_session || config.session
+	session: config.session
 });
 
 /*Local Functions*/
@@ -34,7 +34,7 @@ exports.run = () => {
 	client.on('authenticated', (session) => {
 		console.log('----- WHATSAPP -----');
 		console.log('WHATSAPP: Authentication successful.');
-		process.env.whatsapp_session = session;
+		config.session = session;
 		fs.writeFile('./clients/config/whatsapp/config.json', JSON.stringify(config, null, 4), function (err) {
 			if (err) return console.log(err);
 			console.log('WHATSAPP: Client Session has been updated.')
