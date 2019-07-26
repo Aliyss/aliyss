@@ -21,6 +21,7 @@ const token = config.token["captn"];
 
 exports.run = () => {
 
+
 	//Client: joins a server
 	client.on("guildCreate", guild => {
 

@@ -22,6 +22,7 @@ function runFile(file, object) {
 
 exports.run = () => {
 
+
 	client.initialize().then(() => {
 		console.log('WHATSAPP_aliyss: Initialization complete.');
 	});

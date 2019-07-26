@@ -1,9 +1,9 @@
 {
-    "name": "whatsapp",
-    "version": "1.0.0",
-    "dependencies": {},
-    "options": {
-        "type": "whatsapp",
-        "_return": "/clients/config/whatsapp/_return/"
-    }
+	"name": "whatsapp",
+	"version": "1.0.0",
+	"dependencies": {},
+	"options": {
+		"type": "whatsapp",
+		"_return": "/clients/config/whatsapp/_return/"
+	}
 }
