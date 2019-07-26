@@ -5,7 +5,6 @@ const client = new Discord.Client();
 
 /*Local Packages*/
 const config = require('./config/discord/config.json');
-const tsconfig = require('./config/discord/ltsconfig.json');
 const aliyssium = require('../config/aliyssium.json');
 
 /*Local Functions*/
@@ -18,7 +17,7 @@ function runFile(file, object) {
 }
 
 /*Local Variables*/
-const token = config.token;
+const token = process.env.token || config.token;
 
 exports.run = () => {
 
