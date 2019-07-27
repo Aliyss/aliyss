@@ -4,14 +4,15 @@
 function runFile(file, content, message, client) {
 
 	let commandFile = require(file);
-	commandFile.run(content, message, client);
+	return commandFile.run(content, message, client);
 
 }
 
-exports.run = (options, message, args, client) => {
+exports.run = async (options, message, args, client) => {
 	let content = "Pong!";
-	if (client.ping) {
-		content += " " + client.ping
+	if (message.createdTimestamp) {
+		let m = await runFile(options._return + "send.js", "Pinging...", message, client);
+		content += " Latency: " + (m.createdTimestamp - message.createdTimestamp) + "ms."
 	}
-	runFile(options._return + "send.js", content, message, client)
+	await runFile(options._return + "send.js", content, message, client)
 };

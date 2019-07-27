@@ -1,5 +1,14 @@
 
 
+/*Local Functions*/
+//Run File
+function messageFile(file, object) {
+
+	let commandFile = require(file);
+	return commandFile.run(object);
+
+}
+
 exports.run = async (content, message, client) => {
 
 	if (content.embed) {
@@ -26,5 +35,18 @@ exports.run = async (content, message, client) => {
 		content = text;
 	}
 
-	await client.sendMessage(message.from, content)
+	if (message.id.fromMe === true) {
+		message.me = message.from;
+		message.from = message.to;
+	}
+
+	let m = await client.sendMessage(message.from, content);
+
+	m = messageFile('../discordify.js', m);
+
+	if (message.id.fromMe === true) {
+		message.from = message.me;
+	}
+
+	return m
 };

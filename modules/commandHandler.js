@@ -66,9 +66,11 @@ exports.run = async (options, message, client) => {
 	let msg = message.content;
 	let full_args = [];
 
-	for (let i = 0; i < aliyssium.prefixes.length; i++) {
-		if (message.content.startsWith(aliyssium.prefixes[i])) {
-			msg = message.content.substr(aliyssium.prefixes[i].length);
+	client._profile.prefixes = client._profile.prefixes.concat(aliyssium.prefixes);
+
+	for (let i = 0; i < client._profile.prefixes.length; i++) {
+		if (message.content.startsWith(client._profile.prefixes[i])) {
+			msg = message.content.substr(client._profile.prefixes[i].length);
 			break;
 		}
 	}
@@ -96,7 +98,7 @@ exports.run = async (options, message, client) => {
 		return !item.includes(options.type);
 	});
 
-	glob(`${aliyssium.main_directory}/modules/store/**/*.js`, config.options, function (er, files) {
+	glob(`${aliyssium.main_directory}/modules/store/**/*.js`, lesser.options, function (er, files) {
 
 		let used_file = parser(options, files, full_args);
 

@@ -1,7 +1,7 @@
 
 /*Global Packages*/
-const discord_captn = require('discord.js');
-const client = new discord_captn.Client();
+const discord = require('discord.js');
+const client = new discord.Client();
 
 /*Local Packages*/
 const config = require('./config/discord/config.json');
@@ -17,37 +17,45 @@ function runFile(file, object) {
 }
 
 /*Local Variables*/
-const token = config.token["captn"];
+const profile_name = "captn";
+const profile = aliyssium.profiles.discord.filter(function (item) {
+	return item.name === profile_name
+})[0];
+client._profile = profile;
+const token = profile.token;
 
 exports.run = () => {
 
 
-	//Client: joins a server
+	//client: joins a server
 	client.on("guildCreate", guild => {
 
 	});
 
 
-	//Client: leaves a server
+	//client: leaves a server
 	client.on("guildDelete", guild => {
 
 	});
 
 
-	//Client: receives a message
+	//client: receives a message
 	client.on('message', message => {
 		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message)
 	});
 
+	client.on("messageDelete", (messageDelete) => {
+		runFile(aliyssium.main_directory + aliyssium.locations.messageDelete, messageDelete);
+	});
 
-	//Client: is ready
+	//client: is ready
 	client.on('ready', async () => {
 		console.log('DISCORD_captn: Ready.');
 		console.log('DISCORD_captn: Initialization complete.');
-		config.options._return = aliyssium.main_directory + config.options._return
+		config.options._return = aliyssium.main_directory + config.options.return
 	});
 
-	//Client: login
+	//client: login
 	client.login(token).then(() => {
 		console.log('----- DISCORD_captn -----');
 		console.log("DISCORD_CA: Authentication successful.")

@@ -13,7 +13,10 @@
     "deepmerge": "^4.0.0",
     "discord.js": "github:discordjs/discord.js",
     "glob": "latest",
-    "weather-js": "^2.0.0",
-    "whatsapp-web.js": "^0.1.2"
+    "rgb-to-int": "^1.0.0",
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "node-vibrant": "^3.1.3"
   }
 }

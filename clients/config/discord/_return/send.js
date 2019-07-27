@@ -1,4 +1,4 @@
 
 exports.run = async (content, message) => {
-	await message.channel.send(content)
+	return await message.channel.send(content)
 };

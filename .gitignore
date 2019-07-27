@@ -75,3 +75,4 @@ fabric.properties
 /.idea/vcs.xml
 
 /config/aliyssium.json
+/bfg.jar
