@@ -49,7 +49,6 @@ exports.run = () => {
 	});
 
 	client.on('authenticated', (session) => {
-		console.log('----- WHATSAPP_aliyss -----');
 		console.log('WHATSAPP_aliyss: Authentication successful.');
 		for (let i = 0; i < aliyssium.profiles.whatsapp.length; i++) {
 			if (aliyssium.profiles.whatsapp[i].name === profile_name) {

@@ -1,8 +1,6 @@
 {
 	"options": {
-		"ignore": [
-			"**/store/_types/discord/**",
-			"**/store/_types/whatsapp/**"
-		]
+		"cwd": "/",
+		"realpath": true
 	}
 }

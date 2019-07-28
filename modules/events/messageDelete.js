@@ -7,11 +7,12 @@ exports.run = async (options, message, client) => {
 		for (let i = 0; i < message.mentions.members.array().length; i++) {
 			let member = message.mentions.members.array()[i];
 			if (log[member.user.id]) {
-				log[member.user.id] = log[member.user.id].concat(message)
+				log[member.user.id][message.id] = JSON.parse(JSON.stringify(message, null, 4))
 			} else {
-				log[member.user.id] = [message]
+				log[member.user.id] = {
+					[message.id]: JSON.parse(JSON.stringify(message, null, 4))
+				}
 			}
-
 		}
 
 		fs.writeFile('./modules/events/messageDelete/log.json', JSON.stringify(log, null, 4), function (err, data) {

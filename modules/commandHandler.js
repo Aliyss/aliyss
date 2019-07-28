@@ -9,8 +9,12 @@ const aliyssium = require('../config/aliyssium.json');
 //Run File
 function runFile(file, options, message, args, client) {
 
-	let commandFile = require(file);
-	commandFile.run(options, message, args, client);
+	try {
+		let commandFile = require(file);
+		commandFile.run(options, message, args, client);
+	} catch (e) {
+		console.log(e)
+	}
 
 }
 
@@ -22,8 +26,8 @@ function parser (options, files, full_args) {
 	};
 
 	for (let i = 0; i < files.length; i++) {
-		files[i] = files[i].replace(`${aliyssium.main_directory}/modules`,".");
-		let files_arr = files[i].split("/");
+		files[i] = files[i].replace(aliyssium.main_directory + `/modules`,".");
+		let files_arr = files[i].replace(`/store/_types/${options.type}`, "").split("/");
 
 		let start = true;
 		let end = false;
@@ -94,16 +98,31 @@ exports.run = async (options, message, client) => {
 
 	let lesser = {};
 
-	lesser.options = config.options.ignore.filter( function(item) {
-		return !item.includes(options.type);
-	});
+	lesser.options = config.options.ignore;
 
 	glob(`${aliyssium.main_directory}/modules/store/**/*.js`, lesser.options, function (er, files) {
+
+		files = files.filter( function(item) {
+			if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/')) {
+				if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/' + options.type)) {
+					return item
+				}
+			} else {
+				return item
+			}
+		});
 
 		let used_file = parser(options, files, full_args);
 
 		if (used_file.matched === 0) {
 			return;
+		}
+
+		if (used_file.filename.endsWith("help.js")) {
+			used_file.args = {
+				"args": used_file.args,
+				"additional": files
+			}
 		}
 
 		runFile(used_file.filename, options, message, used_file.args, client)

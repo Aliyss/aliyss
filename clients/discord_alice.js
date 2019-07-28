@@ -56,7 +56,6 @@ exports.run = () => {
 
 	//client: login
 	client.login(token).then(() => {
-		console.log('----- DISCORD_alice -----');
 		console.log("DISCORD_alice: Authentication successful.")
 	});
 };

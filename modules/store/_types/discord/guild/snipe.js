@@ -1,4 +1,5 @@
-
+const fs = require("fs");
+const parse = require('date-fns/parse');
 let log = require('../../../../events/messageDelete/log.json');
 
 /*Local Functions*/
@@ -12,11 +13,14 @@ function runFile(file, content, message, client) {
 
 exports.run = async (options, message, args, client) => {
 	let content = "";
-
 	if (log[message.author.id]) {
-		for (let i = 0; i < log[message.author.id].length; i++) {
-			content = content + `\n**Pinged by:** ${log[message.author.id][i]['authorID']}\n**Message:** ${log[message.author.id][i]['content']}`
-		}
+		Object.keys(log[message.author.id]).forEach(function(key) {
+			content = content + `\n**Pinged by:** ${log[message.author.id][key].authorID}\n**Message:** ${log[message.author.id][key].cleanContent}\n\n`
+		});
+		delete log[message.author.id];
+		fs.writeFile('./modules/events/messageDelete/log.json', JSON.stringify(log, null, 4), function (err, data) {
+			if (err) throw err;
+		})
 	} else {
 		content = "No messages found."
 	}

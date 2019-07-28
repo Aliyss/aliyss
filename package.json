@@ -10,10 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "array-join": "^2.4.0",
+    "cheerio": "^1.0.0-rc.3",
+    "date-fns": "^1.30.1",
     "deepmerge": "^4.0.0",
     "discord.js": "github:discordjs/discord.js",
-    "glob": "latest",
+    "glob": "^7.1.4",
+    "request": "latest",
     "rgb-to-int": "^1.0.0",
+    "treeify": "^1.1.0",
+    "turndown": "^5.0.3",
     "weather-js": "^2.0.0"
   },
   "devDependencies": {

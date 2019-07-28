@@ -79,6 +79,8 @@ exports.run = async (options, message, args, client) => {
 							main_status = member.user.presence.activity.name;
 							if (member.user.presence.activity.name === "Spotify") {
 								sub_status = sub_status + " - " + member.user.presence.activity.details
+							} else {
+								sub_status = sub_status + "\`\`\n\`\`" + member.user.presence.activity.details
 							}
 						}
 					} else {
@@ -95,6 +97,9 @@ exports.run = async (options, message, args, client) => {
 								imURL = member.user.presence.activity.assets.largeImageURL();
 							} else if (member.user.presence.activity.assets.smallImageURL) {
 								imURL = member.user.presence.activity.assets.smallImageURL();
+							}
+							if (member.user.presence.activity.assets.largeText) {
+								main_status += " - " + member.user.presence.activity.assets.largeText
 							}
 						}
 					}
