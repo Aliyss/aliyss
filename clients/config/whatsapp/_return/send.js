@@ -31,8 +31,19 @@ exports.run = async (content, message, client) => {
 		text = text.replace(/\*\*/g, "*");
 		text = text.replace(/``/g, "```");
 		text = text.replace(/````/g, "```");
+		text = text.replace(/```py\n/g, "```");
+		text = text.replace(/```css\n/g, "```");
+		text = text.replace(/⠀/g, "");
 
 		content = text;
+	} else {
+		let text = content;
+
+		text = text.replace(/\*\*/g, "*");
+		text = text.replace(/``/g, "```");
+		text = text.replace(/````/g, "```");
+
+		content = text
 	}
 
 	if (message.id.fromMe === true) {

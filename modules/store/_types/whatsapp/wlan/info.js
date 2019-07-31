@@ -10,6 +10,11 @@ function runFile(file, content, message, client) {
 
 }
 
+exports.help = {
+	arguments: [],
+	information: Object.keys({})
+};
+
 exports.run = async (options, message, args, client) => {
 
 	if (message.id.fromMe === true) {

@@ -8,6 +8,14 @@ function runFile(file, content, message, client) {
 
 }
 
+exports.help = {
+	name: "Ping",
+	description: "Returns Pong and maybe a bit more information to the swiftness of the client.",
+	arguments: [],
+	optional: [],
+	information: Object.keys({})
+};
+
 exports.run = async (options, message, args, client) => {
 	let content = "Pong!";
 	if (message.createdTimestamp) {

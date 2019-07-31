@@ -1,5 +1,7 @@
 /*Global Packages*/
+const watch = require("node-watch");
 const glob = require("glob");
+const fs = require('fs');
 
 /*Local Packages*/
 const config = require('./store/command_config.json');
@@ -12,6 +14,17 @@ function runFile(file, options, message, args, client) {
 	try {
 		let commandFile = require(file);
 		commandFile.run(options, message, args, client);
+	} catch (e) {
+		console.log(e)
+	}
+
+}
+
+function helpFile(file) {
+
+	try {
+		let commandFile = require(file);
+		return commandFile.help;
 	} catch (e) {
 		console.log(e)
 	}
@@ -53,7 +66,7 @@ function parser (options, files, full_args) {
 
 		}
 
-		if (used_file.matched < matched) {
+		if (used_file.matched < matched && (helpFile(files[i]).arguments.length <= args.length)) {
 			used_file = {
 				filename: files[i],
 				matched: matched,
@@ -67,19 +80,21 @@ function parser (options, files, full_args) {
 
 exports.run = async (options, message, client) => {
 
+	options.locations = aliyssium.locations;
+	options.main_directory = aliyssium.main_directory;
+
+	message.content = message.content.toLowerCase();
 	let msg = message.content;
 	let full_args = [];
 
-	client._profile.prefixes = client._profile.prefixes.concat(aliyssium.prefixes);
-
 	for (let i = 0; i < client._profile.prefixes.length; i++) {
-		if (message.content.startsWith(client._profile.prefixes[i])) {
+		if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
 			msg = message.content.substr(client._profile.prefixes[i].length);
 			break;
 		}
 	}
 
-	if (message.content === msg) {
+	if (message.content === msg || msg.trim() === "") {
 		return;
 	} else {
 		message.content = msg;
@@ -91,9 +106,9 @@ exports.run = async (options, message, client) => {
 			break;
 		}
 	}
-	
-	if (full_args.length === 0) {
-		full_args = message.content.substr(1).split(aliyssium.splitters[0]);
+
+	if (full_args.length === 0 || full_args[0] === "") {
+		return;
 	}
 
 	let lesser = {};
@@ -105,7 +120,9 @@ exports.run = async (options, message, client) => {
 		files = files.filter( function(item) {
 			if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/')) {
 				if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/' + options.type)) {
-					return item
+					if (!item.startsWith(aliyssium.main_directory + '/modules/store/_types/' + options.type + "/~")) {
+						return item
+					}
 				}
 			} else {
 				return item
@@ -124,6 +141,13 @@ exports.run = async (options, message, client) => {
 				"additional": files
 			}
 		}
+
+
+		watch(`${aliyssium.main_directory}/modules${used_file.filename.replace(".", "")}`, (event, filename) => {
+			if (filename) {
+				delete require.cache[require.resolve(used_file.filename)];
+			}
+		});
 
 		runFile(used_file.filename, options, message, used_file.args, client)
 

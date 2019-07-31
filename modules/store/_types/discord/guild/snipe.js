@@ -11,6 +11,14 @@ function runFile(file, content, message, client) {
 
 }
 
+exports.help = {
+	name: "Snipe",
+	description: "Gets a list of deleted mentions of the user.",
+	arguments: [],
+	optional: [],
+	information: Object.keys({})
+};
+
 exports.run = async (options, message, args, client) => {
 	let content = "";
 	if (log[message.author.id]) {

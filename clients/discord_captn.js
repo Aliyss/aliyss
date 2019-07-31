@@ -21,7 +21,8 @@ const profile_name = "captn";
 const profile = aliyssium.profiles.discord.filter(function (item) {
 	return item.name === profile_name
 })[0];
-client._profile = profile;
+client._profile = JSON.parse(JSON.stringify(profile));
+client._profile.prefixes.push.apply(client._profile.prefixes, aliyssium.prefixes);
 const token = profile.token;
 
 exports.run = () => {

@@ -26,7 +26,7 @@ function messageFile(file, object) {
 
 /*Local Variables*/
 const profile_name = "aliyss";
-const profile = aliyssium.profiles.whatsapp.filter(function (item) {
+let profile = aliyssium.profiles.whatsapp.filter(function (item) {
 	return item.name = profile_name
 })[0];
 let session = profile.session;
@@ -34,7 +34,8 @@ const client = new Client({
 	puppeteer: {headless: false},
 	session: session
 });
-client._profile = profile;
+client._profile = JSON.parse(JSON.stringify(profile));
+client._profile.prefixes.push.apply(client._profile.prefixes, aliyssium.prefixes);
 
 exports.run = () => {
 

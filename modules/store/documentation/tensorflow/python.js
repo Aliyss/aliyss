@@ -24,6 +24,11 @@ exports.description = () => {
 	}
 };
 
+exports.help = {
+	arguments: ["search"],
+	information: Object.keys({info: ""})
+};
+
 //Export: from @/store/CommandHandler/index.js
 exports.run = async (options, message, args, client) => {
 
