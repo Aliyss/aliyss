@@ -122,9 +122,6 @@ exports.information = {
 		let streaming_icon = "<:streaming:549806312356053012>";
 
 		return {
-			thumbnail: {
-				url: member.iconURL
-			},
 			fields: [
 				{
 					name: ("Presences " + `(\`\`${all}\`\`)`).padEnd(20, `~`).replace(/~/g, "⠀"),

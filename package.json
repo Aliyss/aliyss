@@ -18,12 +18,14 @@
     "easy-table": "^1.1.1",
     "flat": "^4.1.0",
     "glob": "^7.1.4",
+    "libgenesis": "^1.1.9",
     "node-watch": "^0.6.2",
     "request": "latest",
     "rgb-to-int": "^1.0.0",
     "treeify": "^1.1.0",
     "turndown": "^5.0.3",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+	  "libgen": "latest"
   },
   "devDependencies": {
     "node-vibrant": "^3.1.3"

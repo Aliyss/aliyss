@@ -288,13 +288,11 @@ exports.run = async (options, message, args, client) => {
 			if (embeds.length > 0) {
 				await runFile(options._return + "send.js", `\`\`\`${t.toString()}\`\`\``, message, client);
 			} else {
-				err = "``⛔ Error: " + "No user with the mentioned name has been found." + "``";
+				let err = "``⛔ Error: " + "No user with the mentioned name has been found." + "``";
 				await runFile(options._return + "send.js", err, message, client);
 			}
 
 		}
-
-		
 
 	} catch (e) {
 		console.log(e)
