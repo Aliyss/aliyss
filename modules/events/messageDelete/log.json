@@ -62,6 +62,27 @@
             "activity": null,
             "guildID": "405403391410438165",
             "cleanContent": "@Charles  who created you"
+        },
+        "607233224606744617": {
+            "channelID": "407958260168130570",
+            "deleted": true,
+            "id": "607233224606744617",
+            "type": "DEFAULT",
+            "content": "<@405511726050574336> what is a syntax error",
+            "authorID": "353956837894389773",
+            "pinned": false,
+            "tts": false,
+            "nonce": "607233220278222848",
+            "system": false,
+            "embeds": [],
+            "attachments": [],
+            "createdTimestamp": 1564846082594,
+            "editedTimestamp": 1564846090185,
+            "webhookID": null,
+            "applicationID": null,
+            "activity": null,
+            "guildID": "405403391410438165",
+            "cleanContent": "@Charles what is a syntax error"
         }
     }
 }

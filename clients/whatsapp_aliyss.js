@@ -75,6 +75,7 @@ exports.run = () => {
 	});
 
 	client.on('message', async msg => {
+		console.log(msg);
 		msg = await messageFile('./config/whatsapp/discordify.js', msg);
 		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, msg)
 	});
