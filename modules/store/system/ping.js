@@ -23,10 +23,5 @@ exports.run = async (options, message, args, client) => {
 		content += " Latency: " + (m.createdTimestamp - message.createdTimestamp) + "ms."
 	}
 
-	scontent = {
-		body: content + `@${message.mentions[0].split("@")[0]} !`,
-		mentions: message.mentions
-	};
-
-	await runFile(options._return + "send.js", scontent, message, client)
+	await runFile(options._return + "send.js", content, message, client)
 };
