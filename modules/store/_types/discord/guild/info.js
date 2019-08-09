@@ -104,6 +104,20 @@ exports.information = {
 			]
 		}
 	},
+	leaderboard: async function(member, palette, options, message, client) {
+		let commandFile = require("../../../../events/messageReceived.js");
+		let data = await commandFile.activity(options, client, message);
+		data = data.sort((a,b) => (a.points > b.points) ? 1 : ((b.points > a.points) ? -1 : 0));
+		return {
+			fields: [
+				{
+					name: ("Activity Leaderboard").padEnd(20, `~`).replace(/~/g, "⠀"),
+					value: `• ${data.map((value) => `<@${value.user_id}> (\`\`${value.points}\`\`)`).reverse().slice(0, 9).join(`\n • `)}`,
+					inline: true
+				}
+			]
+		}
+	},
 	presences: function(member) {
 		let dnd = member.presences.map(r => r.status).filter(i => i === 'dnd').length;
 		let idle = member.presences.map(r => r.status).filter(i => i === 'idle').length;
@@ -236,7 +250,7 @@ exports.information = {
 exports.help = {
 	name: "Guild Profile",
 	description: "Gets the information about the current or given guild.",
-	optional: ["{guild}"],
+	optional: [],
 	arguments: [],
 	information: Object.keys(exports.information)
 };
@@ -272,7 +286,7 @@ exports.run = async (options, message, args, client) => {
 
 
 			async function create_embed() {
-				let embed = merge(base_embed, await information[function_name](member, palette));
+				let embed = merge(base_embed, await information[function_name](member, palette, options, message, client));
 				await runFile(options._return + "send.js", {embed: embed}, message, client);
 			}
 			create_embed()

@@ -55,7 +55,7 @@ function recHelpObj(obj, arr, args) {
 exports.help = {
 	arguments: [],
 	optional: ["{module}", "{command}"],
-	information: Object.keys({info: ""})
+	information: Object.keys({})
 };
 
 exports.run = async (options, message, args, client) => {

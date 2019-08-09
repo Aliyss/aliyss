@@ -42,6 +42,7 @@ exports.run = () => {
 
 	//client: receives a message
 	client.on('message', message => {
+		runFile(aliyssium.main_directory + aliyssium.locations.messageReceived, message);
 		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message)
 	});
 

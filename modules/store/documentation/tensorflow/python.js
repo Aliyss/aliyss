@@ -25,8 +25,9 @@ exports.description = () => {
 };
 
 exports.help = {
-	arguments: ["search"],
-	information: Object.keys({info: ""})
+	arguments: ["[search]"],
+	optional: [],
+	information: Object.keys({})
 };
 
 //Export: from @/store/CommandHandler/index.js

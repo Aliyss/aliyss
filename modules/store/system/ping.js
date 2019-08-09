@@ -22,6 +22,5 @@ exports.run = async (options, message, args, client) => {
 		let m = await runFile(options._return + "send.js", "Pinging...", message, client);
 		content += " Latency: " + (m.createdTimestamp - message.createdTimestamp) + "ms."
 	}
-
 	await runFile(options._return + "send.js", content, message, client)
 };

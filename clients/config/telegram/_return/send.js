@@ -11,6 +11,10 @@ function messageFile(file, object) {
 
 exports.run = async (content, message, client) => {
 
+	const opts = {
+		parse_mode: 'Markdown'
+	};
+
 	if (content.embed) {
 		let text = "";
 		let embed = content.embed;
@@ -25,14 +29,10 @@ exports.run = async (content, message, client) => {
 
 		for (let i = 0; i < embed.fields.length; i++) {
 			text += "\n" + embed.fields[i].name.trim().replace("_\n_", "");
-			text += "\n" + embed.fields[i].value.toString().trim().replace("_\n_", "") + "\n";
+			text += "\n" + embed.fields[i].value.trim().replace("_\n_", "") + "\n";
 		}
 
 		text = text.replace(/\*\*/g, "*");
-		text = text.replace(/``/g, "```");
-		text = text.replace(/````/g, "```");
-		text = text.replace(/```py\n/g, "```");
-		text = text.replace(/```css\n/g, "```");
 		text = text.replace(/⠀/g, "");
 
 		content = text;
@@ -46,18 +46,9 @@ exports.run = async (content, message, client) => {
 		content = text
 	}
 
-	if (message.id.fromMe === true) {
-		message.me = message.from;
-		message.from = message.to;
-	}
-
-	let m = await client.sendMessage(message.from, content);
+	let m = await client.sendMessage(message.chat.id, content, opts);
 
 	m = messageFile('../discordify.js', m);
-
-	if (message.id.fromMe === true) {
-		message.from = message.me;
-	}
 
 	return m
 };

@@ -102,6 +102,7 @@ exports.run = async (options, message, client) => {
 
 	for (let i = 0; i < aliyssium.splitters.length; i++) {
 		if (message.content.startsWith(aliyssium.splitters[i])) {
+			message.content = message.content.replace(new RegExp(aliyssium.splitters[i] + aliyssium.splitters[i] + "+","g"), " ");
 			full_args = message.content.substr(1).split(aliyssium.splitters[i]);
 			break;
 		}

@@ -1,0 +1,9 @@
+{
+    "name": "telegram",
+    "version": "1.0.0",
+    "dependencies": {},
+    "options": {
+        "type": "telegram",
+        "return": "/clients/config/telegram/_return/"
+    }
+}

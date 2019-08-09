@@ -14,16 +14,24 @@ function runFile(file, content, message, client) {
 
 function embedder(member, palette) {
 	let rgb_product = {
-		red: palette['Vibrant']['rgb'][0],
-		green: palette['Vibrant']['rgb'][1],
-		blue: palette['Vibrant']['rgb'][2]
+		red: 145,
+		green: 94,
+		blue: 86
 	};
+	if (palette['Vibrant'] !== null) {
+		rgb_product = {
+			red: palette['Vibrant']['rgb'][0],
+			green: palette['Vibrant']['rgb'][1],
+			blue: palette['Vibrant']['rgb'][2]
+		};
+	}
+
 	return {
 		title: null,
 		description: null,
 		color: rgb(rgb_product),
 		author: {
-			name: member.title + member.user.username,
+			name: member.title + member.user.cleanName,
 			url: "https://discordapp.com/users/" + member.id,
 		},
 		thumbnail: {
@@ -40,6 +48,25 @@ exports.information = {
 				{
 					name: "_\n_**ID**".padEnd(24, `~`).replace(/~/g, "⠀"),
 					value: `\`\`${member.id}\`\``,
+					inline: true
+				}
+			]
+		}
+	},
+	points: async function(member, function_name, options, client, message) {
+		let commandFile = require("../../../../events/messageReceived.js");
+		let data = await commandFile.info(options, message, client, member.id);
+		let messages = 0;
+		if (data['messageCount']) {
+			if (data['messageCount'][client.user.id]['guilds'][message.guild.id]) {
+				messages = data['messageCount'][client.user.id]['guilds'][message.guild.id]['messages']
+			}
+		}
+		return {
+			fields: [
+				{
+					name: "_\n_**Points**".padEnd(24, `~`).replace(/~/g, "⠀"),
+					value: `\`\`${messages}\`\``,
 					inline: true
 				}
 			]
@@ -188,7 +215,7 @@ exports.information = {
 		}
 
 	},
-	info: async function (member, function_name) {
+	info: async function (member, function_name, options, client, message) {
 		let override_embed = {
 			description: `\`\`Created: ${member.user.createdTimestamp}\`\`\n\`\`Joined: ${member.joinedTimestamp}\`\``,
 			timestamp: null,
@@ -201,6 +228,7 @@ exports.information = {
 			this.nickname(member),
 			this.presence(member, function_name),
 			this.status(member),
+			await this.points(member, function_name, options, client, message),
 			this.roles(member),
 			override_embed
 		];
@@ -265,11 +293,11 @@ exports.run = async (options, message, args, client) => {
 				let base_embed = embedder(members[i], palette);
 
 				async function create_embed() {
-					return merge(base_embed, await information[function_name](members[i], function_name));
+					return merge(base_embed, await information[function_name](members[i], function_name, options, client, message));
 				}
 				return create_embed()
 			});
-			x.username = members[i].user.username + "#" + members[i].user.discriminator;
+			x.username = members[i].user.cleanName + "#" + members[i].user.discriminator;
 			embeds.push(x)
 		}
 		

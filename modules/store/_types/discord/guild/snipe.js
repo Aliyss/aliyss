@@ -1,6 +1,4 @@
-const fs = require("fs");
-const parse = require('date-fns/parse');
-let log = require('../../../../events/messageDelete/log.json');
+const database = require("../../../../../config/database/initialization.js").run();
 
 /*Local Functions*/
 //Run File
@@ -19,20 +17,32 @@ exports.help = {
 	information: Object.keys({})
 };
 
+function clearSnipe(path, member) {
+	return path.set({
+		"snipes": null,
+		"id": member.id
+	}, {
+		merge: true
+	});
+}
+
 exports.run = async (options, message, args, client) => {
 	let content = "";
-	if (log[message.author.id]) {
-		Object.keys(log[message.author.id]).forEach(function(key) {
-			content = content + `\n**Pinged by:** ${log[message.author.id][key].authorID}\n**Message:** ${log[message.author.id][key].cleanContent}\n\n`
-		});
-		delete log[message.author.id];
-		fs.writeFile('./modules/events/messageDelete/log.json', JSON.stringify(log, null, 4), function (err, data) {
-			if (err) throw err;
-		})
-	} else {
-		content = "No messages found."
-	}
-
-	await runFile(options._return + "send.js", content, message, client)
-
+	let path = database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id);
+	path.get().then(doc => {
+		if (doc.exists) {
+			let docref = doc.data();
+			if (docref["snipes"]) {
+				Object.keys(docref["snipes"]).forEach(function(key) {
+					content = content + `\n**Pinged by:** ${docref["snipes"][key].authorID}\n**Message:** ${docref["snipes"][key].cleanContent}\n\n`
+				});
+				clearSnipe(path, message.author)
+			} else {
+				content = "No messages found."
+			}
+		} else {
+			content = "No messages found."
+		}
+		runFile(options._return + "send.js", content, message, client)
+	});
 };
