@@ -51,6 +51,11 @@ exports.run = async (options, message, client) => {
 	if (client._profile.database.id) {
 		bot_id = client._profile.database.id
 	}
+	if (message.guild === null) {
+		console.log(message.content);
+		console.log(new Date() + " " + message.author.username + " tried to use the DM's");
+		return
+	}
 	let guild_id = message.guild.id;
 	let user_id = message.author.id;
 	let isbot = message.author.bot;
@@ -68,15 +73,17 @@ exports.run = async (options, message, client) => {
 	}
 };
 
-exports.info = async (options, message, client, user_id) => {
+exports.info = async (options, message, client, user) => {
 	let database = runFile("../../config/database/initialization.js");
 	let bot_id = client.user.id;
 	if (client._profile.database.id) {
 		bot_id = client._profile.database.id
 	}
+	let isBot = user.user.bot;
 	let guild_id = message.guild.id;
 	let input = 0;
-	return await GetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(user_id), bot_id, guild_id, 0, input, user_id)
+	let user_id = user.user.id;
+	return await GetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(user_id), bot_id, guild_id, 0, input, user_id, isBot)
 };
 
 exports.activity = async (options, client, message) => {

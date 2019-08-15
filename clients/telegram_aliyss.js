@@ -36,7 +36,7 @@ function messageFile(file, object) {
 exports.run = () => {
 
 	console.log('TELEGRAM_aliyss: Ready.');
-	config.options._return = aliyssium.main_directory + config.options.return
+	config.options._return = aliyssium.main_directory + config.options.return;
 	//client: receives a message
 	client.on('message', async message => {
 		message = await messageFile('./config/telegram/discordify.js', message);

@@ -55,11 +55,11 @@ exports.information = {
 	},
 	points: async function(member, function_name, options, client, message) {
 		let commandFile = require("../../../../events/messageReceived.js");
-		let data = await commandFile.info(options, message, client, member.id);
+		let data = await commandFile.info(options, message, client, member);
 		let messages = 0;
 		if (data['messageCount']) {
-			if (data['messageCount'][client.user.id]['guilds'][message.guild.id]) {
-				messages = data['messageCount'][client.user.id]['guilds'][message.guild.id]['messages']
+			if (data['messageCount'][client._profile.database.id]['guilds'][message.guild.id]) {
+				messages = data['messageCount'][client._profile.database.id]['guilds'][message.guild.id]['messages']
 			}
 		}
 		return {

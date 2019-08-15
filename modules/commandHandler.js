@@ -80,6 +80,10 @@ function parser (options, files, full_args) {
 
 exports.run = async (options, message, client) => {
 
+	if (message.guild === null) {
+		return
+	}
+
 	options.locations = aliyssium.locations;
 	options.main_directory = aliyssium.main_directory;
 
@@ -115,6 +119,8 @@ exports.run = async (options, message, client) => {
 	let lesser = {};
 
 	lesser.options = config.options.ignore;
+
+
 
 	glob(`${aliyssium.main_directory}/modules/store/**/*.js`, lesser.options, function (er, files) {
 
