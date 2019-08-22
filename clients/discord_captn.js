@@ -59,6 +59,6 @@ exports.run = () => {
 
 	//client: login
 	client.login(token).then(() => {
-		console.log("DISCORD_CA: Authentication successful.")
+		console.log("DISCORD_captn: Authentication successful.")
 	});
 };

@@ -87,6 +87,9 @@ exports.run = async (options, message, client) => {
 	options.locations = aliyssium.locations;
 	options.main_directory = aliyssium.main_directory;
 
+	if (!message.content.toLowerCase()) {
+		console.log(message.content)
+	}
 	message.content = message.content.toLowerCase();
 	let msg = message.content;
 	let full_args = [];
