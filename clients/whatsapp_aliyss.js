@@ -10,10 +10,10 @@ const aliyssium = require('../config/aliyssium.json');
 
 /*Local Functions*/
 //Run File
-function runFile(file, object) {
+function runFile(file, object, nlpManager) {
 
 	let commandFile = require(file);
-	commandFile.run(config.options, object, client);
+	commandFile.run(config.options, object, client, nlpManager);
 
 }
 
@@ -37,7 +37,7 @@ const client = new Client({
 client._profile = JSON.parse(JSON.stringify(profile));
 client._profile.prefixes.push.apply(client._profile.prefixes, aliyssium.prefixes);
 
-exports.run = () => {
+exports.run = (nlpManager) => {
 
 
 	client.initialize().then(() => {
@@ -76,7 +76,7 @@ exports.run = () => {
 
 	client.on('message', async msg => {
 		msg = await messageFile('./config/whatsapp/discordify.js', msg);
-		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, msg)
+		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, msg, nlpManager)
 	});
 
 	client.on('disconnected', () => {

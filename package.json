@@ -23,6 +23,7 @@
     "libgen": "latest",
     "libgenesis": "^1.1.9",
     "mc-server-status": "^1.0.3",
+    "node-nlp": "^3.5.2",
     "node-telegram-bot-api": "^0.30.0",
     "node-watch": "^0.6.2",
     "request": "latest",

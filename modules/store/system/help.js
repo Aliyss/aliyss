@@ -122,13 +122,13 @@ exports.run = async (options, message, args, client) => {
 			}
 		}
 		if (info.arguments && info.arguments.length > 0) {
-			nec_args = "``∙ " + info.arguments.join("``\n∙ ").replace(/\[/g, "").replace(/]/g, "") + "``";
+			nec_args = "``∙ " + info.arguments.join("``\n``∙ ").replace(/\[/g, "").replace(/]/g, "") + "``";
 			for (let i = 0; i < diff.length; i++) {
 				diff[i] += ` ${info.arguments.join(" ")}`
 			}
 		}
 		if (info.optional && info.optional.length > 0) {
-			opt_args = "``∙ " + info.optional.join("\n∙ ").replace(/{/g, "").replace(/}/g, "") + "``"
+			opt_args = "``∙ " + info.optional.join("``\n``∙ ").replace(/{/g, "").replace(/}/g, "") + "``";
 			for (let i = 0; i < diff.length; i++) {
 				if (info.optional[i]) {
 					diff[i] += ` ${info.optional[i]}`
@@ -157,7 +157,7 @@ exports.run = async (options, message, args, client) => {
 					inline: true
 				},
 				{
-					name: "_\n_**Spefications**" + ` (\`\`${info.arguments.length}\`\`)`,
+					name: "_\n_**Spefications**" + ` (\`\`${info.information.length}\`\`)`,
 					value: spec_args,
 					inline: true
 				},

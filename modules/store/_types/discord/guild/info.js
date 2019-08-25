@@ -104,7 +104,7 @@ exports.information = {
 			]
 		}
 	},
-	leaderboard: async function(member, palette, options, message, client) {
+	points: async function(member, palette, options, message, client) {
 		let commandFile = require("../../../../events/messageReceived.js");
 		let data = await commandFile.activity(options, client, message);
 		data = data.sort((a,b) => (a.points > b.points) ? 1 : ((b.points > a.points) ? -1 : 0));
@@ -112,6 +112,20 @@ exports.information = {
 			fields: [
 				{
 					name: ("Activity Leaderboard").padEnd(20, `~`).replace(/~/g, "⠀"),
+					value: `• ${data.map((value) => `<@${value.user_id}> (\`\`${value.points}\`\`)`).reverse().slice(0, 9).join(`\n • `)}`,
+					inline: true
+				}
+			]
+		}
+	},
+	sentiment: async function(member, palette, options, message, client) {
+		let commandFile = require("../../../../events/messageReceived.js");
+		let data = await commandFile.sentiment(options, client, message);
+		data = data.sort((a,b) => (a.points > b.points) ? 1 : ((b.points > a.points) ? -1 : 0));
+		return {
+			fields: [
+				{
+					name: ("Sentiment Leaderboard").padEnd(20, `~`).replace(/~/g, "⠀"),
 					value: `• ${data.map((value) => `<@${value.user_id}> (\`\`${value.points}\`\`)`).reverse().slice(0, 9).join(`\n • `)}`,
 					inline: true
 				}
@@ -196,7 +210,6 @@ exports.information = {
 		}
 	},
 	emojis: function(member) {
-
 		return {
 			fields: [
 				{
@@ -279,17 +292,14 @@ exports.run = async (options, message, args, client) => {
 		}
 
 		let v = new Vibrant(user_icon);
-		v.getPalette().then((palette) => {
+		return v.getPalette().then((palette) => {
 			let member = message.guild;
 			let base_embed = embedder(member, palette);
 
-
-
 			async function create_embed() {
-				let embed = merge(base_embed, await information[function_name](member, palette, options, message, client));
-				await runFile(options._return + "send.js", {embed: embed}, message, client);
+				return merge(base_embed, await information[function_name](member, palette, options, message, client));
 			}
-			create_embed()
+			return create_embed()
 		});
 
 	} catch (e) {

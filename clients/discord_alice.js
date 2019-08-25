@@ -9,10 +9,10 @@ const aliyssium = require('../config/aliyssium.json');
 
 /*Local Functions*/
 //Run File
-function runFile(file, object) {
+function runFile(file, object, nlpManager) {
 
 	let commandFile = require(file);
-	commandFile.run(config.options, object, client);
+	commandFile.run(config.options, object, client, nlpManager);
 
 }
 
@@ -25,7 +25,7 @@ client._profile = JSON.parse(JSON.stringify(profile));
 client._profile.prefixes.push.apply(client._profile.prefixes, aliyssium.prefixes);
 const token = profile.token;
 
-exports.run = () => {
+exports.run = (nlpManager) => {
 
 
 	//client: joins a server
@@ -40,8 +40,8 @@ exports.run = () => {
 
 	//client: receives a message
 	client.on('message', message => {
-		runFile(aliyssium.main_directory + aliyssium.locations.messageReceived, message);
-		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message)
+		runFile(aliyssium.main_directory + aliyssium.locations.messageReceived, message, nlpManager);
+		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message, nlpManager)
 	});
 
 

@@ -6,6 +6,7 @@ const fs = require('fs');
 /*Local Packages*/
 const config = require('./store/command_config.json');
 const aliyssium = require('../config/aliyssium.json');
+const database = require('../config/database/initialization.js').run();
 
 /*Local Functions*/
 //Run File
@@ -13,7 +14,7 @@ function runFile(file, options, message, args, client) {
 
 	try {
 		let commandFile = require(file);
-		commandFile.run(options, message, args, client);
+		return commandFile.run(options, message, args, client);
 	} catch (e) {
 		console.log(e)
 	}
@@ -78,7 +79,9 @@ function parser (options, files, full_args) {
 	return used_file
 }
 
-exports.run = async (options, message, client) => {
+
+
+exports.run = async (options, message, client, nlpManager) => {
 
 	if (message.guild === null) {
 		return
@@ -88,18 +91,44 @@ exports.run = async (options, message, client) => {
 	options.main_directory = aliyssium.main_directory;
 
 	if (!message.content.toLowerCase()) {
-		console.log(message.content)
+		//console.log(message.content)
 	}
 	message.content = message.content.toLowerCase();
 	let msg = message.content;
 	let full_args = [];
 
-	for (let i = 0; i < client._profile.prefixes.length; i++) {
-		if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
-			msg = message.content.substr(client._profile.prefixes[i].length);
-			break;
+	if (message.guild && message.guild.id) {
+		await database.collection(options.type).doc(client._profile.database.name).collection("guilds").doc(message.guild.id).get().then(doc => {
+			if (doc.exists) {
+				let docref = doc.data();
+				if (docref["prefixes"]) {
+					for (let i = 0; i < docref["prefixes"].length; i++) {
+						if (message.content.startsWith(docref["prefixes"][i].toLowerCase())) {
+							msg = message.content.substr(docref["prefixes"][i].length);
+							break;
+						}
+					}
+				}
+			} else {
+				for (let i = 0; i < client._profile.prefixes.length; i++) {
+					if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
+						msg = message.content.substr(client._profile.prefixes[i].length);
+						break;
+					}
+				}
+			}
+		});
+	} else {
+		for (let i = 0; i < client._profile.prefixes.length; i++) {
+			if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
+				msg = message.content.substr(client._profile.prefixes[i].length);
+				break;
+			}
 		}
 	}
+
+
+
 
 	if (message.content === msg || msg.trim() === "") {
 		return;
@@ -123,9 +152,13 @@ exports.run = async (options, message, client) => {
 
 	lesser.options = config.options.ignore;
 
+	let response = await nlpManager.process(full_args.join(" "));
+	if (response.answer) {
+		await runFile(options._return + "send.js", response.answer, message, client);
+		return;
+	}
 
-
-	glob(`${aliyssium.main_directory}/modules/store/**/*.js`, lesser.options, function (er, files) {
+	glob(`${aliyssium.main_directory}/modules/store/**/*.js`, lesser.options, async function (er, files) {
 
 		files = files.filter( function(item) {
 			if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/')) {
@@ -142,6 +175,7 @@ exports.run = async (options, message, client) => {
 		let used_file = parser(options, files, full_args);
 
 		if (used_file.matched === 0) {
+
 			return;
 		}
 
@@ -159,7 +193,10 @@ exports.run = async (options, message, client) => {
 			}
 		});
 
-		runFile(used_file.filename, options, message, used_file.args, client)
+		let embed = await runFile(used_file.filename, options, message, used_file.args, client);
+		if (embed && embed.fields && embed.fields.length > 0) {
+			await runFile(options._return + "send.js", {embed: embed}, message, client);
+		}
 
 	});
 };

@@ -72,6 +72,25 @@ exports.information = {
 			]
 		}
 	},
+	sentiment: async function(member, function_name, options, client, message) {
+		let commandFile = require("../../../../events/messageReceived.js");
+		let data = await commandFile.info(options, message, client, member);
+		let messages = 0;
+		if (data['messageCount']) {
+			if (data['messageCount'][client._profile.database.id]['guilds'][message.guild.id] && data['messageCount'][client._profile.database.id]['guilds'][message.guild.id]['sentiment']) {
+				messages = data['messageCount'][client._profile.database.id]['guilds'][message.guild.id]['sentiment']['score'].toFixed(5)
+			}
+		}
+		return {
+			fields: [
+				{
+					name: "_\n_**Sentiment**".padEnd(24, `~`).replace(/~/g, "⠀"),
+					value: `\`\`${messages}\`\``,
+					inline: true
+				}
+			]
+		}
+	},
 	bot: function(member) {
 		return {
 			fields: [

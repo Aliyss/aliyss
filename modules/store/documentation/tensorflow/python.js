@@ -73,7 +73,7 @@ exports.run = async (options, message, args, client) => {
 	let docref = await GetDocumentation(path);
 
 	if (docref === null) {
-		await request({
+		return request({
 			method: 'GET',
 			url: pyDocSetup + urlstring
 		}, (err, res, body) => {
@@ -227,7 +227,7 @@ exports.run = async (options, message, args, client) => {
 
 			let imageURL = "https://avatars1.githubusercontent.com/u/15658638?s=280&v=4";
 			let v = new Vibrant(imageURL);
-			v.getPalette().then((palette) => {
+			return v.getPalette().then((palette) => {
 
 				let rgb_product = {
 					red: palette['Vibrant']['rgb'][0],
@@ -268,12 +268,12 @@ exports.run = async (options, message, args, client) => {
 				if (embed.fields.length > 0) {
 					SetDocumentation(path, embed);
 				}
-				runFile(options._return + "send.js", {embed: embed}, message, client);
+				return embed
 			});
 
 		});
 	} else {
 		let embed = docref.embed;
-		runFile(options._return + "send.js", {embed: embed}, message, client);
+		return embed
 	}
 };

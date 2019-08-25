@@ -10,7 +10,7 @@ function runFile(file) {
 
 }
 
-function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot) {
+function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, score=0, count=0) {
 	//Firebase: Get Command Document
 	return path.set({
 		"messageCount": {
@@ -18,6 +18,10 @@ function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot) 
 				"guilds": {
 					[guild_id]: {
 						"messages": input,
+						"sentiment": {
+							score: score,
+							count: count
+						},
 						"time_stamp": createdTime
 					}
 				}
@@ -45,7 +49,7 @@ function GetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot) 
 	});
 }
 
-exports.run = async (options, message, client) => {
+exports.run = async (options, message, client, nlpManager) => {
 	let database = runFile("../../config/database/initialization.js");
 	let bot_id = client.user.id;
 	if (client._profile.database.id) {
@@ -63,12 +67,24 @@ exports.run = async (options, message, client) => {
 	let cooldown = 60000;
 	let input = 1;
 	let doc = await GetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id), bot_id, guild_id, createdTime, input, user_id, isbot);
+	let response = await nlpManager.process(message.content);
 	if (doc.messageCount && doc.messageCount[bot_id]["guilds"]) {
+		let score = 0;
+		let count = 0;
+		if (doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]) {
+			count = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"];
+			score = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"];
+		}
+		score = (score * count + response.sentiment.score) / (count+1);
+		count++;
 		if (doc.messageCount[bot_id]["guilds"][guild_id] && doc.messageCount[bot_id]["guilds"][guild_id]["time_stamp"] + cooldown <= createdTime) {
 			input = doc.messageCount[bot_id]["guilds"][guild_id]["messages"] + 1;
-			SetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id), bot_id, guild_id, createdTime, input, user_id, isbot)
+			SetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id), bot_id, guild_id, createdTime, input, user_id, isbot, score, count)
 		} else if (!doc.messageCount[bot_id]["guilds"][guild_id]){
-			SetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id), bot_id, guild_id, createdTime, input, user_id, isbot)
+			SetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id), bot_id, guild_id, createdTime, input, user_id, isbot, score, count)
+		} else {
+			input = doc.messageCount[bot_id]["guilds"][guild_id]["messages"];
+			SetProfile(database.collection(options.type).doc(client._profile.database.name).collection("users").doc(message.author.id), bot_id, guild_id, createdTime, input, user_id, isbot, score, count)
 		}
 	}
 };
@@ -101,6 +117,28 @@ exports.activity = async (options, client, message) => {
 					chartData.push({
 						user_id: docref.id,
 						points: docref['messageCount'][bot_id]['guilds'][message.guild.id].messages
+					});
+				}
+			})
+		});
+	return chartData
+};
+
+exports.sentiment = async (options, client, message) => {
+	let database = runFile("../../config/database/initialization.js");
+	let chartData = [];
+	let bot_id = client.user.id;
+	if (client._profile.database.id) {
+		bot_id = client._profile.database.id
+	}
+	await database.collection(options.type).doc(client._profile.database.name).collection("users").get()
+		.then(querySnapshot => {
+			querySnapshot.docs.map(doc => {
+				let docref = doc.data();
+				if (docref.id && !!!docref.isBot && docref['messageCount'] && docref['messageCount'][bot_id]['guilds'][message.guild.id] && docref['messageCount'][bot_id]['guilds'][message.guild.id]["sentiment"] && docref['messageCount'][bot_id]['guilds'][message.guild.id]["sentiment"].score) {
+					chartData.push({
+						user_id: docref.id,
+						points: docref['messageCount'][bot_id]['guilds'][message.guild.id]["sentiment"].score.toFixed(2)
 					});
 				}
 			})
