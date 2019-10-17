@@ -251,7 +251,7 @@ exports.run = async (options, message, args, client) => {
 		});
 
 		const options_x = {
-			mirror: (url) ? url : "http://gen.lib.rus.ec/",
+			mirror: (url) ? url : "http://libgen.is/",
 			query: search,
 			count: 10,
 			search_in: "def",

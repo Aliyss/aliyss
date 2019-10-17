@@ -76,7 +76,7 @@ exports.run = async (options, message, args, client) => {
 		return request({
 			method: 'GET',
 			url: pyDocSetup + urlstring
-		}, (err, res, body) => {
+		}, async (err, res, body) => {
 
 			if (err) return console.error(err);
 
@@ -134,7 +134,7 @@ exports.run = async (options, message, args, client) => {
 
 						for (let c = 0; c < cutStr.length; c++) {
 							let subfield = {
-								name: f_name + ` (\`\`${c+1}\`\`)`,
+								name: f_name + ` (\`\`${c + 1}\`\`)`,
 								value: cutStr[c].replace(/!!!!/g, "\n")
 							};
 							fullField.push(subfield)
@@ -208,7 +208,7 @@ exports.run = async (options, message, args, client) => {
 
 							for (let c = 0; c < cutStr.length; c++) {
 								let subfield = {
-									name: f_name + ` (\`\`${c+1}\`\`)`,
+									name: f_name + ` (\`\`${c + 1}\`\`)`,
 									value: cutStr[c].replace(/!!!!/g, "\n") + "\n\n"
 								};
 								fullField.push(subfield)
@@ -227,7 +227,7 @@ exports.run = async (options, message, args, client) => {
 
 			let imageURL = "https://avatars1.githubusercontent.com/u/15658638?s=280&v=4";
 			let v = new Vibrant(imageURL);
-			return v.getPalette().then((palette) => {
+			return await v.getPalette().then(async (palette) => {
 
 				let rgb_product = {
 					red: palette['Vibrant']['rgb'][0],
@@ -266,14 +266,13 @@ exports.run = async (options, message, args, client) => {
 					}
 				};
 				if (embed.fields.length > 0) {
-					SetDocumentation(path, embed);
+					await SetDocumentation(path, embed);
 				}
-				return embed
+				await runFile(options._return + "send.js", {embed: embed}, message, client);
 			});
 
 		});
 	} else {
-		let embed = docref.embed;
-		return embed
+		return docref.embed
 	}
 };

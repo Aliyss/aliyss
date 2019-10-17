@@ -1,7 +1,7 @@
 
 /*Global Packages*/
 const fs = require('fs');
-const { Client } = require('./config/whatsapp/wapi/index.js');
+const { Client } = require('./config/whatsapp/wapi2/index.js');
 
 /*Local Packages*/
 const config = require('./config/whatsapp/config.json');

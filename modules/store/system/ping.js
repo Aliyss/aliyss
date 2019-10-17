@@ -18,9 +18,17 @@ exports.help = {
 
 exports.run = async (options, message, args, client) => {
 	let content = "Pong!";
+
 	if (message.createdTimestamp) {
 		let m = await runFile(options._return + "send.js", "Pinging...", message, client);
 		content += " Latency: " + (m.createdTimestamp - message.createdTimestamp) + "ms."
 	}
-	await runFile(options._return + "send.js", content, message, client)
+
+	if (options.return_type === "string") {
+		console.log(content)
+		return content
+	} else {
+		await runFile(options._return + "send.js", content, message, client)
+	}
+
 };

@@ -1,4 +1,5 @@
 
+const aliyssium = require('../../../../config/aliyssium.json');
 
 /*Local Functions*/
 //Run File
@@ -49,6 +50,13 @@ exports.run = async (content, message, client) => {
 	if (message.id.fromMe === true) {
 		message.me = message.from;
 		message.from = message.to;
+	}
+
+	for (let i = 0; i < aliyssium.splitters.length; i++) {
+		if (content.startsWith(aliyssium.splitters[i])) {
+			content = "$Q " + content;
+			break;
+		}
 	}
 
 	let m = await client.sendMessage(message.from, content);

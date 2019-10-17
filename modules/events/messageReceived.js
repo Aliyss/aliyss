@@ -71,7 +71,7 @@ exports.run = async (options, message, client, nlpManager) => {
 	if (doc.messageCount && doc.messageCount[bot_id]["guilds"]) {
 		let score = 0;
 		let count = 0;
-		if (doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]) {
+		if (doc.messageCount[bot_id]["guilds"][guild_id] && doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]) {
 			count = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"];
 			score = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"];
 		}

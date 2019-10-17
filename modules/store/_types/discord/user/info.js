@@ -319,9 +319,9 @@ exports.run = async (options, message, args, client) => {
 			x.username = members[i].user.cleanName + "#" + members[i].user.discriminator;
 			embeds.push(x)
 		}
-		
+
 		if (embeds.length === 1) {
-			await runFile(options._return + "send.js", {embed: embeds[0]}, message, client);
+			return embeds[0]
 		} else {
 			let t = new Table;
 
@@ -333,12 +333,10 @@ exports.run = async (options, message, args, client) => {
 				t.newRow();
 			}
 			if (embeds.length > 0) {
-				await runFile(options._return + "send.js", `\`\`\`${t.toString()}\`\`\``, message, client);
+				return `\`\`\`${t.toString()}\`\`\``
 			} else {
-				let err = "``⛔ Error: " + "No user with the mentioned name has been found." + "``";
-				await runFile(options._return + "send.js", err, message, client);
+				return "``⛔ Error: " + "No user with the mentioned name has been found." + "``"
 			}
-
 		}
 
 	} catch (e) {
