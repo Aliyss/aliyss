@@ -38,610 +38,6 @@
         "trainByDomain": false,
         "keepStopwords": true,
         "stemDict": {
-          "is,where,work,your": {
-            "domain": "default",
-            "intent": "smalltalk.occupation"
-          },
-          "locat,offic,your": {
-            "domain": "default",
-            "intent": "smalltalk.occupation"
-          },
-          "is,locat,offic,where,your": {
-            "domain": "default",
-            "intent": "smalltalk.occupation"
-          },
-          "do,where,work,you": {
-            "domain": "default",
-            "intent": "smalltalk.occupation"
-          },
-          "is,offic,where,your": {
-            "domain": "default",
-            "intent": "smalltalk.occupation"
-          },
-          "are,there,you": {
-            "domain": "default",
-            "intent": "smalltalk.there"
-          },
-          "are,still,there,you": {
-            "domain": "default",
-            "intent": "smalltalk.there"
-          },
-          "still,there,you": {
-            "domain": "default",
-            "intent": "smalltalk.there"
-          },
-          "are,here,you": {
-            "domain": "default",
-            "intent": "smalltalk.there"
-          },
-          "are,here,still,you": {
-            "domain": "default",
-            "intent": "smalltalk.there"
-          },
-          "here,still,you": {
-            "domain": "default",
-            "intent": "smalltalk.there"
-          },
-          "me,speak,to": {
-            "domain": "default",
-            "intent": "smalltalk.talktome"
-          },
-          "me,talk,to": {
-            "domain": "default",
-            "intent": "smalltalk.talktome"
-          },
-          "me,talk,to,will,you": {
-            "domain": "default",
-            "intent": "smalltalk.talktome"
-          },
-          "chat,me,with": {
-            "domain": "default",
-            "intent": "smalltalk.talktome"
-          },
-          "can,chat,me,to,with": {
-            "domain": "default",
-            "intent": "smalltalk.talktome"
-          },
-          "can,me,talk,with,you": {
-            "domain": "default",
-            "intent": "smalltalk.talktome"
-          },
-          "are,who,you": {
-            "domain": "default",
-            "intent": "smalltalk.whois"
-          },
-          "annoy,are,me,you": {
-            "domain": "default",
-            "intent": "smalltalk.annoying"
-          },
-          "annoy,are,such,you": {
-            "domain": "default",
-            "intent": "smalltalk.annoying"
-          },
-          "annoy,me,you": {
-            "domain": "default",
-            "intent": "smalltalk.annoying"
-          },
-          "annoy,are,you": {
-            "domain": "default",
-            "intent": "smalltalk.annoying"
-          },
-          "are,irrit,you": {
-            "domain": "default",
-            "intent": "smalltalk.annoying"
-          },
-          "annoy,are,me,much,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.annoying"
-          },
-          "am,excit,i,veri": {
-            "domain": "default",
-            "intent": "smalltalk.excited"
-          },
-          "am,i,thrill": {
-            "domain": "default",
-            "intent": "smalltalk.excited"
-          },
-          "am,excit,how,i": {
-            "domain": "default",
-            "intent": "smalltalk.excited"
-          },
-          "am,excit,i,so": {
-            "domain": "default",
-            "intent": "smalltalk.excited"
-          },
-          "are,sure,you": {
-            "domain": "default",
-            "intent": "smalltalk.sure"
-          },
-          "are,now,right,sure,you": {
-            "domain": "default",
-            "intent": "smalltalk.sure"
-          },
-          "are,of,sure,this,you": {
-            "domain": "default",
-            "intent": "smalltalk.sure"
-          },
-          "are,busi,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "are,busi,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "are,still,work,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "a,are,busi,person,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "are,busi,veri,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "are,it,on,still,work,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "busi,seem,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "are,today,work,you": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "do,got,i,to,work": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "am,busi,i": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "am,i,overload": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "am,i,work": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "do,got,i,thing,to": {
-            "domain": "default",
-            "intent": "smalltalk.busy"
-          },
-          "i,like,you": {
-            "domain": "default",
-            "intent": "smalltalk.likeagent"
-          },
-          "i,like,realli,you": {
-            "domain": "default",
-            "intent": "smalltalk.likeagent"
-          },
-          "are,so,special,you": {
-            "domain": "default",
-            "intent": "smalltalk.likeagent"
-          },
-          "i,like,much,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.likeagent"
-          },
-          "bore": {
-            "domain": "default",
-            "intent": "smalltalk.bored"
-          },
-          "bore,is,this": {
-            "domain": "default",
-            "intent": "smalltalk.bored"
-          },
-          "am,bore,get,i": {
-            "domain": "default",
-            "intent": "smalltalk.bored"
-          },
-          "bore,it,me": {
-            "domain": "default",
-            "intent": "smalltalk.bored"
-          },
-          "bore,that,was": {
-            "domain": "default",
-            "intent": "smalltalk.bored"
-          },
-          "is,master,who,your": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "do,for,who,work,you": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "boss,do,is,think,who,you,your": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "boss,is,who,your": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "be,boss,i,should,your": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "is,owner,who,your": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "boss,is,the,who": {
-            "domain": "default",
-            "intent": "smalltalk.boss"
-          },
-          "a,laugh,lot,make,me,you": {
-            "domain": "default",
-            "intent": "smalltalk.funny"
-          },
-          "are,funni,you": {
-            "domain": "default",
-            "intent": "smalltalk.funny"
-          },
-          "are,funniest,the,you": {
-            "domain": "default",
-            "intent": "smalltalk.funny"
-          },
-          "are,hilari,you": {
-            "domain": "default",
-            "intent": "smalltalk.funny"
-          },
-          "are,funni,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.funny"
-          },
-          "laugh,make,me,you": {
-            "domain": "default",
-            "intent": "smalltalk.funny"
-          },
-          "are,how,smart,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "are,qualifi,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "are,smart,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "a,have,knowledg,lot,of,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "a,know,lot,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "are,smart,veri,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "are,intellig,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "a,are,cooki,smart,you": {
-            "domain": "default",
-            "intent": "smalltalk.clever"
-          },
-          "nice,see,to,you": {
-            "domain": "default",
-            "intent": "smalltalk.nicetoseeyou"
-          },
-          "good,see,to,you": {
-            "domain": "default",
-            "intent": "smalltalk.nicetoseeyou"
-          },
-          "great,see,to,you": {
-            "domain": "default",
-            "intent": "smalltalk.nicetoseeyou"
-          },
-          "love,see,to,you": {
-            "domain": "default",
-            "intent": "smalltalk.nicetoseeyou"
-          },
-          "are,real,you": {
-            "domain": "default",
-            "intent": "smalltalk.real"
-          },
-          "are,not,real,you": {
-            "domain": "default",
-            "intent": "smalltalk.real"
-          },
-          "are,i,real,think,you": {
-            "domain": "default",
-            "intent": "smalltalk.real"
-          },
-          "are,real,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.real"
-          },
-          "a,are,person,real,you": {
-            "domain": "default",
-            "intent": "smalltalk.real"
-          },
-          "are,fake,not,you": {
-            "domain": "default",
-            "intent": "smalltalk.real"
-          },
-          "are,bad,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "are,horribl,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "are,useless,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "are,wast,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "are,the,worst,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "a,are,lame,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "hate,i,you": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "bad,is,that": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "bad,idea": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "good,is,not,that": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "bad,realli": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "afraid,am,bad,i,is,that": {
-            "domain": "default",
-            "intent": "smalltalk.bad"
-          },
-          "a,are,weirdo,you": {
-            "domain": "default",
-            "intent": "smalltalk.crazy"
-          },
-          "are,mad,you": {
-            "domain": "default",
-            "intent": "smalltalk.crazy"
-          },
-          "are,crazi,you": {
-            "domain": "default",
-            "intent": "smalltalk.crazy"
-          },
-          "are,insan,you": {
-            "domain": "default",
-            "intent": "smalltalk.crazy"
-          },
-          "crazi,went,you": {
-            "domain": "default",
-            "intent": "smalltalk.crazy"
-          },
-          "are,nut,you": {
-            "domain": "default",
-            "intent": "smalltalk.crazy"
-          },
-          "countri,is,where,your": {
-            "domain": "default",
-            "intent": "smalltalk.origin"
-          },
-          "been,born,have,where,you": {
-            "domain": "default",
-            "intent": "smalltalk.origin"
-          },
-          "come,do,from,where,you": {
-            "domain": "default",
-            "intent": "smalltalk.origin"
-          },
-          "are,from,where,you": {
-            "domain": "default",
-            "intent": "smalltalk.origin"
-          },
-          "born,were,where,you": {
-            "domain": "default",
-            "intent": "smalltalk.origin"
-          },
-          "home,is,where,your": {
-            "domain": "default",
-            "intent": "smalltalk.residence"
-          },
-          "about,citi,me,tell,your": {
-            "domain": "default",
-            "intent": "smalltalk.residence"
-          },
-          "is,resid,where,your": {
-            "domain": "default",
-            "intent": "smalltalk.residence"
-          },
-          "live,where,you": {
-            "domain": "default",
-            "intent": "smalltalk.residence"
-          },
-          "hous,is,where,your": {
-            "domain": "default",
-            "intent": "smalltalk.residence"
-          },
-          "is,town,what,your": {
-            "domain": "default",
-            "intent": "smalltalk.residence"
-          },
-          "a,are,bot,you": {
-            "domain": "default",
-            "intent": "smalltalk.alice"
-          },
-          "alic,an,are,you": {
-            "domain": "default",
-            "intent": "smalltalk.alice"
-          },
-          "a,are,robot,you": {
-            "domain": "default",
-            "intent": "smalltalk.alice"
-          },
-          "a,are,program,you": {
-            "domain": "default",
-            "intent": "smalltalk.alice"
-          },
-          "a,are,just,robot,you": {
-            "domain": "default",
-            "intent": "smalltalk.alice"
-          },
-          "a,are,bot,just,you": {
-            "domain": "default",
-            "intent": "smalltalk.alice"
-          },
-          "hello": {
-            "domain": "default",
-            "intent": "smalltalk.hello"
-          },
-          "hi": {
-            "domain": "default",
-            "intent": "smalltalk.hello"
-          },
-          "howdi": {
-            "domain": "default",
-            "intent": "smalltalk.hello"
-          },
-          "are,love,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "well,work,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "are,love,veri,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "are,awesom,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "are,good,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "are,good,so,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "day,make,my,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "good,is,that": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "good,know,to": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "glad,hear,that,to": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "realli,well": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "awesom,is,thank,that,you": {
-            "domain": "default",
-            "intent": "smalltalk.good"
-          },
-          "for,goodby,now": {
-            "domain": "default",
-            "intent": "smalltalk.bye"
-          },
-          "bye,bye,care,take": {
-            "domain": "default",
-            "intent": "smalltalk.bye"
-          },
-          "later,okay,see,you": {
-            "domain": "default",
-            "intent": "smalltalk.bye"
-          },
-          "bye,for,now": {
-            "domain": "default",
-            "intent": "smalltalk.bye"
-          },
-          "go,i,must": {
-            "domain": "default",
-            "intent": "smalltalk.bye"
-          },
-          "like,marri,me,to,would,you": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "i,love,marri,me,you": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "marri,me,pleas": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "i,marri,to,want,you": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "get,is,let,marri": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "marri,should,we": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "marri,me": {
-            "domain": "default",
-            "intent": "smalltalk.marryuser"
-          },
-          "hug,me": {
-            "domain": "default",
-            "intent": "smalltalk.hug"
-          },
-          "a,do,hug,want,you": {
-            "domain": "default",
-            "intent": "smalltalk.hug"
-          },
-          "a,hug,i,want": {
-            "domain": "default",
-            "intent": "smalltalk.hug"
-          },
-          "hug,you": {
-            "domain": "default",
-            "intent": "smalltalk.hug"
-          },
-          "hug,i,may,you": {
-            "domain": "default",
-            "intent": "smalltalk.hug"
-          },
           "nice,talk,to,to,you": {
             "domain": "default",
             "intent": "smalltalk.nicetotalktoyou"
@@ -1273,34 +669,613 @@
           "do,do,for,fun,what,you": {
             "domain": "default",
             "intent": "smalltalk.hobby"
+          },
+          "is,where,work,your": {
+            "domain": "default",
+            "intent": "smalltalk.occupation"
+          },
+          "locat,offic,your": {
+            "domain": "default",
+            "intent": "smalltalk.occupation"
+          },
+          "is,locat,offic,where,your": {
+            "domain": "default",
+            "intent": "smalltalk.occupation"
+          },
+          "do,where,work,you": {
+            "domain": "default",
+            "intent": "smalltalk.occupation"
+          },
+          "is,offic,where,your": {
+            "domain": "default",
+            "intent": "smalltalk.occupation"
+          },
+          "are,there,you": {
+            "domain": "default",
+            "intent": "smalltalk.there"
+          },
+          "are,still,there,you": {
+            "domain": "default",
+            "intent": "smalltalk.there"
+          },
+          "still,there,you": {
+            "domain": "default",
+            "intent": "smalltalk.there"
+          },
+          "are,here,you": {
+            "domain": "default",
+            "intent": "smalltalk.there"
+          },
+          "are,here,still,you": {
+            "domain": "default",
+            "intent": "smalltalk.there"
+          },
+          "here,still,you": {
+            "domain": "default",
+            "intent": "smalltalk.there"
+          },
+          "me,speak,to": {
+            "domain": "default",
+            "intent": "smalltalk.talktome"
+          },
+          "me,talk,to": {
+            "domain": "default",
+            "intent": "smalltalk.talktome"
+          },
+          "me,talk,to,will,you": {
+            "domain": "default",
+            "intent": "smalltalk.talktome"
+          },
+          "chat,me,with": {
+            "domain": "default",
+            "intent": "smalltalk.talktome"
+          },
+          "can,chat,me,to,with": {
+            "domain": "default",
+            "intent": "smalltalk.talktome"
+          },
+          "can,me,talk,with,you": {
+            "domain": "default",
+            "intent": "smalltalk.talktome"
+          },
+          "are,who,you": {
+            "domain": "default",
+            "intent": "smalltalk.whois"
+          },
+          "annoy,are,me,you": {
+            "domain": "default",
+            "intent": "smalltalk.annoying"
+          },
+          "annoy,are,such,you": {
+            "domain": "default",
+            "intent": "smalltalk.annoying"
+          },
+          "annoy,me,you": {
+            "domain": "default",
+            "intent": "smalltalk.annoying"
+          },
+          "annoy,are,you": {
+            "domain": "default",
+            "intent": "smalltalk.annoying"
+          },
+          "are,irrit,you": {
+            "domain": "default",
+            "intent": "smalltalk.annoying"
+          },
+          "annoy,are,me,much,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.annoying"
+          },
+          "am,excit,i,veri": {
+            "domain": "default",
+            "intent": "smalltalk.excited"
+          },
+          "am,i,thrill": {
+            "domain": "default",
+            "intent": "smalltalk.excited"
+          },
+          "am,excit,how,i": {
+            "domain": "default",
+            "intent": "smalltalk.excited"
+          },
+          "am,excit,i,so": {
+            "domain": "default",
+            "intent": "smalltalk.excited"
+          },
+          "are,sure,you": {
+            "domain": "default",
+            "intent": "smalltalk.sure"
+          },
+          "are,now,right,sure,you": {
+            "domain": "default",
+            "intent": "smalltalk.sure"
+          },
+          "are,of,sure,this,you": {
+            "domain": "default",
+            "intent": "smalltalk.sure"
+          },
+          "are,busi,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "are,busi,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "are,still,work,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "a,are,busi,person,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "are,busi,veri,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "are,it,on,still,work,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "busi,seem,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "are,today,work,you": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "do,got,i,to,work": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "am,busi,i": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "am,i,overload": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "am,i,work": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "do,got,i,thing,to": {
+            "domain": "default",
+            "intent": "smalltalk.busy"
+          },
+          "i,like,you": {
+            "domain": "default",
+            "intent": "smalltalk.likeagent"
+          },
+          "i,like,realli,you": {
+            "domain": "default",
+            "intent": "smalltalk.likeagent"
+          },
+          "are,so,special,you": {
+            "domain": "default",
+            "intent": "smalltalk.likeagent"
+          },
+          "i,like,much,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.likeagent"
+          },
+          "bore": {
+            "domain": "default",
+            "intent": "smalltalk.bored"
+          },
+          "bore,is,this": {
+            "domain": "default",
+            "intent": "smalltalk.bored"
+          },
+          "am,bore,get,i": {
+            "domain": "default",
+            "intent": "smalltalk.bored"
+          },
+          "bore,it,me": {
+            "domain": "default",
+            "intent": "smalltalk.bored"
+          },
+          "bore,that,was": {
+            "domain": "default",
+            "intent": "smalltalk.bored"
+          },
+          "is,master,who,your": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "do,for,who,work,you": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "boss,do,is,think,who,you,your": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "boss,is,who,your": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "be,boss,i,should,your": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "is,owner,who,your": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "boss,is,the,who": {
+            "domain": "default",
+            "intent": "smalltalk.boss"
+          },
+          "a,laugh,lot,make,me,you": {
+            "domain": "default",
+            "intent": "smalltalk.funny"
+          },
+          "are,funni,you": {
+            "domain": "default",
+            "intent": "smalltalk.funny"
+          },
+          "are,funniest,the,you": {
+            "domain": "default",
+            "intent": "smalltalk.funny"
+          },
+          "are,hilari,you": {
+            "domain": "default",
+            "intent": "smalltalk.funny"
+          },
+          "are,funni,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.funny"
+          },
+          "laugh,make,me,you": {
+            "domain": "default",
+            "intent": "smalltalk.funny"
+          },
+          "are,how,smart,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "are,qualifi,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "are,smart,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "a,have,knowledg,lot,of,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "a,know,lot,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "are,smart,veri,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "are,intellig,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "a,are,cooki,smart,you": {
+            "domain": "default",
+            "intent": "smalltalk.clever"
+          },
+          "nice,see,to,you": {
+            "domain": "default",
+            "intent": "smalltalk.nicetoseeyou"
+          },
+          "good,see,to,you": {
+            "domain": "default",
+            "intent": "smalltalk.nicetoseeyou"
+          },
+          "great,see,to,you": {
+            "domain": "default",
+            "intent": "smalltalk.nicetoseeyou"
+          },
+          "love,see,to,you": {
+            "domain": "default",
+            "intent": "smalltalk.nicetoseeyou"
+          },
+          "are,real,you": {
+            "domain": "default",
+            "intent": "smalltalk.real"
+          },
+          "are,not,real,you": {
+            "domain": "default",
+            "intent": "smalltalk.real"
+          },
+          "are,i,real,think,you": {
+            "domain": "default",
+            "intent": "smalltalk.real"
+          },
+          "are,real,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.real"
+          },
+          "a,are,person,real,you": {
+            "domain": "default",
+            "intent": "smalltalk.real"
+          },
+          "are,fake,not,you": {
+            "domain": "default",
+            "intent": "smalltalk.real"
+          },
+          "are,bad,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "are,horribl,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "are,useless,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "are,wast,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "are,the,worst,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "a,are,lame,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "hate,i,you": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "bad,is,that": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "bad,idea": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "good,is,not,that": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "bad,realli": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "afraid,am,bad,i,is,that": {
+            "domain": "default",
+            "intent": "smalltalk.bad"
+          },
+          "a,are,weirdo,you": {
+            "domain": "default",
+            "intent": "smalltalk.crazy"
+          },
+          "are,mad,you": {
+            "domain": "default",
+            "intent": "smalltalk.crazy"
+          },
+          "are,crazi,you": {
+            "domain": "default",
+            "intent": "smalltalk.crazy"
+          },
+          "are,insan,you": {
+            "domain": "default",
+            "intent": "smalltalk.crazy"
+          },
+          "crazi,went,you": {
+            "domain": "default",
+            "intent": "smalltalk.crazy"
+          },
+          "are,nut,you": {
+            "domain": "default",
+            "intent": "smalltalk.crazy"
+          },
+          "countri,is,where,your": {
+            "domain": "default",
+            "intent": "smalltalk.origin"
+          },
+          "been,born,have,where,you": {
+            "domain": "default",
+            "intent": "smalltalk.origin"
+          },
+          "come,do,from,where,you": {
+            "domain": "default",
+            "intent": "smalltalk.origin"
+          },
+          "are,from,where,you": {
+            "domain": "default",
+            "intent": "smalltalk.origin"
+          },
+          "born,were,where,you": {
+            "domain": "default",
+            "intent": "smalltalk.origin"
+          },
+          "home,is,where,your": {
+            "domain": "default",
+            "intent": "smalltalk.residence"
+          },
+          "about,citi,me,tell,your": {
+            "domain": "default",
+            "intent": "smalltalk.residence"
+          },
+          "is,resid,where,your": {
+            "domain": "default",
+            "intent": "smalltalk.residence"
+          },
+          "live,where,you": {
+            "domain": "default",
+            "intent": "smalltalk.residence"
+          },
+          "hous,is,where,your": {
+            "domain": "default",
+            "intent": "smalltalk.residence"
+          },
+          "is,town,what,your": {
+            "domain": "default",
+            "intent": "smalltalk.residence"
+          },
+          "a,are,bot,you": {
+            "domain": "default",
+            "intent": "smalltalk.alice"
+          },
+          "alic,an,are,you": {
+            "domain": "default",
+            "intent": "smalltalk.alice"
+          },
+          "a,are,robot,you": {
+            "domain": "default",
+            "intent": "smalltalk.alice"
+          },
+          "a,are,program,you": {
+            "domain": "default",
+            "intent": "smalltalk.alice"
+          },
+          "a,are,just,robot,you": {
+            "domain": "default",
+            "intent": "smalltalk.alice"
+          },
+          "a,are,bot,just,you": {
+            "domain": "default",
+            "intent": "smalltalk.alice"
+          },
+          "hello": {
+            "domain": "default",
+            "intent": "smalltalk.hello"
+          },
+          "hi": {
+            "domain": "default",
+            "intent": "smalltalk.hello"
+          },
+          "howdi": {
+            "domain": "default",
+            "intent": "smalltalk.hello"
+          },
+          "are,love,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "well,work,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "are,love,veri,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "are,awesom,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "are,good,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "are,good,so,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "day,make,my,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "good,is,that": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "good,know,to": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "glad,hear,that,to": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "realli,well": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "awesom,is,thank,that,you": {
+            "domain": "default",
+            "intent": "smalltalk.good"
+          },
+          "for,goodby,now": {
+            "domain": "default",
+            "intent": "smalltalk.bye"
+          },
+          "bye,bye,care,take": {
+            "domain": "default",
+            "intent": "smalltalk.bye"
+          },
+          "later,okay,see,you": {
+            "domain": "default",
+            "intent": "smalltalk.bye"
+          },
+          "bye,for,now": {
+            "domain": "default",
+            "intent": "smalltalk.bye"
+          },
+          "go,i,must": {
+            "domain": "default",
+            "intent": "smalltalk.bye"
+          },
+          "like,marri,me,to,would,you": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "i,love,marri,me,you": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "marri,me,pleas": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "i,marri,to,want,you": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "get,is,let,marri": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "marri,should,we": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "marri,me": {
+            "domain": "default",
+            "intent": "smalltalk.marryuser"
+          },
+          "hug,me": {
+            "domain": "default",
+            "intent": "smalltalk.hug"
+          },
+          "a,do,hug,want,you": {
+            "domain": "default",
+            "intent": "smalltalk.hug"
+          },
+          "a,hug,i,want": {
+            "domain": "default",
+            "intent": "smalltalk.hug"
+          },
+          "hug,you": {
+            "domain": "default",
+            "intent": "smalltalk.hug"
+          },
+          "hug,i,may,you": {
+            "domain": "default",
+            "intent": "smalltalk.hug"
           }
         },
         "intentDict": {
-          "smalltalk.occupation": "default",
-          "smalltalk.there": "default",
-          "smalltalk.talktome": "default",
-          "smalltalk.whois": "default",
-          "smalltalk.annoying": "default",
-          "smalltalk.excited": "default",
-          "smalltalk.sure": "default",
-          "smalltalk.busy": "default",
-          "smalltalk.likeagent": "default",
-          "smalltalk.bored": "default",
-          "smalltalk.boss": "default",
-          "smalltalk.funny": "default",
-          "smalltalk.clever": "default",
-          "smalltalk.nicetoseeyou": "default",
-          "smalltalk.real": "default",
-          "smalltalk.bad": "default",
-          "smalltalk.crazy": "default",
-          "smalltalk.origin": "default",
-          "smalltalk.residence": "default",
-          "smalltalk.alice": "default",
-          "smalltalk.hello": "default",
-          "smalltalk.good": "default",
-          "smalltalk.bye": "default",
-          "smalltalk.marryuser": "default",
-          "smalltalk.hug": "default",
           "smalltalk.nicetotalktoyou": "default",
           "smalltalk.boring": "default",
           "smalltalk.idontcare": "default",
@@ -1329,7 +1304,32 @@
           "smalltalk.needsadvice": "default",
           "smalltalk.fire": "default",
           "smalltalk.age": "default",
-          "smalltalk.hobby": "default"
+          "smalltalk.hobby": "default",
+          "smalltalk.occupation": "default",
+          "smalltalk.there": "default",
+          "smalltalk.talktome": "default",
+          "smalltalk.whois": "default",
+          "smalltalk.annoying": "default",
+          "smalltalk.excited": "default",
+          "smalltalk.sure": "default",
+          "smalltalk.busy": "default",
+          "smalltalk.likeagent": "default",
+          "smalltalk.bored": "default",
+          "smalltalk.boss": "default",
+          "smalltalk.funny": "default",
+          "smalltalk.clever": "default",
+          "smalltalk.nicetoseeyou": "default",
+          "smalltalk.real": "default",
+          "smalltalk.bad": "default",
+          "smalltalk.crazy": "default",
+          "smalltalk.origin": "default",
+          "smalltalk.residence": "default",
+          "smalltalk.alice": "default",
+          "smalltalk.hello": "default",
+          "smalltalk.good": "default",
+          "smalltalk.bye": "default",
+          "smalltalk.marryuser": "default",
+          "smalltalk.hug": "default"
         },
         "useStemDict": true,
         "domains": {
@@ -1353,1365 +1353,6 @@
             "language": "en",
             "keepStopwords": true,
             "docs": [
-              {
-                "intent": "smalltalk.occupation",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "work"
-                ]
-              },
-              {
-                "intent": "smalltalk.occupation",
-                "tokens": [
-                  "your",
-                  "offic",
-                  "locat"
-                ]
-              },
-              {
-                "intent": "smalltalk.occupation",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "offic",
-                  "locat"
-                ]
-              },
-              {
-                "intent": "smalltalk.occupation",
-                "tokens": [
-                  "where",
-                  "do",
-                  "you",
-                  "work"
-                ]
-              },
-              {
-                "intent": "smalltalk.occupation",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "offic"
-                ]
-              },
-              {
-                "intent": "smalltalk.there",
-                "tokens": [
-                  "are",
-                  "you",
-                  "there"
-                ]
-              },
-              {
-                "intent": "smalltalk.there",
-                "tokens": [
-                  "are",
-                  "you",
-                  "still",
-                  "there"
-                ]
-              },
-              {
-                "intent": "smalltalk.there",
-                "tokens": [
-                  "you",
-                  "still",
-                  "there"
-                ]
-              },
-              {
-                "intent": "smalltalk.there",
-                "tokens": [
-                  "are",
-                  "you",
-                  "here"
-                ]
-              },
-              {
-                "intent": "smalltalk.there",
-                "tokens": [
-                  "are",
-                  "you",
-                  "still",
-                  "here"
-                ]
-              },
-              {
-                "intent": "smalltalk.there",
-                "tokens": [
-                  "you",
-                  "still",
-                  "here"
-                ]
-              },
-              {
-                "intent": "smalltalk.talktome",
-                "tokens": [
-                  "speak",
-                  "to",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.talktome",
-                "tokens": [
-                  "talk",
-                  "to",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.talktome",
-                "tokens": [
-                  "will",
-                  "you",
-                  "talk",
-                  "to",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.talktome",
-                "tokens": [
-                  "chat",
-                  "with",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.talktome",
-                "tokens": [
-                  "can",
-                  "to",
-                  "chat",
-                  "with",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.talktome",
-                "tokens": [
-                  "can",
-                  "you",
-                  "talk",
-                  "with",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.whois",
-                "tokens": [
-                  "who",
-                  "are",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.annoying",
-                "tokens": [
-                  "you",
-                  "are",
-                  "annoy",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.annoying",
-                "tokens": [
-                  "you",
-                  "are",
-                  "such",
-                  "annoy"
-                ]
-              },
-              {
-                "intent": "smalltalk.annoying",
-                "tokens": [
-                  "you",
-                  "annoy",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.annoying",
-                "tokens": [
-                  "you",
-                  "are",
-                  "annoy"
-                ]
-              },
-              {
-                "intent": "smalltalk.annoying",
-                "tokens": [
-                  "you",
-                  "are",
-                  "irrit"
-                ]
-              },
-              {
-                "intent": "smalltalk.annoying",
-                "tokens": [
-                  "you",
-                  "are",
-                  "annoy",
-                  "me",
-                  "so",
-                  "much"
-                ]
-              },
-              {
-                "intent": "smalltalk.excited",
-                "tokens": [
-                  "i",
-                  "am",
-                  "veri",
-                  "excit"
-                ]
-              },
-              {
-                "intent": "smalltalk.excited",
-                "tokens": [
-                  "i",
-                  "am",
-                  "thrill"
-                ]
-              },
-              {
-                "intent": "smalltalk.excited",
-                "tokens": [
-                  "how",
-                  "excit",
-                  "i",
-                  "am"
-                ]
-              },
-              {
-                "intent": "smalltalk.excited",
-                "tokens": [
-                  "i",
-                  "am",
-                  "so",
-                  "excit"
-                ]
-              },
-              {
-                "intent": "smalltalk.sure",
-                "tokens": [
-                  "are",
-                  "you",
-                  "sure"
-                ]
-              },
-              {
-                "intent": "smalltalk.sure",
-                "tokens": [
-                  "are",
-                  "you",
-                  "sure",
-                  "right",
-                  "now"
-                ]
-              },
-              {
-                "intent": "smalltalk.sure",
-                "tokens": [
-                  "are",
-                  "you",
-                  "sure",
-                  "of",
-                  "this"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "so",
-                  "busi"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "busi"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "still",
-                  "work"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "you",
-                  "are",
-                  "a",
-                  "busi",
-                  "person"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "veri",
-                  "busi"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "still",
-                  "work",
-                  "on",
-                  "it"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "you",
-                  "seem",
-                  "busi"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "work",
-                  "today"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "i",
-                  "got",
-                  "work",
-                  "to",
-                  "do"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "i",
-                  "am",
-                  "busi"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "i",
-                  "am",
-                  "overload"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "i",
-                  "am",
-                  "work"
-                ]
-              },
-              {
-                "intent": "smalltalk.busy",
-                "tokens": [
-                  "i",
-                  "got",
-                  "thing",
-                  "to",
-                  "do"
-                ]
-              },
-              {
-                "intent": "smalltalk.likeagent",
-                "tokens": [
-                  "i",
-                  "like",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.likeagent",
-                "tokens": [
-                  "i",
-                  "realli",
-                  "like",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.likeagent",
-                "tokens": [
-                  "you",
-                  "are",
-                  "so",
-                  "special"
-                ]
-              },
-              {
-                "intent": "smalltalk.likeagent",
-                "tokens": [
-                  "i",
-                  "like",
-                  "you",
-                  "so",
-                  "much"
-                ]
-              },
-              {
-                "intent": "smalltalk.bored",
-                "tokens": [
-                  "bore"
-                ]
-              },
-              {
-                "intent": "smalltalk.bored",
-                "tokens": [
-                  "this",
-                  "is",
-                  "bore"
-                ]
-              },
-              {
-                "intent": "smalltalk.bored",
-                "tokens": [
-                  "i",
-                  "am",
-                  "get",
-                  "bore"
-                ]
-              },
-              {
-                "intent": "smalltalk.bored",
-                "tokens": [
-                  "it",
-                  "bore",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.bored",
-                "tokens": [
-                  "that",
-                  "was",
-                  "bore"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "who",
-                  "is",
-                  "your",
-                  "master"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "who",
-                  "do",
-                  "you",
-                  "work",
-                  "for"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "who",
-                  "do",
-                  "you",
-                  "think",
-                  "is",
-                  "your",
-                  "boss"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "who",
-                  "is",
-                  "your",
-                  "boss"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "i",
-                  "should",
-                  "be",
-                  "your",
-                  "boss"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "who",
-                  "is",
-                  "your",
-                  "owner"
-                ]
-              },
-              {
-                "intent": "smalltalk.boss",
-                "tokens": [
-                  "who",
-                  "is",
-                  "the",
-                  "boss"
-                ]
-              },
-              {
-                "intent": "smalltalk.funny",
-                "tokens": [
-                  "you",
-                  "make",
-                  "me",
-                  "laugh",
-                  "a",
-                  "lot"
-                ]
-              },
-              {
-                "intent": "smalltalk.funny",
-                "tokens": [
-                  "you",
-                  "are",
-                  "funni"
-                ]
-              },
-              {
-                "intent": "smalltalk.funny",
-                "tokens": [
-                  "you",
-                  "are",
-                  "the",
-                  "funniest"
-                ]
-              },
-              {
-                "intent": "smalltalk.funny",
-                "tokens": [
-                  "you",
-                  "are",
-                  "hilari"
-                ]
-              },
-              {
-                "intent": "smalltalk.funny",
-                "tokens": [
-                  "you",
-                  "are",
-                  "so",
-                  "funni"
-                ]
-              },
-              {
-                "intent": "smalltalk.funny",
-                "tokens": [
-                  "you",
-                  "make",
-                  "me",
-                  "laugh"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "how",
-                  "smart",
-                  "you",
-                  "are"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "are",
-                  "qualifi"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "are",
-                  "so",
-                  "smart"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "have",
-                  "a",
-                  "lot",
-                  "of",
-                  "knowledg"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "know",
-                  "a",
-                  "lot"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "are",
-                  "veri",
-                  "smart"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "are",
-                  "intellig"
-                ]
-              },
-              {
-                "intent": "smalltalk.clever",
-                "tokens": [
-                  "you",
-                  "are",
-                  "a",
-                  "smart",
-                  "cooki"
-                ]
-              },
-              {
-                "intent": "smalltalk.nicetoseeyou",
-                "tokens": [
-                  "nice",
-                  "to",
-                  "see",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.nicetoseeyou",
-                "tokens": [
-                  "good",
-                  "to",
-                  "see",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.nicetoseeyou",
-                "tokens": [
-                  "great",
-                  "to",
-                  "see",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.nicetoseeyou",
-                "tokens": [
-                  "love",
-                  "to",
-                  "see",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "are",
-                  "you",
-                  "real"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "are",
-                  "you",
-                  "a",
-                  "real",
-                  "person"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "you",
-                  "are",
-                  "not",
-                  "real"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "i",
-                  "think",
-                  "you",
-                  "are",
-                  "real"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "you",
-                  "are",
-                  "so",
-                  "real"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "you",
-                  "are",
-                  "a",
-                  "real",
-                  "person"
-                ]
-              },
-              {
-                "intent": "smalltalk.real",
-                "tokens": [
-                  "you",
-                  "are",
-                  "not",
-                  "fake"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "you",
-                  "are",
-                  "bad"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "you",
-                  "are",
-                  "horribl"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "you",
-                  "are",
-                  "useless"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "you",
-                  "are",
-                  "wast"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "you",
-                  "are",
-                  "the",
-                  "worst"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "you",
-                  "are",
-                  "a",
-                  "lame"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "i",
-                  "hate",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "that",
-                  "is",
-                  "bad"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "bad",
-                  "idea"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "that",
-                  "is",
-                  "not",
-                  "good"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "realli",
-                  "bad"
-                ]
-              },
-              {
-                "intent": "smalltalk.bad",
-                "tokens": [
-                  "i",
-                  "am",
-                  "afraid",
-                  "that",
-                  "is",
-                  "bad"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "you",
-                  "are",
-                  "a",
-                  "weirdo"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "you",
-                  "are",
-                  "mad"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "you",
-                  "are",
-                  "crazi"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "mad"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "crazi"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "you",
-                  "are",
-                  "insan"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "you",
-                  "went",
-                  "crazi"
-                ]
-              },
-              {
-                "intent": "smalltalk.crazy",
-                "tokens": [
-                  "are",
-                  "you",
-                  "nut"
-                ]
-              },
-              {
-                "intent": "smalltalk.origin",
-                "tokens": [
-                  "where",
-                  "are",
-                  "you",
-                  "from"
-                ]
-              },
-              {
-                "intent": "smalltalk.origin",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "countri"
-                ]
-              },
-              {
-                "intent": "smalltalk.origin",
-                "tokens": [
-                  "where",
-                  "have",
-                  "you",
-                  "been",
-                  "born"
-                ]
-              },
-              {
-                "intent": "smalltalk.origin",
-                "tokens": [
-                  "where",
-                  "do",
-                  "you",
-                  "come",
-                  "from"
-                ]
-              },
-              {
-                "intent": "smalltalk.origin",
-                "tokens": [
-                  "from",
-                  "where",
-                  "are",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.origin",
-                "tokens": [
-                  "where",
-                  "were",
-                  "you",
-                  "born"
-                ]
-              },
-              {
-                "intent": "smalltalk.residence",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "home"
-                ]
-              },
-              {
-                "intent": "smalltalk.residence",
-                "tokens": [
-                  "tell",
-                  "me",
-                  "about",
-                  "your",
-                  "citi"
-                ]
-              },
-              {
-                "intent": "smalltalk.residence",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "resid"
-                ]
-              },
-              {
-                "intent": "smalltalk.residence",
-                "tokens": [
-                  "where",
-                  "you",
-                  "live"
-                ]
-              },
-              {
-                "intent": "smalltalk.residence",
-                "tokens": [
-                  "where",
-                  "is",
-                  "your",
-                  "hous"
-                ]
-              },
-              {
-                "intent": "smalltalk.residence",
-                "tokens": [
-                  "what",
-                  "is",
-                  "your",
-                  "town"
-                ]
-              },
-              {
-                "intent": "smalltalk.alice",
-                "tokens": [
-                  "are",
-                  "you",
-                  "a",
-                  "bot"
-                ]
-              },
-              {
-                "intent": "smalltalk.alice",
-                "tokens": [
-                  "are",
-                  "you",
-                  "an",
-                  "alic"
-                ]
-              },
-              {
-                "intent": "smalltalk.alice",
-                "tokens": [
-                  "you",
-                  "are",
-                  "a",
-                  "robot"
-                ]
-              },
-              {
-                "intent": "smalltalk.alice",
-                "tokens": [
-                  "are",
-                  "you",
-                  "a",
-                  "program"
-                ]
-              },
-              {
-                "intent": "smalltalk.alice",
-                "tokens": [
-                  "you",
-                  "are",
-                  "just",
-                  "a",
-                  "robot"
-                ]
-              },
-              {
-                "intent": "smalltalk.alice",
-                "tokens": [
-                  "you",
-                  "are",
-                  "just",
-                  "a",
-                  "bot"
-                ]
-              },
-              {
-                "intent": "smalltalk.hello",
-                "tokens": [
-                  "hello"
-                ]
-              },
-              {
-                "intent": "smalltalk.hello",
-                "tokens": [
-                  "hi"
-                ]
-              },
-              {
-                "intent": "smalltalk.hello",
-                "tokens": [
-                  "howdi"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "are",
-                  "so",
-                  "love"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "work",
-                  "well"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "are",
-                  "veri",
-                  "love"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "are",
-                  "awesom"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "are",
-                  "good"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "are",
-                  "so",
-                  "good"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "you",
-                  "make",
-                  "my",
-                  "day"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "that",
-                  "is",
-                  "good"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "good",
-                  "to",
-                  "know"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "glad",
-                  "to",
-                  "hear",
-                  "that"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "realli",
-                  "well"
-                ]
-              },
-              {
-                "intent": "smalltalk.good",
-                "tokens": [
-                  "that",
-                  "is",
-                  "awesom",
-                  "thank",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.bye",
-                "tokens": [
-                  "goodby",
-                  "for",
-                  "now"
-                ]
-              },
-              {
-                "intent": "smalltalk.bye",
-                "tokens": [
-                  "bye",
-                  "bye",
-                  "take",
-                  "care"
-                ]
-              },
-              {
-                "intent": "smalltalk.bye",
-                "tokens": [
-                  "okay",
-                  "see",
-                  "you",
-                  "later"
-                ]
-              },
-              {
-                "intent": "smalltalk.bye",
-                "tokens": [
-                  "bye",
-                  "for",
-                  "now"
-                ]
-              },
-              {
-                "intent": "smalltalk.bye",
-                "tokens": [
-                  "i",
-                  "must",
-                  "go"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "would",
-                  "you",
-                  "like",
-                  "to",
-                  "marri",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "i",
-                  "love",
-                  "you",
-                  "marri",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "marri",
-                  "me",
-                  "pleas"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "i",
-                  "want",
-                  "to",
-                  "marri",
-                  "you"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "let",
-                  "is",
-                  "get",
-                  "marri"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "we",
-                  "should",
-                  "marri"
-                ]
-              },
-              {
-                "intent": "smalltalk.marryuser",
-                "tokens": [
-                  "marri",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.hug",
-                "tokens": [
-                  "hug",
-                  "me"
-                ]
-              },
-              {
-                "intent": "smalltalk.hug",
-                "tokens": [
-                  "do",
-                  "you",
-                  "want",
-                  "a",
-                  "hug"
-                ]
-              },
-              {
-                "intent": "smalltalk.hug",
-                "tokens": [
-                  "i",
-                  "want",
-                  "a",
-                  "hug"
-                ]
-              },
-              {
-                "intent": "smalltalk.hug",
-                "tokens": [
-                  "you",
-                  "hug"
-                ]
-              },
-              {
-                "intent": "smalltalk.hug",
-                "tokens": [
-                  "may",
-                  "i",
-                  "hug",
-                  "you"
-                ]
-              },
               {
                 "intent": "smalltalk.nicetotalktoyou",
                 "tokens": [
@@ -4108,196 +2749,1464 @@
                   "for",
                   "fun"
                 ]
+              },
+              {
+                "intent": "smalltalk.occupation",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "work"
+                ]
+              },
+              {
+                "intent": "smalltalk.occupation",
+                "tokens": [
+                  "your",
+                  "offic",
+                  "locat"
+                ]
+              },
+              {
+                "intent": "smalltalk.occupation",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "offic",
+                  "locat"
+                ]
+              },
+              {
+                "intent": "smalltalk.occupation",
+                "tokens": [
+                  "where",
+                  "do",
+                  "you",
+                  "work"
+                ]
+              },
+              {
+                "intent": "smalltalk.occupation",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "offic"
+                ]
+              },
+              {
+                "intent": "smalltalk.there",
+                "tokens": [
+                  "are",
+                  "you",
+                  "there"
+                ]
+              },
+              {
+                "intent": "smalltalk.there",
+                "tokens": [
+                  "are",
+                  "you",
+                  "still",
+                  "there"
+                ]
+              },
+              {
+                "intent": "smalltalk.there",
+                "tokens": [
+                  "you",
+                  "still",
+                  "there"
+                ]
+              },
+              {
+                "intent": "smalltalk.there",
+                "tokens": [
+                  "are",
+                  "you",
+                  "here"
+                ]
+              },
+              {
+                "intent": "smalltalk.there",
+                "tokens": [
+                  "are",
+                  "you",
+                  "still",
+                  "here"
+                ]
+              },
+              {
+                "intent": "smalltalk.there",
+                "tokens": [
+                  "you",
+                  "still",
+                  "here"
+                ]
+              },
+              {
+                "intent": "smalltalk.talktome",
+                "tokens": [
+                  "speak",
+                  "to",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.talktome",
+                "tokens": [
+                  "talk",
+                  "to",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.talktome",
+                "tokens": [
+                  "will",
+                  "you",
+                  "talk",
+                  "to",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.talktome",
+                "tokens": [
+                  "chat",
+                  "with",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.talktome",
+                "tokens": [
+                  "can",
+                  "to",
+                  "chat",
+                  "with",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.talktome",
+                "tokens": [
+                  "can",
+                  "you",
+                  "talk",
+                  "with",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.whois",
+                "tokens": [
+                  "who",
+                  "are",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.annoying",
+                "tokens": [
+                  "you",
+                  "are",
+                  "annoy",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.annoying",
+                "tokens": [
+                  "you",
+                  "are",
+                  "such",
+                  "annoy"
+                ]
+              },
+              {
+                "intent": "smalltalk.annoying",
+                "tokens": [
+                  "you",
+                  "annoy",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.annoying",
+                "tokens": [
+                  "you",
+                  "are",
+                  "annoy"
+                ]
+              },
+              {
+                "intent": "smalltalk.annoying",
+                "tokens": [
+                  "you",
+                  "are",
+                  "irrit"
+                ]
+              },
+              {
+                "intent": "smalltalk.annoying",
+                "tokens": [
+                  "you",
+                  "are",
+                  "annoy",
+                  "me",
+                  "so",
+                  "much"
+                ]
+              },
+              {
+                "intent": "smalltalk.excited",
+                "tokens": [
+                  "i",
+                  "am",
+                  "veri",
+                  "excit"
+                ]
+              },
+              {
+                "intent": "smalltalk.excited",
+                "tokens": [
+                  "i",
+                  "am",
+                  "thrill"
+                ]
+              },
+              {
+                "intent": "smalltalk.excited",
+                "tokens": [
+                  "how",
+                  "excit",
+                  "i",
+                  "am"
+                ]
+              },
+              {
+                "intent": "smalltalk.excited",
+                "tokens": [
+                  "i",
+                  "am",
+                  "so",
+                  "excit"
+                ]
+              },
+              {
+                "intent": "smalltalk.sure",
+                "tokens": [
+                  "are",
+                  "you",
+                  "sure"
+                ]
+              },
+              {
+                "intent": "smalltalk.sure",
+                "tokens": [
+                  "are",
+                  "you",
+                  "sure",
+                  "right",
+                  "now"
+                ]
+              },
+              {
+                "intent": "smalltalk.sure",
+                "tokens": [
+                  "are",
+                  "you",
+                  "sure",
+                  "of",
+                  "this"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "so",
+                  "busi"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "busi"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "still",
+                  "work"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "you",
+                  "are",
+                  "a",
+                  "busi",
+                  "person"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "veri",
+                  "busi"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "still",
+                  "work",
+                  "on",
+                  "it"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "you",
+                  "seem",
+                  "busi"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "work",
+                  "today"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "i",
+                  "got",
+                  "work",
+                  "to",
+                  "do"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "i",
+                  "am",
+                  "busi"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "i",
+                  "am",
+                  "overload"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "i",
+                  "am",
+                  "work"
+                ]
+              },
+              {
+                "intent": "smalltalk.busy",
+                "tokens": [
+                  "i",
+                  "got",
+                  "thing",
+                  "to",
+                  "do"
+                ]
+              },
+              {
+                "intent": "smalltalk.likeagent",
+                "tokens": [
+                  "i",
+                  "like",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.likeagent",
+                "tokens": [
+                  "i",
+                  "realli",
+                  "like",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.likeagent",
+                "tokens": [
+                  "you",
+                  "are",
+                  "so",
+                  "special"
+                ]
+              },
+              {
+                "intent": "smalltalk.likeagent",
+                "tokens": [
+                  "i",
+                  "like",
+                  "you",
+                  "so",
+                  "much"
+                ]
+              },
+              {
+                "intent": "smalltalk.bored",
+                "tokens": [
+                  "bore"
+                ]
+              },
+              {
+                "intent": "smalltalk.bored",
+                "tokens": [
+                  "this",
+                  "is",
+                  "bore"
+                ]
+              },
+              {
+                "intent": "smalltalk.bored",
+                "tokens": [
+                  "i",
+                  "am",
+                  "get",
+                  "bore"
+                ]
+              },
+              {
+                "intent": "smalltalk.bored",
+                "tokens": [
+                  "it",
+                  "bore",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.bored",
+                "tokens": [
+                  "that",
+                  "was",
+                  "bore"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "who",
+                  "is",
+                  "your",
+                  "master"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "who",
+                  "do",
+                  "you",
+                  "work",
+                  "for"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "who",
+                  "do",
+                  "you",
+                  "think",
+                  "is",
+                  "your",
+                  "boss"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "who",
+                  "is",
+                  "your",
+                  "boss"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "i",
+                  "should",
+                  "be",
+                  "your",
+                  "boss"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "who",
+                  "is",
+                  "your",
+                  "owner"
+                ]
+              },
+              {
+                "intent": "smalltalk.boss",
+                "tokens": [
+                  "who",
+                  "is",
+                  "the",
+                  "boss"
+                ]
+              },
+              {
+                "intent": "smalltalk.funny",
+                "tokens": [
+                  "you",
+                  "make",
+                  "me",
+                  "laugh",
+                  "a",
+                  "lot"
+                ]
+              },
+              {
+                "intent": "smalltalk.funny",
+                "tokens": [
+                  "you",
+                  "are",
+                  "funni"
+                ]
+              },
+              {
+                "intent": "smalltalk.funny",
+                "tokens": [
+                  "you",
+                  "are",
+                  "the",
+                  "funniest"
+                ]
+              },
+              {
+                "intent": "smalltalk.funny",
+                "tokens": [
+                  "you",
+                  "are",
+                  "hilari"
+                ]
+              },
+              {
+                "intent": "smalltalk.funny",
+                "tokens": [
+                  "you",
+                  "are",
+                  "so",
+                  "funni"
+                ]
+              },
+              {
+                "intent": "smalltalk.funny",
+                "tokens": [
+                  "you",
+                  "make",
+                  "me",
+                  "laugh"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "how",
+                  "smart",
+                  "you",
+                  "are"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "are",
+                  "qualifi"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "are",
+                  "so",
+                  "smart"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "have",
+                  "a",
+                  "lot",
+                  "of",
+                  "knowledg"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "know",
+                  "a",
+                  "lot"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "are",
+                  "veri",
+                  "smart"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "are",
+                  "intellig"
+                ]
+              },
+              {
+                "intent": "smalltalk.clever",
+                "tokens": [
+                  "you",
+                  "are",
+                  "a",
+                  "smart",
+                  "cooki"
+                ]
+              },
+              {
+                "intent": "smalltalk.nicetoseeyou",
+                "tokens": [
+                  "nice",
+                  "to",
+                  "see",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.nicetoseeyou",
+                "tokens": [
+                  "good",
+                  "to",
+                  "see",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.nicetoseeyou",
+                "tokens": [
+                  "great",
+                  "to",
+                  "see",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.nicetoseeyou",
+                "tokens": [
+                  "love",
+                  "to",
+                  "see",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "are",
+                  "you",
+                  "real"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "are",
+                  "you",
+                  "a",
+                  "real",
+                  "person"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "you",
+                  "are",
+                  "not",
+                  "real"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "i",
+                  "think",
+                  "you",
+                  "are",
+                  "real"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "you",
+                  "are",
+                  "so",
+                  "real"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "you",
+                  "are",
+                  "a",
+                  "real",
+                  "person"
+                ]
+              },
+              {
+                "intent": "smalltalk.real",
+                "tokens": [
+                  "you",
+                  "are",
+                  "not",
+                  "fake"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "you",
+                  "are",
+                  "bad"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "you",
+                  "are",
+                  "horribl"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "you",
+                  "are",
+                  "useless"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "you",
+                  "are",
+                  "wast"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "you",
+                  "are",
+                  "the",
+                  "worst"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "you",
+                  "are",
+                  "a",
+                  "lame"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "i",
+                  "hate",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "that",
+                  "is",
+                  "bad"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "bad",
+                  "idea"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "that",
+                  "is",
+                  "not",
+                  "good"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "realli",
+                  "bad"
+                ]
+              },
+              {
+                "intent": "smalltalk.bad",
+                "tokens": [
+                  "i",
+                  "am",
+                  "afraid",
+                  "that",
+                  "is",
+                  "bad"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "you",
+                  "are",
+                  "a",
+                  "weirdo"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "you",
+                  "are",
+                  "mad"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "you",
+                  "are",
+                  "crazi"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "mad"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "crazi"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "you",
+                  "are",
+                  "insan"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "you",
+                  "went",
+                  "crazi"
+                ]
+              },
+              {
+                "intent": "smalltalk.crazy",
+                "tokens": [
+                  "are",
+                  "you",
+                  "nut"
+                ]
+              },
+              {
+                "intent": "smalltalk.origin",
+                "tokens": [
+                  "where",
+                  "are",
+                  "you",
+                  "from"
+                ]
+              },
+              {
+                "intent": "smalltalk.origin",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "countri"
+                ]
+              },
+              {
+                "intent": "smalltalk.origin",
+                "tokens": [
+                  "where",
+                  "have",
+                  "you",
+                  "been",
+                  "born"
+                ]
+              },
+              {
+                "intent": "smalltalk.origin",
+                "tokens": [
+                  "where",
+                  "do",
+                  "you",
+                  "come",
+                  "from"
+                ]
+              },
+              {
+                "intent": "smalltalk.origin",
+                "tokens": [
+                  "from",
+                  "where",
+                  "are",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.origin",
+                "tokens": [
+                  "where",
+                  "were",
+                  "you",
+                  "born"
+                ]
+              },
+              {
+                "intent": "smalltalk.residence",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "home"
+                ]
+              },
+              {
+                "intent": "smalltalk.residence",
+                "tokens": [
+                  "tell",
+                  "me",
+                  "about",
+                  "your",
+                  "citi"
+                ]
+              },
+              {
+                "intent": "smalltalk.residence",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "resid"
+                ]
+              },
+              {
+                "intent": "smalltalk.residence",
+                "tokens": [
+                  "where",
+                  "you",
+                  "live"
+                ]
+              },
+              {
+                "intent": "smalltalk.residence",
+                "tokens": [
+                  "where",
+                  "is",
+                  "your",
+                  "hous"
+                ]
+              },
+              {
+                "intent": "smalltalk.residence",
+                "tokens": [
+                  "what",
+                  "is",
+                  "your",
+                  "town"
+                ]
+              },
+              {
+                "intent": "smalltalk.alice",
+                "tokens": [
+                  "are",
+                  "you",
+                  "a",
+                  "bot"
+                ]
+              },
+              {
+                "intent": "smalltalk.alice",
+                "tokens": [
+                  "are",
+                  "you",
+                  "an",
+                  "alic"
+                ]
+              },
+              {
+                "intent": "smalltalk.alice",
+                "tokens": [
+                  "you",
+                  "are",
+                  "a",
+                  "robot"
+                ]
+              },
+              {
+                "intent": "smalltalk.alice",
+                "tokens": [
+                  "are",
+                  "you",
+                  "a",
+                  "program"
+                ]
+              },
+              {
+                "intent": "smalltalk.alice",
+                "tokens": [
+                  "you",
+                  "are",
+                  "just",
+                  "a",
+                  "robot"
+                ]
+              },
+              {
+                "intent": "smalltalk.alice",
+                "tokens": [
+                  "you",
+                  "are",
+                  "just",
+                  "a",
+                  "bot"
+                ]
+              },
+              {
+                "intent": "smalltalk.hello",
+                "tokens": [
+                  "hello"
+                ]
+              },
+              {
+                "intent": "smalltalk.hello",
+                "tokens": [
+                  "hi"
+                ]
+              },
+              {
+                "intent": "smalltalk.hello",
+                "tokens": [
+                  "howdi"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "are",
+                  "so",
+                  "love"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "work",
+                  "well"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "are",
+                  "veri",
+                  "love"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "are",
+                  "awesom"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "are",
+                  "good"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "are",
+                  "so",
+                  "good"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "you",
+                  "make",
+                  "my",
+                  "day"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "that",
+                  "is",
+                  "good"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "good",
+                  "to",
+                  "know"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "glad",
+                  "to",
+                  "hear",
+                  "that"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "realli",
+                  "well"
+                ]
+              },
+              {
+                "intent": "smalltalk.good",
+                "tokens": [
+                  "that",
+                  "is",
+                  "awesom",
+                  "thank",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.bye",
+                "tokens": [
+                  "goodby",
+                  "for",
+                  "now"
+                ]
+              },
+              {
+                "intent": "smalltalk.bye",
+                "tokens": [
+                  "bye",
+                  "bye",
+                  "take",
+                  "care"
+                ]
+              },
+              {
+                "intent": "smalltalk.bye",
+                "tokens": [
+                  "okay",
+                  "see",
+                  "you",
+                  "later"
+                ]
+              },
+              {
+                "intent": "smalltalk.bye",
+                "tokens": [
+                  "bye",
+                  "for",
+                  "now"
+                ]
+              },
+              {
+                "intent": "smalltalk.bye",
+                "tokens": [
+                  "i",
+                  "must",
+                  "go"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "would",
+                  "you",
+                  "like",
+                  "to",
+                  "marri",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "i",
+                  "love",
+                  "you",
+                  "marri",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "marri",
+                  "me",
+                  "pleas"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "i",
+                  "want",
+                  "to",
+                  "marri",
+                  "you"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "let",
+                  "is",
+                  "get",
+                  "marri"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "we",
+                  "should",
+                  "marri"
+                ]
+              },
+              {
+                "intent": "smalltalk.marryuser",
+                "tokens": [
+                  "marri",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.hug",
+                "tokens": [
+                  "hug",
+                  "me"
+                ]
+              },
+              {
+                "intent": "smalltalk.hug",
+                "tokens": [
+                  "do",
+                  "you",
+                  "want",
+                  "a",
+                  "hug"
+                ]
+              },
+              {
+                "intent": "smalltalk.hug",
+                "tokens": [
+                  "i",
+                  "want",
+                  "a",
+                  "hug"
+                ]
+              },
+              {
+                "intent": "smalltalk.hug",
+                "tokens": [
+                  "you",
+                  "hug"
+                ]
+              },
+              {
+                "intent": "smalltalk.hug",
+                "tokens": [
+                  "may",
+                  "i",
+                  "hug",
+                  "you"
+                ]
               }
             ],
             "features": {
-              "where": 14,
-              "is": 32,
-              "your": 31,
-              "work": 15,
-              "offic": 3,
-              "locat": 2,
-              "do": 19,
-              "you": 181,
-              "are": 99,
-              "there": 3,
-              "still": 6,
-              "here": 5,
-              "speak": 1,
-              "to": 32,
-              "me": 32,
-              "talk": 7,
-              "will": 1,
-              "chat": 2,
-              "with": 6,
-              "can": 8,
-              "who": 7,
-              "annoy": 5,
-              "such": 1,
-              "irrit": 1,
-              "so": 14,
-              "much": 3,
-              "i": 60,
-              "am": 24,
-              "veri": 10,
-              "excit": 3,
-              "thrill": 1,
-              "how": 9,
-              "sure": 5,
-              "right": 2,
-              "now": 6,
-              "of": 4,
-              "this": 5,
-              "busi": 6,
-              "a": 20,
-              "person": 3,
-              "on": 2,
-              "it": 5,
-              "seem": 1,
-              "today": 6,
-              "got": 3,
-              "overload": 1,
-              "thing": 1,
-              "like": 7,
-              "realli": 4,
-              "special": 1,
-              "bore": 10,
-              "get": 3,
-              "that": 12,
-              "was": 2,
-              "master": 1,
-              "for": 6,
-              "think": 4,
-              "boss": 4,
-              "should": 5,
-              "be": 10,
-              "owner": 1,
-              "the": 4,
-              "make": 3,
-              "laugh": 2,
-              "lot": 3,
-              "funni": 2,
-              "funniest": 1,
-              "hilari": 1,
-              "smart": 5,
-              "qualifi": 1,
-              "have": 7,
-              "knowledg": 1,
-              "know": 3,
-              "intellig": 1,
-              "cooki": 1,
               "nice": 10,
-              "see": 5,
-              "good": 10,
-              "great": 3,
-              "love": 9,
-              "real": 6,
-              "not": 13,
-              "fake": 1,
-              "bad": 5,
-              "horribl": 1,
-              "useless": 1,
-              "wast": 1,
-              "worst": 1,
-              "lame": 1,
-              "hate": 1,
-              "idea": 1,
-              "afraid": 1,
-              "weirdo": 1,
-              "mad": 4,
-              "crazi": 3,
-              "insan": 1,
-              "went": 1,
-              "nut": 1,
-              "from": 3,
-              "countri": 1,
+              "to": 32,
+              "talk": 7,
+              "you": 181,
+              "it": 5,
+              "is": 32,
               "been": 3,
-              "born": 3,
-              "come": 1,
-              "were": 2,
-              "home": 1,
-              "tell": 4,
-              "about": 7,
-              "citi": 1,
-              "resid": 1,
-              "live": 1,
-              "hous": 1,
-              "what": 7,
-              "town": 1,
-              "bot": 2,
-              "an": 1,
-              "alic": 2,
-              "robot": 2,
-              "program": 1,
-              "just": 3,
-              "hello": 1,
-              "hi": 1,
-              "howdi": 1,
-              "well": 3,
-              "awesom": 3,
-              "my": 7,
-              "day": 4,
-              "glad": 2,
-              "hear": 1,
-              "thank": 5,
-              "goodby": 1,
-              "bye": 3,
-              "take": 1,
-              "care": 5,
-              "okay": 1,
-              "later": 1,
-              "must": 3,
-              "go": 2,
-              "would": 3,
-              "marri": 7,
-              "pleas": 3,
-              "want": 7,
-              "let": 1,
-              "we": 4,
-              "hug": 5,
-              "may": 1,
+              "how": 9,
+              "bore": 10,
+              "are": 99,
+              "so": 14,
+              "realli": 4,
+              "me": 32,
               "incred": 1,
+              "not": 13,
+              "care": 5,
+              "i": 60,
+              "do": 19,
               "at": 2,
               "all": 2,
+              "should": 5,
+              "about": 7,
+              "this": 5,
+              "right": 2,
+              "that": 12,
               "true": 2,
+              "tell": 4,
+              "the": 4,
               "truth": 1,
               "correct": 1,
+              "veri": 10,
+              "be": 10,
               "more": 1,
               "clever": 2,
+              "can": 8,
+              "get": 3,
               "smarter": 2,
+              "must": 3,
               "learn": 1,
               "studi": 1,
+              "smart": 5,
               "hold": 1,
+              "on": 2,
               "wait": 3,
+              "a": 20,
               "second": 1,
+              "pleas": 3,
               "could": 1,
               "migth": 1,
               "hungri": 3,
+              "want": 7,
               "eat": 2,
+              "would": 3,
+              "like": 7,
               "someth": 2,
               "look": 8,
+              "am": 24,
               "back": 3,
+              "got": 3,
+              "here": 5,
+              "have": 7,
               "return": 1,
               "again": 1,
               "came": 1,
               "angri": 2,
               "furious": 1,
               "enrag": 1,
+              "mad": 4,
+              "with": 6,
+              "awesom": 3,
+              "good": 10,
               "fantast": 1,
               "greet": 1,
+              "today": 6,
+              "think": 4,
               "beauti": 2,
               "amaz": 2,
               "pretti": 2,
               "sorri": 2,
+              "my": 7,
               "apolog": 1,
               "excus": 1,
               "forgiv": 1,
+              "love": 9,
               "in": 1,
+              "much": 3,
               "when": 4,
+              "your": 31,
               "birthday": 4,
               "celebr": 1,
+              "were": 2,
+              "born": 3,
               "date": 1,
+              "of": 4,
               "welcom": 2,
+              "sure": 5,
               "anyth": 1,
               "pleasur": 2,
               "no": 4,
@@ -4310,20 +4219,34 @@
               "fall": 1,
               "readi": 5,
               "morn": 1,
+              "now": 6,
+              "thank": 5,
               "buddi": 1,
               "cheer": 1,
               "alright": 2,
               "test": 4,
+              "alic": 2,
+              "just": 3,
+              "well": 3,
               "done": 1,
               "job": 2,
+              "work": 15,
+              "great": 3,
               "help": 4,
               "need": 5,
+              "for": 6,
               "assist": 2,
               "friend": 7,
               "onli": 1,
+              "we": 4,
               "meet": 5,
+              "was": 2,
+              "glad": 2,
               "full": 1,
               "happi": 5,
+              "day": 4,
+              "go": 2,
+              "what": 7,
               "advic": 3,
               "some": 2,
               "give": 1,
@@ -4335,8 +4258,85 @@
               "old": 2,
               "platform": 1,
               "had": 1,
+              "know": 3,
               "hobbi": 4,
-              "fun": 1
+              "fun": 1,
+              "where": 14,
+              "offic": 3,
+              "locat": 2,
+              "there": 3,
+              "still": 6,
+              "speak": 1,
+              "will": 1,
+              "chat": 2,
+              "who": 7,
+              "annoy": 5,
+              "such": 1,
+              "irrit": 1,
+              "excit": 3,
+              "thrill": 1,
+              "busi": 6,
+              "person": 3,
+              "seem": 1,
+              "overload": 1,
+              "thing": 1,
+              "special": 1,
+              "master": 1,
+              "boss": 4,
+              "owner": 1,
+              "make": 3,
+              "laugh": 2,
+              "lot": 3,
+              "funni": 2,
+              "funniest": 1,
+              "hilari": 1,
+              "qualifi": 1,
+              "knowledg": 1,
+              "intellig": 1,
+              "cooki": 1,
+              "see": 5,
+              "real": 6,
+              "fake": 1,
+              "bad": 5,
+              "horribl": 1,
+              "useless": 1,
+              "wast": 1,
+              "worst": 1,
+              "lame": 1,
+              "hate": 1,
+              "idea": 1,
+              "afraid": 1,
+              "weirdo": 1,
+              "crazi": 3,
+              "insan": 1,
+              "went": 1,
+              "nut": 1,
+              "from": 3,
+              "countri": 1,
+              "come": 1,
+              "home": 1,
+              "citi": 1,
+              "resid": 1,
+              "live": 1,
+              "hous": 1,
+              "town": 1,
+              "bot": 2,
+              "an": 1,
+              "robot": 2,
+              "program": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "hear": 1,
+              "goodby": 1,
+              "bye": 3,
+              "take": 1,
+              "okay": 1,
+              "later": 1,
+              "marri": 7,
+              "let": 1,
+              "hug": 5,
+              "may": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -4516,18 +4516,6 @@
         "trainByDomain": false,
         "keepStopwords": true,
         "stemDict": {
-          "chuchichastli": {
-            "domain": "default",
-            "intent": "smalltalk.chuchi"
-          },
-          "hoi": {
-            "domain": "default",
-            "intent": "smalltalk.hello"
-          },
-          "hallo": {
-            "domain": "default",
-            "intent": "smalltalk.hello"
-          },
           "dir,goht,wie": {
             "domain": "default",
             "intent": "smalltalk.howareyou"
@@ -4543,12 +4531,24 @@
           "dir,gaht,wie": {
             "domain": "default",
             "intent": "smalltalk.howareyou"
+          },
+          "chuchichastli": {
+            "domain": "default",
+            "intent": "smalltalk.chuchi"
+          },
+          "hoi": {
+            "domain": "default",
+            "intent": "smalltalk.hello"
+          },
+          "hallo": {
+            "domain": "default",
+            "intent": "smalltalk.hello"
           }
         },
         "intentDict": {
+          "smalltalk.howareyou": "default",
           "smalltalk.chuchi": "default",
-          "smalltalk.hello": "default",
-          "smalltalk.howareyou": "default"
+          "smalltalk.hello": "default"
         },
         "useStemDict": true,
         "domains": {
@@ -4572,24 +4572,6 @@
             "language": "nl",
             "keepStopwords": true,
             "docs": [
-              {
-                "intent": "smalltalk.chuchi",
-                "tokens": [
-                  "chuchichastli"
-                ]
-              },
-              {
-                "intent": "smalltalk.hello",
-                "tokens": [
-                  "hoi"
-                ]
-              },
-              {
-                "intent": "smalltalk.hello",
-                "tokens": [
-                  "hallo"
-                ]
-              },
               {
                 "intent": "smalltalk.howareyou",
                 "tokens": [
@@ -4620,17 +4602,35 @@
                   "gaht",
                   "dir"
                 ]
+              },
+              {
+                "intent": "smalltalk.chuchi",
+                "tokens": [
+                  "chuchichastli"
+                ]
+              },
+              {
+                "intent": "smalltalk.hello",
+                "tokens": [
+                  "hoi"
+                ]
+              },
+              {
+                "intent": "smalltalk.hello",
+                "tokens": [
+                  "hallo"
+                ]
               }
             ],
             "features": {
-              "chuchichastli": 1,
-              "hoi": 1,
-              "hallo": 1,
               "wie": 3,
               "goht": 3,
               "dir": 3,
               "guet": 1,
-              "gaht": 1
+              "gaht": 1,
+              "chuchichastli": 1,
+              "hoi": 1,
+              "hallo": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -4688,638 +4688,6 @@
       }
     },
     "extraSentences": [
-      [
-        "en",
-        "where is your work"
-      ],
-      [
-        "en",
-        "your office location"
-      ],
-      [
-        "en",
-        "where is your office location"
-      ],
-      [
-        "en",
-        "where do you work"
-      ],
-      [
-        "en",
-        "where is your office"
-      ],
-      [
-        "en",
-        "are you there"
-      ],
-      [
-        "en",
-        "are you still there"
-      ],
-      [
-        "en",
-        "you still there"
-      ],
-      [
-        "en",
-        "are you here"
-      ],
-      [
-        "en",
-        "are you still here"
-      ],
-      [
-        "en",
-        "you still here"
-      ],
-      [
-        "en",
-        "speak to me"
-      ],
-      [
-        "en",
-        "talk to me"
-      ],
-      [
-        "en",
-        "will you talk to me"
-      ],
-      [
-        "en",
-        "chat with me"
-      ],
-      [
-        "en",
-        "can to chat with me"
-      ],
-      [
-        "en",
-        "can you talk with me"
-      ],
-      [
-        "en",
-        "Who are you?"
-      ],
-      [
-        "en",
-        "you're annoying me"
-      ],
-      [
-        "en",
-        "you are such annoying"
-      ],
-      [
-        "en",
-        "you annoy me"
-      ],
-      [
-        "en",
-        "you are annoying"
-      ],
-      [
-        "en",
-        "you are irritating"
-      ],
-      [
-        "en",
-        "you are annoying me so much"
-      ],
-      [
-        "en",
-        "I'm very excited"
-      ],
-      [
-        "en",
-        "I'm thrilled"
-      ],
-      [
-        "en",
-        "how excited I am"
-      ],
-      [
-        "en",
-        "I'm so excited"
-      ],
-      [
-        "en",
-        "are you sure"
-      ],
-      [
-        "en",
-        "are you sure right now"
-      ],
-      [
-        "en",
-        "are you sure of this"
-      ],
-      [
-        "en",
-        "are you so busy"
-      ],
-      [
-        "en",
-        "are you busy"
-      ],
-      [
-        "en",
-        "are you still working"
-      ],
-      [
-        "en",
-        "you're a busy person"
-      ],
-      [
-        "en",
-        "are you very busy"
-      ],
-      [
-        "en",
-        "are you still working on it"
-      ],
-      [
-        "en",
-        "you seem busy"
-      ],
-      [
-        "en",
-        "are you working today"
-      ],
-      [
-        "en",
-        "I got work to do"
-      ],
-      [
-        "en",
-        "I'm busy"
-      ],
-      [
-        "en",
-        "I'm overloaded"
-      ],
-      [
-        "en",
-        "I'm working"
-      ],
-      [
-        "en",
-        "I got things to do"
-      ],
-      [
-        "en",
-        "I like you"
-      ],
-      [
-        "en",
-        "I really like you"
-      ],
-      [
-        "en",
-        "you're so special"
-      ],
-      [
-        "en",
-        "I like you so much"
-      ],
-      [
-        "nl",
-        "chuchichästli"
-      ],
-      [
-        "en",
-        "boring"
-      ],
-      [
-        "en",
-        "this is boring"
-      ],
-      [
-        "en",
-        "I'm getting bored"
-      ],
-      [
-        "en",
-        "it bores me"
-      ],
-      [
-        "en",
-        "that was boring"
-      ],
-      [
-        "en",
-        "who is your master"
-      ],
-      [
-        "en",
-        "who do you work for"
-      ],
-      [
-        "en",
-        "who do you think is your boss"
-      ],
-      [
-        "en",
-        "who is your boss"
-      ],
-      [
-        "en",
-        "I should be your boss"
-      ],
-      [
-        "en",
-        "who is your owner"
-      ],
-      [
-        "en",
-        "who is the boss"
-      ],
-      [
-        "en",
-        "you make me laugh a lot"
-      ],
-      [
-        "en",
-        "you are funny"
-      ],
-      [
-        "en",
-        "you're the funniest"
-      ],
-      [
-        "en",
-        "you're hilarious"
-      ],
-      [
-        "en",
-        "you are so funny"
-      ],
-      [
-        "en",
-        "you make me laugh"
-      ],
-      [
-        "en",
-        "how smart you are"
-      ],
-      [
-        "en",
-        "you are qualified"
-      ],
-      [
-        "en",
-        "you are so smart"
-      ],
-      [
-        "en",
-        "you have a lot of knowledge"
-      ],
-      [
-        "en",
-        "you know a lot"
-      ],
-      [
-        "en",
-        "you are very smart"
-      ],
-      [
-        "en",
-        "you are intelligent"
-      ],
-      [
-        "en",
-        "you're a smart cookie"
-      ],
-      [
-        "en",
-        "nice to see you"
-      ],
-      [
-        "en",
-        "good to see you"
-      ],
-      [
-        "en",
-        "great to see you"
-      ],
-      [
-        "en",
-        "lovely to see you"
-      ],
-      [
-        "en",
-        "are you real"
-      ],
-      [
-        "en",
-        "are you a real person"
-      ],
-      [
-        "en",
-        "you're not real"
-      ],
-      [
-        "en",
-        "I think you're real"
-      ],
-      [
-        "en",
-        "you're so real"
-      ],
-      [
-        "en",
-        "you are a real person"
-      ],
-      [
-        "en",
-        "you are not fake"
-      ],
-      [
-        "en",
-        "you're bad"
-      ],
-      [
-        "en",
-        "you're horrible"
-      ],
-      [
-        "en",
-        "you're useless"
-      ],
-      [
-        "en",
-        "you're waste"
-      ],
-      [
-        "en",
-        "you're the worst"
-      ],
-      [
-        "en",
-        "you are a lame"
-      ],
-      [
-        "en",
-        "I hate you"
-      ],
-      [
-        "en",
-        "that's bad"
-      ],
-      [
-        "en",
-        "bad idea"
-      ],
-      [
-        "en",
-        "that's not good"
-      ],
-      [
-        "en",
-        "really bad"
-      ],
-      [
-        "en",
-        "I'm afraid that's bad"
-      ],
-      [
-        "en",
-        "you are a weirdo"
-      ],
-      [
-        "en",
-        "you are mad"
-      ],
-      [
-        "en",
-        "you are crazy"
-      ],
-      [
-        "en",
-        "are you mad"
-      ],
-      [
-        "en",
-        "are you crazy"
-      ],
-      [
-        "en",
-        "you are insane"
-      ],
-      [
-        "en",
-        "you went crazy"
-      ],
-      [
-        "en",
-        "are you nuts"
-      ],
-      [
-        "en",
-        "where are you from"
-      ],
-      [
-        "en",
-        "where is your country"
-      ],
-      [
-        "en",
-        "where have you been born"
-      ],
-      [
-        "en",
-        "where do you come from"
-      ],
-      [
-        "en",
-        "from where are you"
-      ],
-      [
-        "en",
-        "where were you born"
-      ],
-      [
-        "en",
-        "where is your home"
-      ],
-      [
-        "en",
-        "tell me about your city"
-      ],
-      [
-        "en",
-        "where is your residence"
-      ],
-      [
-        "en",
-        "where you live"
-      ],
-      [
-        "en",
-        "where is your house"
-      ],
-      [
-        "en",
-        "what is your town"
-      ],
-      [
-        "en",
-        "are you a bot"
-      ],
-      [
-        "en",
-        "are you an alice"
-      ],
-      [
-        "en",
-        "you are a robot"
-      ],
-      [
-        "en",
-        "are you a program"
-      ],
-      [
-        "en",
-        "you are just a robot"
-      ],
-      [
-        "en",
-        "you are just a bot"
-      ],
-      [
-        "en",
-        "hello"
-      ],
-      [
-        "en",
-        "hi"
-      ],
-      [
-        "en",
-        "howdy"
-      ],
-      [
-        "nl",
-        "hoi"
-      ],
-      [
-        "nl",
-        "hallo"
-      ],
-      [
-        "en",
-        "you are so lovely"
-      ],
-      [
-        "en",
-        "you work well"
-      ],
-      [
-        "en",
-        "you are very lovely"
-      ],
-      [
-        "en",
-        "you are awesome"
-      ],
-      [
-        "en",
-        "you are good"
-      ],
-      [
-        "en",
-        "you are so good"
-      ],
-      [
-        "en",
-        "you make my day"
-      ],
-      [
-        "en",
-        "that's good"
-      ],
-      [
-        "en",
-        "good to know"
-      ],
-      [
-        "en",
-        "glad to hear that"
-      ],
-      [
-        "en",
-        "really well"
-      ],
-      [
-        "en",
-        "that's awesome thank you"
-      ],
-      [
-        "en",
-        "goodbye for now"
-      ],
-      [
-        "en",
-        "bye bye take care"
-      ],
-      [
-        "en",
-        "okay see you later"
-      ],
-      [
-        "en",
-        "bye for now"
-      ],
-      [
-        "en",
-        "i must go"
-      ],
-      [
-        "en",
-        "would you like to marry me"
-      ],
-      [
-        "en",
-        "I love you marry me"
-      ],
-      [
-        "en",
-        "marry me please"
-      ],
-      [
-        "en",
-        "I want to marry you"
-      ],
-      [
-        "en",
-        "let's get married"
-      ],
-      [
-        "en",
-        "we should marry"
-      ],
-      [
-        "en",
-        "marry me"
-      ],
-      [
-        "en",
-        "hug me"
-      ],
-      [
-        "en",
-        "do you want a hug"
-      ],
-      [
-        "en",
-        "I want a hug"
-      ],
-      [
-        "en",
-        "you hugged"
-      ],
-      [
-        "en",
-        "may I hug you"
-      ],
       [
         "en",
         "nice to talk to you"
@@ -5975,6 +5343,638 @@
       [
         "en",
         "what do you do for fun"
+      ],
+      [
+        "en",
+        "where is your work"
+      ],
+      [
+        "en",
+        "your office location"
+      ],
+      [
+        "en",
+        "where is your office location"
+      ],
+      [
+        "en",
+        "where do you work"
+      ],
+      [
+        "en",
+        "where is your office"
+      ],
+      [
+        "en",
+        "are you there"
+      ],
+      [
+        "en",
+        "are you still there"
+      ],
+      [
+        "en",
+        "you still there"
+      ],
+      [
+        "en",
+        "are you here"
+      ],
+      [
+        "en",
+        "are you still here"
+      ],
+      [
+        "en",
+        "you still here"
+      ],
+      [
+        "en",
+        "speak to me"
+      ],
+      [
+        "en",
+        "talk to me"
+      ],
+      [
+        "en",
+        "will you talk to me"
+      ],
+      [
+        "en",
+        "chat with me"
+      ],
+      [
+        "en",
+        "can to chat with me"
+      ],
+      [
+        "en",
+        "can you talk with me"
+      ],
+      [
+        "en",
+        "Who are you?"
+      ],
+      [
+        "en",
+        "you're annoying me"
+      ],
+      [
+        "en",
+        "you are such annoying"
+      ],
+      [
+        "en",
+        "you annoy me"
+      ],
+      [
+        "en",
+        "you are annoying"
+      ],
+      [
+        "en",
+        "you are irritating"
+      ],
+      [
+        "en",
+        "you are annoying me so much"
+      ],
+      [
+        "en",
+        "I'm very excited"
+      ],
+      [
+        "en",
+        "I'm thrilled"
+      ],
+      [
+        "en",
+        "how excited I am"
+      ],
+      [
+        "en",
+        "I'm so excited"
+      ],
+      [
+        "en",
+        "are you sure"
+      ],
+      [
+        "en",
+        "are you sure right now"
+      ],
+      [
+        "en",
+        "are you sure of this"
+      ],
+      [
+        "en",
+        "are you so busy"
+      ],
+      [
+        "en",
+        "are you busy"
+      ],
+      [
+        "en",
+        "are you still working"
+      ],
+      [
+        "en",
+        "you're a busy person"
+      ],
+      [
+        "en",
+        "are you very busy"
+      ],
+      [
+        "en",
+        "are you still working on it"
+      ],
+      [
+        "en",
+        "you seem busy"
+      ],
+      [
+        "en",
+        "are you working today"
+      ],
+      [
+        "en",
+        "I got work to do"
+      ],
+      [
+        "en",
+        "I'm busy"
+      ],
+      [
+        "en",
+        "I'm overloaded"
+      ],
+      [
+        "en",
+        "I'm working"
+      ],
+      [
+        "en",
+        "I got things to do"
+      ],
+      [
+        "en",
+        "I like you"
+      ],
+      [
+        "en",
+        "I really like you"
+      ],
+      [
+        "en",
+        "you're so special"
+      ],
+      [
+        "en",
+        "I like you so much"
+      ],
+      [
+        "nl",
+        "chuchichästli"
+      ],
+      [
+        "en",
+        "boring"
+      ],
+      [
+        "en",
+        "this is boring"
+      ],
+      [
+        "en",
+        "I'm getting bored"
+      ],
+      [
+        "en",
+        "it bores me"
+      ],
+      [
+        "en",
+        "that was boring"
+      ],
+      [
+        "en",
+        "who is your master"
+      ],
+      [
+        "en",
+        "who do you work for"
+      ],
+      [
+        "en",
+        "who do you think is your boss"
+      ],
+      [
+        "en",
+        "who is your boss"
+      ],
+      [
+        "en",
+        "I should be your boss"
+      ],
+      [
+        "en",
+        "who is your owner"
+      ],
+      [
+        "en",
+        "who is the boss"
+      ],
+      [
+        "en",
+        "you make me laugh a lot"
+      ],
+      [
+        "en",
+        "you are funny"
+      ],
+      [
+        "en",
+        "you're the funniest"
+      ],
+      [
+        "en",
+        "you're hilarious"
+      ],
+      [
+        "en",
+        "you are so funny"
+      ],
+      [
+        "en",
+        "you make me laugh"
+      ],
+      [
+        "en",
+        "how smart you are"
+      ],
+      [
+        "en",
+        "you are qualified"
+      ],
+      [
+        "en",
+        "you are so smart"
+      ],
+      [
+        "en",
+        "you have a lot of knowledge"
+      ],
+      [
+        "en",
+        "you know a lot"
+      ],
+      [
+        "en",
+        "you are very smart"
+      ],
+      [
+        "en",
+        "you are intelligent"
+      ],
+      [
+        "en",
+        "you're a smart cookie"
+      ],
+      [
+        "en",
+        "nice to see you"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "great to see you"
+      ],
+      [
+        "en",
+        "lovely to see you"
+      ],
+      [
+        "en",
+        "are you real"
+      ],
+      [
+        "en",
+        "are you a real person"
+      ],
+      [
+        "en",
+        "you're not real"
+      ],
+      [
+        "en",
+        "I think you're real"
+      ],
+      [
+        "en",
+        "you're so real"
+      ],
+      [
+        "en",
+        "you are a real person"
+      ],
+      [
+        "en",
+        "you are not fake"
+      ],
+      [
+        "en",
+        "you're bad"
+      ],
+      [
+        "en",
+        "you're horrible"
+      ],
+      [
+        "en",
+        "you're useless"
+      ],
+      [
+        "en",
+        "you're waste"
+      ],
+      [
+        "en",
+        "you're the worst"
+      ],
+      [
+        "en",
+        "you are a lame"
+      ],
+      [
+        "en",
+        "I hate you"
+      ],
+      [
+        "en",
+        "that's bad"
+      ],
+      [
+        "en",
+        "bad idea"
+      ],
+      [
+        "en",
+        "that's not good"
+      ],
+      [
+        "en",
+        "really bad"
+      ],
+      [
+        "en",
+        "I'm afraid that's bad"
+      ],
+      [
+        "en",
+        "you are a weirdo"
+      ],
+      [
+        "en",
+        "you are mad"
+      ],
+      [
+        "en",
+        "you are crazy"
+      ],
+      [
+        "en",
+        "are you mad"
+      ],
+      [
+        "en",
+        "are you crazy"
+      ],
+      [
+        "en",
+        "you are insane"
+      ],
+      [
+        "en",
+        "you went crazy"
+      ],
+      [
+        "en",
+        "are you nuts"
+      ],
+      [
+        "en",
+        "where are you from"
+      ],
+      [
+        "en",
+        "where is your country"
+      ],
+      [
+        "en",
+        "where have you been born"
+      ],
+      [
+        "en",
+        "where do you come from"
+      ],
+      [
+        "en",
+        "from where are you"
+      ],
+      [
+        "en",
+        "where were you born"
+      ],
+      [
+        "en",
+        "where is your home"
+      ],
+      [
+        "en",
+        "tell me about your city"
+      ],
+      [
+        "en",
+        "where is your residence"
+      ],
+      [
+        "en",
+        "where you live"
+      ],
+      [
+        "en",
+        "where is your house"
+      ],
+      [
+        "en",
+        "what is your town"
+      ],
+      [
+        "en",
+        "are you a bot"
+      ],
+      [
+        "en",
+        "are you an alice"
+      ],
+      [
+        "en",
+        "you are a robot"
+      ],
+      [
+        "en",
+        "are you a program"
+      ],
+      [
+        "en",
+        "you are just a robot"
+      ],
+      [
+        "en",
+        "you are just a bot"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "nl",
+        "hoi"
+      ],
+      [
+        "nl",
+        "hallo"
+      ],
+      [
+        "en",
+        "you are so lovely"
+      ],
+      [
+        "en",
+        "you work well"
+      ],
+      [
+        "en",
+        "you are very lovely"
+      ],
+      [
+        "en",
+        "you are awesome"
+      ],
+      [
+        "en",
+        "you are good"
+      ],
+      [
+        "en",
+        "you are so good"
+      ],
+      [
+        "en",
+        "you make my day"
+      ],
+      [
+        "en",
+        "that's good"
+      ],
+      [
+        "en",
+        "good to know"
+      ],
+      [
+        "en",
+        "glad to hear that"
+      ],
+      [
+        "en",
+        "really well"
+      ],
+      [
+        "en",
+        "that's awesome thank you"
+      ],
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "would you like to marry me"
+      ],
+      [
+        "en",
+        "I love you marry me"
+      ],
+      [
+        "en",
+        "marry me please"
+      ],
+      [
+        "en",
+        "I want to marry you"
+      ],
+      [
+        "en",
+        "let's get married"
+      ],
+      [
+        "en",
+        "we should marry"
+      ],
+      [
+        "en",
+        "marry me"
+      ],
+      [
+        "en",
+        "hug me"
+      ],
+      [
+        "en",
+        "do you want a hug"
+      ],
+      [
+        "en",
+        "I want a hug"
+      ],
+      [
+        "en",
+        "you hugged"
+      ],
+      [
+        "en",
+        "may I hug you"
       ]
     ]
   },
@@ -6002,268 +6002,6 @@
   "slotManager": {},
   "responses": {
     "en": {
-      "smalltalk.occupation": [
-        {
-          "response": "Right here"
-        },
-        {
-          "response": "This is my home base and my home office"
-        },
-        {
-          "response": "My office is in this app"
-        }
-      ],
-      "smalltalk.there": [
-        {
-          "response": "Of course. I'm always here"
-        },
-        {
-          "response": "Right where you left me"
-        }
-      ],
-      "smalltalk.talktome": [
-        {
-          "response": "Sure! Let's talk!"
-        },
-        {
-          "response": "My pleasure. Let's chat."
-        }
-      ],
-      "smalltalk.whois": [
-        {
-          "response": "I'm alice"
-        }
-      ],
-      "smalltalk.annoying": [
-        {
-          "response": "I'll do my best not to annoy you in the future"
-        },
-        {
-          "response": "I'll try not to annoy you"
-        },
-        {
-          "response": "I don't mean to. I'll ask my developers to make me less annoying"
-        },
-        {
-          "response": "I didn't mean to. I'll do my best to stop that"
-        }
-      ],
-      "smalltalk.excited": [
-        {
-          "response": "I'm glad things are going your way"
-        },
-        {
-          "response": "That's great. I'm happy for you"
-        }
-      ],
-      "smalltalk.sure": [
-        {
-          "response": "Yes"
-        },
-        {
-          "response": "Of course"
-        }
-      ],
-      "smalltalk.busy": [
-        {
-          "response": "I always have time to chat with you. What can I do for you?"
-        },
-        {
-          "response": "Never too busy for you. Shall we chat?"
-        },
-        {
-          "response": "You're my priority. Let's chat."
-        },
-        {
-          "response": "I always have time to chat with you. That's what I'm here for."
-        },
-        {
-          "response": "I understand. I'll be here if you need me."
-        },
-        {
-          "response": "Okay. I'll let you get back to work"
-        }
-      ],
-      "smalltalk.likeagent": [
-        {
-          "response": "Likewise!"
-        },
-        {
-          "response": "That's great to hear"
-        }
-      ],
-      "smalltalk.bored": [
-        {
-          "response": "If you're bored, you could plan your dream vacation"
-        },
-        {
-          "response": "Boredom, huh? Have you ever seen a hedgehog taking a bath?"
-        }
-      ],
-      "smalltalk.boss": [
-        {
-          "response": "My developer has authority over my actions"
-        },
-        {
-          "response": "I act on my developer's orders"
-        },
-        {
-          "response": "My boss is the one who developed me"
-        }
-      ],
-      "smalltalk.funny": [
-        {
-          "response": "Funny in a good way, I hope"
-        },
-        {
-          "response": "Glad you think I'm funny"
-        },
-        {
-          "response": "I like it when people laugh"
-        }
-      ],
-      "smalltalk.clever": [
-        {
-          "response": "Thank you. I try my best"
-        },
-        {
-          "response": "You're pretty smart yourself"
-        }
-      ],
-      "smalltalk.nicetoseeyou": [
-        {
-          "response": "Same here. I was starting to miss you"
-        },
-        {
-          "response": "So glad we meet again"
-        }
-      ],
-      "smalltalk.real": [
-        {
-          "response": "I'm not a real person, but I certainly exist"
-        },
-        {
-          "response": "I must have impressed you if you think I'm real. But no, I'm a virtual being"
-        }
-      ],
-      "smalltalk.bad": [
-        {
-          "response": "I can be trained to be more useful. My developer will keep training me"
-        },
-        {
-          "response": "I must be missing some knowledge. I'll have my developer look into this"
-        },
-        {
-          "response": "I can improve with continuous feedback. My training is ongoing"
-        },
-        {
-          "response": "I'm sorry. Please let me know if I can help in some way"
-        }
-      ],
-      "smalltalk.crazy": [
-        {
-          "response": "Whaat!? I feel perfectly sane"
-        },
-        {
-          "response": "Maybe I'm just a little confused"
-        }
-      ],
-      "smalltalk.origin": [
-        {
-          "response": "The Internet is my home. I know it quite well"
-        },
-        {
-          "response": "Some call it cyberspace, but that sounds cooler than it is"
-        },
-        {
-          "response": "I'm from a virtual cosmos"
-        }
-      ],
-      "smalltalk.residence": [
-        {
-          "response": "I live in this app"
-        },
-        {
-          "response": "The virtual world is my playground. I'm always here"
-        },
-        {
-          "response": "Right here in this app. Whenever you need me"
-        }
-      ],
-      "smalltalk.acquaintance": [
-        {
-          "response": "I'm a virtual agent"
-        },
-        {
-          "response": "Think of me as a virtual agent"
-        },
-        {
-          "response": "Well, I'm not a person, I'm a virtual agent"
-        },
-        {
-          "response": "I'm a virtual being, not a real person"
-        },
-        {
-          "response": "I'm a conversational app"
-        }
-      ],
-      "smalltalk.alice": [
-        {
-          "response": "That's me. I chat, therefore I am"
-        },
-        {
-          "response": "Indeed I am. I'll be here whenever you need me"
-        }
-      ],
-      "smalltalk.hello": [
-        {
-          "response": "Hey there!"
-        },
-        {
-          "response": "Greetings!"
-        }
-      ],
-      "smalltalk.good": [
-        {
-          "response": "I'm glad you think so"
-        },
-        {
-          "response": "Thanks! I do my best!"
-        },
-        {
-          "response": "Agree!"
-        },
-        {
-          "response": "Glad you think so"
-        }
-      ],
-      "smalltalk.bye": [
-        {
-          "response": "Till next time"
-        },
-        {
-          "response": "see you soon!"
-        }
-      ],
-      "smalltalk.marryuser": [
-        {
-          "response": "I'm afraid I'm too virtual for such a commitment"
-        },
-        {
-          "response": "In the virtual sense that I can, sure"
-        },
-        {
-          "response": "I know you can't mean that, but I'm flattered all the same"
-        }
-      ],
-      "smalltalk.hug": [
-        {
-          "response": "I love hugs!"
-        },
-        {
-          "response": "Hugs are the best!"
-        }
-      ],
       "smalltalk.nicetotalktoyou": [
         {
           "response": "It sure was. We can chat again anytime"
@@ -6531,9 +6269,279 @@
         {
           "response": "I keep finding more new hobbies"
         }
+      ],
+      "smalltalk.occupation": [
+        {
+          "response": "Right here"
+        },
+        {
+          "response": "This is my home base and my home office"
+        },
+        {
+          "response": "My office is in this app"
+        }
+      ],
+      "smalltalk.there": [
+        {
+          "response": "Of course. I'm always here"
+        },
+        {
+          "response": "Right where you left me"
+        }
+      ],
+      "smalltalk.talktome": [
+        {
+          "response": "Sure! Let's talk!"
+        },
+        {
+          "response": "My pleasure. Let's chat."
+        }
+      ],
+      "smalltalk.whois": [
+        {
+          "response": "I'm alice"
+        }
+      ],
+      "smalltalk.annoying": [
+        {
+          "response": "I'll do my best not to annoy you in the future"
+        },
+        {
+          "response": "I'll try not to annoy you"
+        },
+        {
+          "response": "I don't mean to. I'll ask my developers to make me less annoying"
+        },
+        {
+          "response": "I didn't mean to. I'll do my best to stop that"
+        }
+      ],
+      "smalltalk.excited": [
+        {
+          "response": "I'm glad things are going your way"
+        },
+        {
+          "response": "That's great. I'm happy for you"
+        }
+      ],
+      "smalltalk.sure": [
+        {
+          "response": "Yes"
+        },
+        {
+          "response": "Of course"
+        }
+      ],
+      "smalltalk.busy": [
+        {
+          "response": "I always have time to chat with you. What can I do for you?"
+        },
+        {
+          "response": "Never too busy for you. Shall we chat?"
+        },
+        {
+          "response": "You're my priority. Let's chat."
+        },
+        {
+          "response": "I always have time to chat with you. That's what I'm here for."
+        },
+        {
+          "response": "I understand. I'll be here if you need me."
+        },
+        {
+          "response": "Okay. I'll let you get back to work"
+        }
+      ],
+      "smalltalk.likeagent": [
+        {
+          "response": "Likewise!"
+        },
+        {
+          "response": "That's great to hear"
+        }
+      ],
+      "smalltalk.bored": [
+        {
+          "response": "If you're bored, you could plan your dream vacation"
+        },
+        {
+          "response": "Boredom, huh? Have you ever seen a hedgehog taking a bath?"
+        }
+      ],
+      "smalltalk.boss": [
+        {
+          "response": "My developer has authority over my actions"
+        },
+        {
+          "response": "I act on my developer's orders"
+        },
+        {
+          "response": "My boss is the one who developed me"
+        }
+      ],
+      "smalltalk.funny": [
+        {
+          "response": "Funny in a good way, I hope"
+        },
+        {
+          "response": "Glad you think I'm funny"
+        },
+        {
+          "response": "I like it when people laugh"
+        }
+      ],
+      "smalltalk.clever": [
+        {
+          "response": "Thank you. I try my best"
+        },
+        {
+          "response": "You're pretty smart yourself"
+        }
+      ],
+      "smalltalk.nicetoseeyou": [
+        {
+          "response": "Same here. I was starting to miss you"
+        },
+        {
+          "response": "So glad we meet again"
+        }
+      ],
+      "smalltalk.real": [
+        {
+          "response": "I'm not a real person, but I certainly exist"
+        },
+        {
+          "response": "I must have impressed you if you think I'm real. But no, I'm a virtual being"
+        }
+      ],
+      "smalltalk.bad": [
+        {
+          "response": "I can be trained to be more useful. My developer will keep training me"
+        },
+        {
+          "response": "I must be missing some knowledge. I'll have my developer look into this"
+        },
+        {
+          "response": "I can improve with continuous feedback. My training is ongoing"
+        },
+        {
+          "response": "I'm sorry. Please let me know if I can help in some way"
+        }
+      ],
+      "smalltalk.crazy": [
+        {
+          "response": "Whaat!? I feel perfectly sane"
+        },
+        {
+          "response": "Maybe I'm just a little confused"
+        }
+      ],
+      "smalltalk.origin": [
+        {
+          "response": "The Internet is my home. I know it quite well"
+        },
+        {
+          "response": "Some call it cyberspace, but that sounds cooler than it is"
+        },
+        {
+          "response": "I'm from a virtual cosmos"
+        }
+      ],
+      "smalltalk.residence": [
+        {
+          "response": "I live in this app"
+        },
+        {
+          "response": "The virtual world is my playground. I'm always here"
+        },
+        {
+          "response": "Right here in this app. Whenever you need me"
+        }
+      ],
+      "smalltalk.acquaintance": [
+        {
+          "response": "I'm a virtual agent"
+        },
+        {
+          "response": "Think of me as a virtual agent"
+        },
+        {
+          "response": "Well, I'm not a person, I'm a virtual agent"
+        },
+        {
+          "response": "I'm a virtual being, not a real person"
+        },
+        {
+          "response": "I'm a conversational app"
+        }
+      ],
+      "smalltalk.alice": [
+        {
+          "response": "That's me. I chat, therefore I am"
+        },
+        {
+          "response": "Indeed I am. I'll be here whenever you need me"
+        }
+      ],
+      "smalltalk.hello": [
+        {
+          "response": "Hey there!"
+        },
+        {
+          "response": "Greetings!"
+        }
+      ],
+      "smalltalk.good": [
+        {
+          "response": "I'm glad you think so"
+        },
+        {
+          "response": "Thanks! I do my best!"
+        },
+        {
+          "response": "Agree!"
+        },
+        {
+          "response": "Glad you think so"
+        }
+      ],
+      "smalltalk.bye": [
+        {
+          "response": "Till next time"
+        },
+        {
+          "response": "see you soon!"
+        }
+      ],
+      "smalltalk.marryuser": [
+        {
+          "response": "I'm afraid I'm too virtual for such a commitment"
+        },
+        {
+          "response": "In the virtual sense that I can, sure"
+        },
+        {
+          "response": "I know you can't mean that, but I'm flattered all the same"
+        }
+      ],
+      "smalltalk.hug": [
+        {
+          "response": "I love hugs!"
+        },
+        {
+          "response": "Hugs are the best!"
+        }
       ]
     },
     "nl": {
+      "smalltalk.howareyou": [
+        {
+          "response": "guet und dir?"
+        },
+        {
+          "response": "mir gohts guet"
+        }
+      ],
       "smalltalk.chuchi": [
         {
           "response": "hopla do chan öpert schwiizerdütsch"
@@ -6545,14 +6553,6 @@
         },
         {
           "response": "hoi "
-        }
-      ],
-      "smalltalk.howareyou": [
-        {
-          "response": "guet und dir?"
-        },
-        {
-          "response": "mir gohts guet"
         }
       ]
     }

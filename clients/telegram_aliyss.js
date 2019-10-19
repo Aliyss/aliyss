@@ -32,7 +32,6 @@ function messageFile(file, object) {
 
 }
 
-
 exports.run = (nlpManager) => {
 
 	console.log('TELEGRAM_aliyss: Ready.');
@@ -42,12 +41,5 @@ exports.run = (nlpManager) => {
 		message = await messageFile('./config/telegram/discordify.js', message);
 		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message, nlpManager)
 	});
-
-	/*
-	client.launch().then(ctx => {
-		console.log('TELEGRAM_aliyss: Ready.');
-		config.options._return = aliyssium.main_directory + config.options.return
-	});
-	*/
 
 };
