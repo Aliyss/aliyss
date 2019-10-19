@@ -80,3 +80,4 @@ fabric.properties
 /config/firebase_serviceKey.json
 /.idea/
 /model.nlp
+/.gitignore
