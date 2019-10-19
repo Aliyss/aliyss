@@ -4,8 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 
 /*Local Packages*/
 const config = require('./config/telegram/config.json');
-const config_location = require("../config/config_locations.json");
-const aliyssium = require(`../config/${config_location.clients}`);
+const aliyssium = require(`../config/aliyssium.json`);
 const command_config = require('../modules/store/command_config.json');
 
 exports.run = (nlpManager) => {
