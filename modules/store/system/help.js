@@ -169,5 +169,5 @@ exports.run = async (options, message, args, client) => {
 		})
 	}
 
-	await runFile(options._return + "send.js", {embed: embed}, message, client)
+	return embed;
 };

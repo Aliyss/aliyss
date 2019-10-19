@@ -33,12 +33,10 @@ exports.run = (nlpManager) => {
 
 	});
 
-
 	//client: leaves a server
 	client.on("guildDelete", guild => {
 
 	});
-
 
 	//client: receives a message
 	client.on('message', message => {
@@ -48,6 +46,10 @@ exports.run = (nlpManager) => {
 
 	client.on("messageDelete", (messageDelete) => {
 		runFile(aliyssium.main_directory + aliyssium.locations.messageDelete, messageDelete);
+	});
+
+	client.on("messageUpdate", (messageOld, messageNew) => {
+		runFile(aliyssium.main_directory + aliyssium.locations.messageUpdate, messageOld, messageNew);
 	});
 
 	//client: is ready

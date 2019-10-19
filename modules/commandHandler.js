@@ -1,7 +1,6 @@
 /*Global Packages*/
 const watch = require("node-watch");
 const glob = require("glob");
-const fs = require('fs');
 
 /*Local Packages*/
 const config = require('./store/command_config.json');
@@ -97,8 +96,6 @@ exports.run = async (options, message, client, nlpManager) => {
 	} else  {
 		//console.log(message)
 	}
-
-	//console.log(message);
 
 	message.content = message.content.toLowerCase();
 	let msg = message.content;
@@ -267,6 +264,5 @@ let searcher = async (client, lesser, full_args, options, message) => {
 		} else {
 			await runFile(options._return + "send.js", embed, message, client);
 		}
-
 	}
 };

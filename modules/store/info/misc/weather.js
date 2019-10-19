@@ -144,23 +144,25 @@ exports.run = async (options, message, args, client) => {
 
 		let search = args.join(", ");
 
-		weather.find({search: `${search}`, degreeType: 'C'}, function(err, result) {
-			if (err) {
-				err = "``⛔ Error: " + err + "``";
-				runFile(options._return + "send.js", err, message, client);
-			} else if (result && result[0]) {
-				result[0].title = main_title;
-				let base_embed = embedder(message.author, result[0]);
-				async function create_embed() {
-					let embed = await merge(base_embed, await information[function_name](result[0]));
-					await runFile(options._return + "send.js", {embed: embed}, message, client);
-				}
-				create_embed()
-			}
-		});
+		return await weather2(search, main_title, information, function_name, message);
 
 	} catch (e) {
-		console.log(e)
+		console.error(e)
 	}
 
 };
+
+function weather2(search, main_title, information, function_name, message) {
+	return new Promise((resolve, reject) => {
+		weather.find({search: `${search}`, degreeType: 'C'}, async (err, result) => {
+			if (err) {
+				resolve("``⛔ Error: " + err + "``");
+			} else if (result && result[0]) {
+				result[0].title = main_title;
+				let base_embed = embedder(message.author, result[0]);
+				resolve(await merge(base_embed, await information[function_name](result[0])));
+			}
+		});
+	});
+
+}

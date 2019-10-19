@@ -89,7 +89,7 @@ class Client extends EventEmitter {
             WASecretBundle: localStorage.WASecretBundle,
             WAToken1: localStorage.WAToken1,
             WAToken2: localStorage.WAToken2
-        }
+        };
 
         this.emit(Events.AUTHENTICATED, session);
 

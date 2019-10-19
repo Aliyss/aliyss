@@ -25,7 +25,6 @@ exports.run = async (options, message, args, client) => {
 	}
 
 	if (options.return_type === "string") {
-		console.log(content)
 		return content
 	} else {
 		await runFile(options._return + "send.js", content, message, client)

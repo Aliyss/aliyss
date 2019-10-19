@@ -9,10 +9,10 @@ const aliyssium = require('../config/aliyssium.json');
 
 /*Local Functions*/
 //Run File
-function runFile(file, object, nlpManager) {
+function runFile(file, object, other) {
 
 	let commandFile = require(file);
-	commandFile.run(config.options, object, client, nlpManager);
+	commandFile.run(config.options, object, client, other);
 
 }
 
@@ -44,9 +44,12 @@ exports.run = (nlpManager) => {
 		runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message, nlpManager)
 	});
 
-
 	client.on("messageDelete", (messageDelete) => {
 		runFile(aliyssium.main_directory + aliyssium.locations.messageDelete, messageDelete);
+	});
+
+	client.on("messageUpdate", (messageOld, messageNew) => {
+		runFile(aliyssium.main_directory + aliyssium.locations.messageUpdate, messageOld, messageNew);
 	});
 
 	//client: is ready

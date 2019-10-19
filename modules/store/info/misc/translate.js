@@ -125,9 +125,7 @@ exports.run = async (options, message, args, client) => {
 
 		let base_embed = embedder(message.author, result);
 
-		let embed = await merge(base_embed, await information[function_name](result));
-		await runFile(options._return + "send.js", {embed: embed}, message, client);
-
+		return await merge(base_embed, await information[function_name](result));
 
 	} catch (e) {
 		console.log(e)
