@@ -4,7 +4,9 @@ const TelegramBot = require('node-telegram-bot-api');
 
 /*Local Packages*/
 const config = require('./config/telegram/config.json');
-const aliyssium = require('../config/aliyssium.json');
+const config_location = require("../config/config_locations.json");
+const aliyssium = require(`../config/${config_location.clients}`);
+const command_config = require('../modules/store/command_config.json');
 
 exports.run = (nlpManager) => {
 
@@ -40,12 +42,12 @@ exports.run = (nlpManager) => {
 
 		console.log(`TELEGRAM_${profile_name}: Ready.`);
 
-		config.options._return = aliyssium.main_directory + config.options.return;
+		config.options._return = command_config.main_directory + config.options.return;
 
 		//client: receives a message
 		client.on('message', async message => {
 			message = await messageFile('./config/telegram/discordify.js', message);
-			runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message, nlpManager)
+			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});
 	}
 

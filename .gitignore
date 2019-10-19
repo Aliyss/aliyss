@@ -78,3 +78,5 @@ fabric.properties
 /bfg.jar
 /modules/store/_types/whatsapp/wlan/passwords.json
 /config/firebase_serviceKey.json
+/.idea/
+/model.nlp

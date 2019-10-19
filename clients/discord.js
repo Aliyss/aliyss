@@ -1,7 +1,9 @@
 
 /*Local Packages*/
 const config = require('./config/discord/config.json');
-const aliyssium = require('../config/aliyssium.json');
+const config_location = require("../config/config_locations.json");
+const aliyssium = require(`../config/${config_location.clients}`);
+const command_config = require('../modules/store/command_config.json');
 
 exports.run = (nlpManager) => {
 
@@ -44,23 +46,23 @@ exports.run = (nlpManager) => {
 
 		//client: receives a message
 		client.on('message', message => {
-			runFile(aliyssium.main_directory + aliyssium.locations.messageReceived, message, nlpManager);
-			runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, message, nlpManager)
+			runFile(command_config.main_directory + command_config.locations.messageReceived, message, nlpManager);
+			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});
 
 		client.on("messageDelete", (messageDelete) => {
-			runFile(aliyssium.main_directory + aliyssium.locations.messageDelete, messageDelete);
+			runFile(command_config.main_directory + command_config.locations.messageDelete, messageDelete);
 		});
 
 		client.on("messageUpdate", (messageOld, messageNew) => {
-			runFile(aliyssium.main_directory + aliyssium.locations.messageUpdate, messageOld, messageNew);
+			runFile(command_config.main_directory + command_config.locations.messageUpdate, messageOld, messageNew);
 		});
 
 		//client: is ready
 		client.on('ready', async () => {
 			console.log(`DISCORD_${profile_name}: Ready.`);
 			console.log(`DISCORD_${profile_name}: Initialization complete.`);
-			config.options._return = aliyssium.main_directory + config.options.return
+			config.options._return = command_config.main_directory + config.options.return
 		});
 
 		//client: login

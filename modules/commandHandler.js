@@ -4,7 +4,6 @@ const glob = require("glob");
 
 /*Local Packages*/
 const config = require('./store/command_config.json');
-const aliyssium = require('../config/aliyssium.json');
 const database = require('../config/database/initialization.js').run();
 
 /*Local Functions*/
@@ -39,7 +38,7 @@ function parser (options, files, full_args) {
 	};
 
 	for (let i = 0; i < files.length; i++) {
-		files[i] = files[i].replace(aliyssium.main_directory + `/modules`,".");
+		files[i] = files[i].replace(config.main_directory + `/modules`,".");
 		let files_arr = files[i].replace(`/store/_types/${options.type}`, "").split("/");
 
 		let start = true;
@@ -86,8 +85,8 @@ exports.run = async (options, message, client, nlpManager) => {
 		return
 	}
 
-	options.locations = aliyssium.locations;
-	options.main_directory = aliyssium.main_directory;
+	options.locations = config.locations;
+	options.main_directory = config.main_directory;
 
 	if (message.content) {
 		if (!message.content.toLowerCase()) {
@@ -147,10 +146,10 @@ exports.run = async (options, message, client, nlpManager) => {
 	}
 
 	let nlpstuff = false;
-	for (let i = 0; i < aliyssium.splitters.length; i++) {
-		if (message.content.startsWith(aliyssium.splitters[i])) {
-			message.content = message.content.replace(new RegExp(aliyssium.splitters[i] + aliyssium.splitters[i] + "+","g"), " ");
-			full_args = message.content.substr(1).split(aliyssium.splitters[i]);
+	for (let i = 0; i < config.splitters.length; i++) {
+		if (message.content.startsWith(config.splitters[i])) {
+			message.content = message.content.replace(new RegExp(config.splitters[i] + config.splitters[i] + "+","g"), " ");
+			full_args = message.content.substr(1).split(config.splitters[i]);
 			break;
 		}
 	}
@@ -217,12 +216,12 @@ let matcher = async (client, lesser, full_args, options, message) => {
 
 let searcher = async (client, lesser, full_args, options, message) => {
 
-	let files =  glob.sync(`${aliyssium.main_directory}/modules/store/**/*.js`, lesser.options);
+	let files =  glob.sync(`${config.main_directory}/modules/store/**/*.js`, lesser.options);
 
 	files = files.filter( function(item) {
-		if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/')) {
-			if (item.startsWith(aliyssium.main_directory + '/modules/store/_types/' + options.type)) {
-				if (!item.startsWith(aliyssium.main_directory + '/modules/store/_types/' + options.type + "/~")) {
+		if (item.startsWith(config.main_directory + '/modules/store/_types/')) {
+			if (item.startsWith(config.main_directory + '/modules/store/_types/' + options.type)) {
+				if (!item.startsWith(config.main_directory + '/modules/store/_types/' + options.type + "/~")) {
 					return item
 				}
 			}
@@ -244,7 +243,7 @@ let searcher = async (client, lesser, full_args, options, message) => {
 		}
 	}
 
-	watch(`${aliyssium.main_directory}/modules${used_file.filename.replace(".", "")}`, (event, filename) => {
+	watch(`${config.main_directory}/modules${used_file.filename.replace(".", "")}`, (event, filename) => {
 		if (filename) {
 			delete require.cache[require.resolve(used_file.filename)];
 		}

@@ -1,0 +1,58 @@
+{
+    "prefixes": [
+        "hey"
+    ],
+    "profiles": {
+        "discord": [
+            {
+                "name": "your bot name",
+                "database": {
+                    "name": "your shared database name",
+                    "id": "your shared database id, use the client id"
+                },
+                "prefixes": [
+                    "a"
+                ],
+                "token": "",
+                "disabled": false
+            },
+            {
+                "name": "your second bots name",
+                "database": {
+                    "name": "your shared database name",
+                    "id": "your shared database id, use the client id"
+                },
+                "prefixes": [
+                    "c"
+                ],
+                "token": "",
+                "disabled": false
+            }
+        ],
+        "whatsapp": [
+            {
+                "name": "your bot name",
+                "prefixes": [
+                    "a"
+                ],
+                "database": {
+                    "name": "alice",
+                    "id": "463990114561949706"
+                },
+                "session": {},
+                "headless": true,
+                "disabled": false
+            }
+        ],
+        "telegram": [
+            {
+                "name": "your bot name",
+                "prefixes": [
+                    "a"
+                ],
+                "token": "",
+                "disabled": false
+            }
+        ]
+    }
+}

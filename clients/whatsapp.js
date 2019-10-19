@@ -4,7 +4,9 @@ const fs = require('fs');
 
 /*Local Packages*/
 const config = require('./config/whatsapp/config.json');
-const aliyssium = require('../config/aliyssium.json');
+const config_location = require("../config/config_locations.json");
+const aliyssium = require(`../config/${config_location.clients}`);
+const command_config = require('../modules/store/command_config.json');
 
 exports.run = (nlpManager) => {
 
@@ -76,12 +78,12 @@ exports.run = (nlpManager) => {
 
 		client.on('ready', () => {
 			console.log(`WHATSAPP_${profile_name}: Ready.`);
-			config.options._return = aliyssium.main_directory + config.options.return
+			config.options._return = command_config.main_directory + config.options.return
 		});
 
 		client.on('message', async msg => {
 			msg = await messageFile('./config/whatsapp/discordify.js', msg);
-			runFile(aliyssium.main_directory + aliyssium.locations.commandHandler, msg, nlpManager)
+			runFile(command_config.main_directory + command_config.locations.commandHandler, msg, nlpManager)
 		});
 
 		client.on('disconnected', () => {

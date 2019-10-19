@@ -2,5 +2,18 @@
 	"options": {
 		"cwd": "/",
 		"realpath": true
-	}
+	},
+	"splitters": [
+		" ",
+		"|",
+		"."
+	],
+	"locations": {
+		"modules": "/modules",
+		"commandHandler": "/modules/commandHandler.js",
+		"messageDelete": "/modules/events/messageDelete.js",
+		"messageReceived": "/modules/events/messageReceived.js",
+		"messageUpdate": "/modules/events/messageUpdate"
+	},
+	"main_directory": "A:/Projects/all-aliyss"
 }

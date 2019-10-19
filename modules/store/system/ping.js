@@ -17,11 +17,14 @@ exports.help = {
 };
 
 exports.run = async (options, message, args, client) => {
-	let content = "Pong!";
+	let content = "";
 
 	if (message.createdTimestamp) {
 		let m = await runFile(options._return + "send.js", "Pinging...", message, client);
-		content += " Latency: " + (m.createdTimestamp - message.createdTimestamp) + "ms."
+		content += "Bot Latency: " + (m.createdTimestamp - message.createdTimestamp) + "ms."
+		if (client.ws && client.ws.ping) {
+			content += "\nAPI Latency: " + Math.round(client.ws.ping) + "ms."
+		}
 	}
 
 	if (options.return_type === "string") {

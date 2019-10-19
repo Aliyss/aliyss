@@ -1,5 +1,5 @@
 
-const aliyssium = require('../../../../config/aliyssium.json');
+const command_config = require('../../../../modules/store/command_config.json');
 
 /*Local Functions*/
 //Run File
@@ -52,8 +52,8 @@ exports.run = async (content, message, client) => {
 		message.from = message.to;
 	}
 
-	for (let i = 0; i < aliyssium.splitters.length; i++) {
-		if (content.startsWith(aliyssium.splitters[i])) {
+	for (let i = 0; i < command_config.splitters.length; i++) {
+		if (content.startsWith(command_config.splitters[i])) {
 			content = "$Q " + content;
 			break;
 		}
