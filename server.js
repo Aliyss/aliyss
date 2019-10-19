@@ -30,7 +30,7 @@ fs.readdir('./clients', async function(err, items) {
 
 	for (let i = 0; i < items.length; i++) {
 
-		if (items[i].endsWith(".js") && !config.exclude.includes(items[i])) {
+		if (items[i].endsWith(".js")) {
 			await runFile(`./clients/${items[i]}`, nlpManager)
 		}
 

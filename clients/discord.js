@@ -5,7 +5,11 @@ const aliyssium = require('../config/aliyssium.json');
 
 exports.run = (nlpManager) => {
 
-	const profiles = aliyssium.profiles.discord;
+	const profiles = aliyssium.profiles.discord.filter(item => {
+		if (!item.disabled) {
+			return item
+		}
+	});
 
 	for (let i = 0; i < profiles.length; i++) {
 		/*Global Packages*/

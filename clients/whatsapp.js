@@ -8,7 +8,11 @@ const aliyssium = require('../config/aliyssium.json');
 
 exports.run = (nlpManager) => {
 
-	const profiles = aliyssium.profiles.whatsapp;
+	const profiles = aliyssium.profiles.whatsapp.filter(item => {
+		if (!item.disabled) {
+			return item
+		}
+	});
 
 	for (let i = 0; i < profiles.length; i++) {
 
@@ -34,7 +38,7 @@ exports.run = (nlpManager) => {
 		const profile_name = profiles[i].name;
 		let session = profiles[i].session;
 		const client = new Client({
-			puppeteer: {headless: false},
+			puppeteer: {headless: profiles[i].headless || false},
 			session: session
 		});
 

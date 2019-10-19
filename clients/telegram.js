@@ -8,7 +8,11 @@ const aliyssium = require('../config/aliyssium.json');
 
 exports.run = (nlpManager) => {
 
-	const profiles = aliyssium.profiles.telegram;
+	const profiles = aliyssium.profiles.telegram.filter(item => {
+		if (!item.disabled) {
+			return item
+		}
+	});
 
 	for (let i = 0; i < profiles.length; i++) {
 		const profile_name = profiles[i].name;
