@@ -1,7 +1,7 @@
 const glob = require("glob");
 const command_config = require('../../modules/store/command_config.json');
 
-exports.commandFiles = async (options) => {
+exports.files = async (options) => {
 
 	let files =  glob.sync(`${command_config.main_directory}/modules/store/**/*.js`, command_config.ignore);
 

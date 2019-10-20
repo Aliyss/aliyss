@@ -5,6 +5,7 @@ const aliyssium = require(`../config/aliyssium.json`);
 const command_config = require('../modules/store/command_config.json');
 const db_client = require("../config/database/db_client");
 const lc_initialize = require("../config/client/lc_initialize");
+const db_deinitialization = require("../config/database/db_deinitialization");
 
 exports.run = async (nlpManager) => {
 
@@ -13,6 +14,8 @@ exports.run = async (nlpManager) => {
 			return item
 		}
 	});
+
+	let clients = [];
 
 	for (let i = 0; i < profiles.length; i++) {
 		/*Global Packages*/
@@ -49,7 +52,7 @@ exports.run = async (nlpManager) => {
 		//client: receives a message
 		client.on('message', message => {
 			runFile(command_config.main_directory + command_config.locations.messageReceived, message, nlpManager);
-			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
+			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager);
 		});
 
 		client.on("messageDelete", (messageDelete) => {
@@ -61,19 +64,24 @@ exports.run = async (nlpManager) => {
 		});
 
 		//client: is ready
-		client.on('ready', async () => {
+		client.on('shardReady', async () => {
 			console.log(`DISCORD_${profile_name}: Ready.`);
 			console.log(`DISCORD_${profile_name}: Initialization complete.`);
 			let additional = await lc_initialize.initialize(client, config.options);
 			client._guilds = additional._guilds;
 			client._files = additional._files;
-			config.options._return = command_config.main_directory + config.options.return
+			client._users = additional._users;
+			config.options = additional.options;
 		});
 
 		//client: login
 		client.login(token).then(() => {
 			console.log(`DISCORD_${profile_name}: Authentication successful.`)
 		});
+
+		await clients.push({client, config});
 	}
+
+	return clients
 
 };

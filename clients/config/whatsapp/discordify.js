@@ -3,7 +3,8 @@
 exports.message = (msg) => {
 	msg.content = msg.body;
 	msg.author = {
-		id: msg.from
+		id: msg.from,
+		bot: false
 	};
 	if (msg.id && msg.id.remote) {
 		msg.guild = {

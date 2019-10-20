@@ -9,13 +9,15 @@ const command_config = require('../modules/store/command_config.json');
 const lc_initialize = require("../config/client/lc_initialize");
 const discordify = require('./config/whatsapp/discordify.js');
 
-exports.run = (nlpManager) => {
+exports.run = async (nlpManager) => {
 
 	const profiles = aliyssium.profiles.whatsapp.filter(item => {
 		if (!item.disabled) {
 			return item
 		}
 	});
+
+	let clients = [];
 
 	for (let i = 0; i < profiles.length; i++) {
 
@@ -76,7 +78,8 @@ exports.run = (nlpManager) => {
 			let additional = await lc_initialize.initialize(client, config.options);
 			client._guilds = additional._guilds;
 			client._files = additional._files;
-			config.options._return = command_config.main_directory + config.options.return
+			client._users = additional._users;
+			config.options = additional.options;
 		});
 
 		client.on('message', async msg => {
@@ -86,8 +89,10 @@ exports.run = (nlpManager) => {
 
 		client.on('disconnected', () => {
 			console.log(`WHATSAPP_${profile_name}: Client was logged out.`);
-		})
+		});
+
+		await clients.push({client, config});
 	}
 
-
+	return clients
 };

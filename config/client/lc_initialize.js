@@ -1,19 +1,18 @@
-const db_client = require("../database/db_client");
-const lc_commands = require("../database/lc_commands");
+const lc_files = require("./lc_files");
+const lc_guilds = require("./lc_guilds");
+const lc_users = require("./lc_users");
+const command_config = require('../../modules/store/command_config.json');
+
 
 exports.initialize = async (client, options) => {
+
 	//Initialization
-	let _guilds = await db_client.guilds(client, options);
-	client.guilds.map(async (guild) => {
-		if (!_guilds[guild.id]) {
-			_guilds[guild.id] = await db_client.guildSet(client, options, guild);
-		}
-		if (_guilds[guild.id]["prefixes"].length === 0) {
-			_guilds[guild.id]["prefixes"] = client._profile.prefixes
-		}
-	});
 
-	let _files = await lc_commands.commandFiles(options);
+	let _guilds = await lc_guilds.guilds(client, options);
+	let _files = await lc_files.files(options);
+	let _users = await lc_users.users(client, options);
 
-	return {_guilds, _files}
+	options._return = command_config.main_directory + options.return;
+
+	return {_guilds, _files, _users, options}
 };

@@ -31,7 +31,7 @@ function embedder(member, palette) {
 		description: null,
 		color: rgb(rgb_product),
 		author: {
-			name: member.title + member.user.cleanName,
+			name: member.title + (member.user.cleanName || member.user.username),
 			url: "https://discordapp.com/users/" + member.id,
 		},
 		thumbnail: {

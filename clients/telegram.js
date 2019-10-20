@@ -4,13 +4,15 @@ const config = require('./config/telegram/config.json');
 const aliyssium = require(`../config/aliyssium.json`);
 const command_config = require('../modules/store/command_config.json');
 
-exports.run = (nlpManager) => {
+exports.run = async (nlpManager) => {
 
 	const profiles = aliyssium.profiles.telegram.filter(item => {
 		if (!item.disabled) {
 			return item
 		}
 	});
+
+	let clients = [];
 
 	for (let i = 0; i < profiles.length; i++) {
 
@@ -49,6 +51,8 @@ exports.run = (nlpManager) => {
 			message = await messageFile('./config/telegram/discordify.js', message);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});
+		await clients.push({client, config});
 	}
 
+	return clients
 };

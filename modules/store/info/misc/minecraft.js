@@ -1,4 +1,4 @@
-const { getStatus } = require("mc-server-status");
+const mcping = require('minecraft-ping');
 const merge = require('deepmerge');
 
 /*Local Functions*/
@@ -12,7 +12,7 @@ function runFile(file, content, message, client) {
 
 function embedder(member, first_result) {
 	return {
-		title: first_result.title,
+		title: "Minecraft Server Info: " + (first_result.motd || "Error Received"),
 		description: null,
 		color: 16776960,
 		footer: null
@@ -25,7 +25,7 @@ exports.information = {
 			fields: [
 				{
 					name: "_\n_**Version**".padEnd(24, `~`).replace(/~/g, "⠀"),
-					value: 	first_result.version.name,
+					value: 	first_result.gameVersion,
 					inline: true
 				}
 			]
@@ -35,8 +35,19 @@ exports.information = {
 		return {
 			fields: [
 				{
-					name: "_\n_**Ping**".padEnd(24, `~`).replace(/~/g, "⠀"),
-					value: 	first_result.ping,
+					name: "_\n_**Ping Version**".padEnd(24, `~`).replace(/~/g, "⠀"),
+					value: 	first_result.pingVersion,
+					inline: true
+				}
+			]
+		}
+	},
+	protocol: function(first_result) {
+		return {
+			fields: [
+				{
+					name: "_\n_**Protocol Version**".padEnd(24, `~`).replace(/~/g, "⠀"),
+					value: 	first_result.protocolVersion,
 					inline: true
 				}
 			]
@@ -47,7 +58,18 @@ exports.information = {
 			fields: [
 				{
 					name: "_\n_**Players**".padEnd(24, `~`).replace(/~/g, "⠀"),
-					value: 	first_result.players.online + "/" + first_result.players.max,
+					value: 	first_result.playersOnline + "/" + first_result.maxPlayers,
+					inline: true
+				}
+			]
+		}
+	},
+	name: function(first_result) {
+		return {
+			fields: [
+				{
+					name: "_\n_**Players**".padEnd(24, `~`).replace(/~/g, "⠀"),
+					value: 	first_result.motd,
 					inline: true
 				}
 			]
@@ -109,7 +131,7 @@ exports.run = async (options, message, args, client) => {
 
 		let search = args.join(" ");
 
-		const status = await getStatus(search);
+		let status = await pingMC(search);
 
 		let base_embed = embedder(message.author, status);
 
@@ -119,4 +141,12 @@ exports.run = async (options, message, args, client) => {
 		console.log(e)
 	}
 
+};
+
+let pingMC = (search) => {
+	return new Promise((resolve, reject) => {
+		mcping.ping_fe01fa({host:search, port:25565}, function(err, response) {
+			resolve(response);
+		});
+	})
 };

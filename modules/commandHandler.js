@@ -38,7 +38,7 @@ function parser (options, files, full_args) {
 	};
 
 	for (let i = 0; i < files.length; i++) {
-		files[i] = files[i].replace(config.main_directory + `/modules`,".");
+		files[i] = files[i].replace(options.main_directory + `/modules`,".");
 		let files_arr = files[i].replace(`/store/_types/${options.type}`, "").split("/");
 
 		let start = true;
@@ -131,7 +131,7 @@ exports.run = async (options, message, client, nlpManager) => {
 	let nlpstuff = false;
 	for (let i = 0; i < config.splitters.length; i++) {
 		if (message.content.startsWith(config.splitters[i])) {
-			message.content = message.content.replace(new RegExp(`(${config.splitters[i]})\\1+`,"g"), config.splitters[i]);
+			message.content = message.content.replace(new RegExp(`\\\\(${config.splitters[i]})1+`,"g"), config.splitters[i]);
 			full_args = message.content.substr(1).split(config.splitters[i]);
 			break;
 		}
@@ -193,7 +193,19 @@ let matcher = async (client, full_args, options, message) => {
 
 let searcher = async (client, full_args, options, message) => {
 
-	const files = Object.assign([], client._files);
+	let files = client._files.slice(0);
+
+	/*
+	files = files.filter(item => {
+		if (item.includes("store/owner")) {
+			if (client._profile.owners.includes(message.author.id)) {
+				return item
+			}
+		} else {
+			return item
+		}
+	});
+	*/
 
 	let used_file = parser(options, files, full_args);
 
@@ -208,11 +220,13 @@ let searcher = async (client, full_args, options, message) => {
 		}
 	}
 
-	watch(`${config.main_directory}/modules${used_file.filename.replace(".", "")}`, (event, filename) => {
+	/*
+	watch(`${options.main_directory}/modules${used_file.filename.replace(".", "")}`, (event, filename) => {
 		if (filename) {
 			delete require.cache[require.resolve(used_file.filename)];
 		}
 	});
+	*/
 
 	let embed = await runFile(used_file.filename, options, message, used_file.args, client);
 
