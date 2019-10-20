@@ -4,14 +4,18 @@ exports.message = (msg) => {
 	msg.content = msg.body;
 	msg.author = {
 		id: msg.from,
-		bot: false
+		bot: false,
+		user: {
+			id: msg.from,
+			bot: false
+		}
 	};
 	if (msg.id && msg.id.remote) {
 		msg.guild = {
 			id: msg.id.remote
 		};
 	}
-	msg.createdTimestamp = msg.timestamp;
+	msg.createdTimestamp = Date.now();
 	return msg
 };
 

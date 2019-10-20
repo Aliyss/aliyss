@@ -42,5 +42,5 @@ exports.run = async (options, message, args, client) => {
 		content = "This command can only be used in group chats."
 	}
 
-	await runFile(options._return + "send.js", content, message, client)
+	return content;
 };

@@ -76,15 +76,19 @@ exports.run = async (nlpManager) => {
 			console.log(`WHATSAPP_${profile_name}: Ready.`);
 			client.guilds = await discordify.guilds(client);
 			let additional = await lc_initialize.initialize(client, config.options);
+			client.user = {
+				id: client._profile.owners[0]
+			};
 			client._guilds = additional._guilds;
 			client._files = additional._files;
 			client._users = additional._users;
 			config.options = additional.options;
 		});
 
-		client.on('message', async msg => {
-			msg = await discordify.message(msg);
-			runFile(command_config.main_directory + command_config.locations.commandHandler, msg, nlpManager)
+		client.on('message', async message => {
+			message = await discordify.message(message);
+			runFile(command_config.main_directory + command_config.locations.messageReceived, message, nlpManager);
+			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});
 
 		client.on('disconnected', () => {

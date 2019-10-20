@@ -45,15 +45,15 @@ fs.readdir('./clients', async function(err, items) {
 			}
 		}
 		let today = new Date();
-		let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		let date = today.getFullYear() +'-'+ (today.getMonth()+1) +'-'+ today.getDate() +' '+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		console.log(`[Processes] Database updated at: ${date}`)
 	}
 
 });
 
 process.on('unhandledRejection', (error, promise) => {
-	console.error(' Oh Lord! We forgot to handle a promise rejection here: ', promise);
-	console.error(' The error was: ', error );
+	//console.error(' Oh Lord! We forgot to handle a promise rejection here: ', promise);
+	//console.error(' The error was: ', error );
 });
 
 process.on('exit', code => {
@@ -69,7 +69,9 @@ process.on('exit', code => {
 					await db_deinitialization.de_initialize(all_clients[i][j].client, all_clients[i][j].config.options);
 				}
 			}
-			console.log(`[Processes] Database updated with code: ${code}`);
+			let today = new Date();
+			let date = today.getFullYear() +'-'+ (today.getMonth()+1) +'-'+ today.getDate() +' '+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+			console.log(`[Processes] Database updated at: ${date} with code ${code}`);
 			await process.emit("exit", 1)
 		})();
 	} else if (code === 130) {
