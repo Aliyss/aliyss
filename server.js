@@ -4,7 +4,7 @@ const { NlpManager } = require("node-nlp");
 
 
 /*Local Packages*/
-const config = require('./config/aliyssium.json');
+const config = require('./modules/store/command_config.json');
 const trainnlp = require("./modules/nlp/train-nlp.js");
 
 /*Local Functions*/
@@ -18,10 +18,9 @@ function runFile(file, nlgManager) {
 
 config.main_directory = __dirname.replace(/\\/g, "/");
 
-
 fs.readdir('./clients', async function(err, items) {
 
-	const nlpManager = new NlpManager({ languages: ['en', 'de', 'nl'] });
+	const nlpManager = new NlpManager({ languages: ['en', 'de', 'nl'], ner: { useDuckling: false }});
 
 	await nlpManager.train();
 	nlpManager.save();

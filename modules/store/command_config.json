@@ -1,4 +1,5 @@
 {
+	"ignore": [],
 	"options": {
 		"cwd": "/",
 		"realpath": true

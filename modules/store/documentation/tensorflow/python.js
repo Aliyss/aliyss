@@ -68,7 +68,7 @@ exports.run = async (options, message, args, client) => {
 		}
 	}
 
-	let database = require("../../../../config/database/initialization.js").run();
+	let database = require("../../../../config/database/db_initialization.js").run();
 	let path = database.collection("commands").doc("documentation-tensorflow-python").collection("saves").doc((pyDocSetup.replace("https://www.tensorflow.org/versions/", "") + urlstring).replace(/\//g, "-"));
 	let docref = await GetDocumentation(path);
 

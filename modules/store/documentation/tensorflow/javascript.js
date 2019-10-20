@@ -59,7 +59,7 @@ exports.run = async (options, message, args, client) => {
 	let urladder = args;
 	let urlstring = "#" + args.join(".").replace(/#/g, "");
 
-	let database = require("../../../../config/database/initialization.js").run();
+	let database = require("../../../../config/database/db_initialization.js").run();
 	let path = database.collection("commands").doc("documentation-tensorflow-javascript").collection("saves").doc((jsDocSetup.replace("https://js.tensorflow.org/api/", "") + urlstring).replace(/\//g, "-"));
 	let docref = await GetDocumentation(path);
 

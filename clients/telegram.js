@@ -1,6 +1,3 @@
-/*Global Packages*/
-const TelegramBot = require('node-telegram-bot-api');
-
 
 /*Local Packages*/
 const config = require('./config/telegram/config.json');
@@ -16,6 +13,10 @@ exports.run = (nlpManager) => {
 	});
 
 	for (let i = 0; i < profiles.length; i++) {
+
+		/*Global Packages*/
+		const TelegramBot = require('node-telegram-bot-api');
+
 		const profile_name = profiles[i].name;
 		const token = profiles[i].token;
 		const client = new TelegramBot(token, {polling: true});

@@ -6,7 +6,7 @@ const command_config = require('../../../../modules/store/command_config.json');
 function messageFile(file, object) {
 
 	let commandFile = require(file);
-	return commandFile.run(object);
+	return commandFile.message(object);
 
 }
 

@@ -4,7 +4,7 @@ const glob = require("glob");
 
 /*Local Packages*/
 const config = require('./store/command_config.json');
-const database = require('../config/database/initialization.js').run();
+const database = require('../config/database/db_initialization.js').run();
 
 /*Local Functions*/
 //Run File
@@ -90,7 +90,7 @@ exports.run = async (options, message, client, nlpManager) => {
 
 	if (message.content) {
 		if (!message.content.toLowerCase()) {
-			//console.log(message.content)
+			console.log(message.content)
 		}
 	} else  {
 		//console.log(message)
@@ -100,34 +100,17 @@ exports.run = async (options, message, client, nlpManager) => {
 	let msg = message.content;
 	let full_args = [];
 
+	if (client._guilds && !client._guilds[message.guild.id]) {
+		return;
+	}
+
 	if (message.guild && message.guild.id) {
-		await database.collection(options.type).doc(client._profile.database.name).collection("guilds").doc(message.guild.id).get().then(doc => {
-			if (doc.exists) {
-				let docref = doc.data();
-				if (docref["prefixes"]) {
-					for (let i = 0; i < docref["prefixes"].length; i++) {
-						if (message.content.startsWith(docref["prefixes"][i].toLowerCase())) {
-							msg = message.content.substr(docref["prefixes"][i].length);
-							break;
-						}
-					}
-				} else {
-					for (let i = 0; i < client._profile.prefixes.length; i++) {
-						if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
-							msg = message.content.substr(client._profile.prefixes[i].length);
-							break;
-						}
-					}
-				}
-			} else {
-				for (let i = 0; i < client._profile.prefixes.length; i++) {
-					if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
-						msg = message.content.substr(client._profile.prefixes[i].length);
-						break;
-					}
-				}
+		for (let i = 0; i < client._guilds[message.guild.id]["prefixes"].length; i++) {
+			if (message.content.startsWith(client._guilds[message.guild.id]["prefixes"][i].toLowerCase())) {
+				msg = message.content.substr(client._guilds[message.guild.id]["prefixes"][i].length);
+				break;
 			}
-		});
+		}
 	} else {
 		for (let i = 0; i < client._profile.prefixes.length; i++) {
 			if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
@@ -148,7 +131,7 @@ exports.run = async (options, message, client, nlpManager) => {
 	let nlpstuff = false;
 	for (let i = 0; i < config.splitters.length; i++) {
 		if (message.content.startsWith(config.splitters[i])) {
-			message.content = message.content.replace(new RegExp(config.splitters[i] + config.splitters[i] + "+","g"), " ");
+			message.content = message.content.replace(new RegExp(`(${config.splitters[i]})\\1+`,"g"), config.splitters[i]);
 			full_args = message.content.substr(1).split(config.splitters[i]);
 			break;
 		}
@@ -159,7 +142,7 @@ exports.run = async (options, message, client, nlpManager) => {
 		nlpstuff = true
 	}
 
-	if (nlpstuff && message.from !== "41786932427@c.us") {
+	if (nlpstuff && message.author.id !== "41786932427@c.us") {
 		let response = await nlpManager.process(full_args.join(" "));
 		if (response.answer) {
 			await runFile(options._return + "send.js", response.answer, message, client);
@@ -169,8 +152,6 @@ exports.run = async (options, message, client, nlpManager) => {
 		}
 	}
 
-
-
 	if (full_args.length === 0 || full_args[0] === "") {
 		return;
 	}
@@ -179,11 +160,7 @@ exports.run = async (options, message, client, nlpManager) => {
 		return;
 	}
 
-	let lesser = {};
-
-	lesser.options = config.options.ignore;
-
-	await matcher(client, lesser, full_args, options, message);
+	await matcher(client, full_args, options, message);
 
 };
 
@@ -195,7 +172,7 @@ function replaceNth(input, re, n, transform) {
 		match => n(++count) ? transform(match) : match);
 }
 
-let matcher = async (client, lesser, full_args, options, message) => {
+let matcher = async (client, full_args, options, message) => {
 
 	let text = full_args.join(" ");
 	let arr = text.match(/({(?:{??[^{]*?}))/g);
@@ -203,32 +180,20 @@ let matcher = async (client, lesser, full_args, options, message) => {
 	if (arr && arr.length >= 1) {
 		let full_temp = arr[0].replace(/{/g, "").replace(/}/g, "").split(" ");
 		options.return_type = "string";
-		let val = await searcher(client, lesser, full_temp, options, message);
+		let val = await searcher(client, full_temp, options, message);
 		text = replaceNth(text,/({(?:{??[^{]*?}))/g, count => count === 1,() => `${val}`);
-		await matcher(client, lesser, text.split(" "), options, message)
+		await matcher(client, text.split(" "), options, message)
 	} else {
 		options.return_type = "embed";
-		await searcher(client, lesser, full_args, options, message);
+		await searcher(client, full_args, options, message);
 	}
 
 
 };
 
-let searcher = async (client, lesser, full_args, options, message) => {
+let searcher = async (client, full_args, options, message) => {
 
-	let files =  glob.sync(`${config.main_directory}/modules/store/**/*.js`, lesser.options);
-
-	files = files.filter( function(item) {
-		if (item.startsWith(config.main_directory + '/modules/store/_types/')) {
-			if (item.startsWith(config.main_directory + '/modules/store/_types/' + options.type)) {
-				if (!item.startsWith(config.main_directory + '/modules/store/_types/' + options.type + "/~")) {
-					return item
-				}
-			}
-		} else {
-			return item
-		}
-	});
+	const files = Object.assign([], client._files);
 
 	let used_file = parser(options, files, full_args);
 

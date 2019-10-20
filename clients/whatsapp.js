@@ -6,6 +6,8 @@ const fs = require('fs');
 const config = require('./config/whatsapp/config.json');
 const aliyssium = require(`../config/aliyssium.json`);
 const command_config = require('../modules/store/command_config.json');
+const lc_initialize = require("../config/client/lc_initialize");
+const discordify = require('./config/whatsapp/discordify.js');
 
 exports.run = (nlpManager) => {
 
@@ -25,13 +27,6 @@ exports.run = (nlpManager) => {
 
 			let commandFile = require(file);
 			commandFile.run(config.options, object, client, nlpManager);
-
-		}
-
-		function messageFile(file, object) {
-
-			let commandFile = require(file);
-			return commandFile.run(object);
 
 		}
 
@@ -75,13 +70,17 @@ exports.run = (nlpManager) => {
 			console.error(`WHATSAPP_${profile_name}: Authentication failure.`, message);
 		});
 
-		client.on('ready', () => {
+		client.on('ready', async () => {
 			console.log(`WHATSAPP_${profile_name}: Ready.`);
+			client.guilds = await discordify.guilds(client);
+			let additional = await lc_initialize.initialize(client, config.options);
+			client._guilds = additional._guilds;
+			client._files = additional._files;
 			config.options._return = command_config.main_directory + config.options.return
 		});
 
 		client.on('message', async msg => {
-			msg = await messageFile('./config/whatsapp/discordify.js', msg);
+			msg = await discordify.message(msg);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, msg, nlpManager)
 		});
 

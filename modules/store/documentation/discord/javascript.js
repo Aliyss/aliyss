@@ -53,7 +53,7 @@ exports.run = async (options, message, args, client) => {
 		args.pop()
 	}
 
-	let database = require("../../../../config/database/initialization.js").run();
+	let database = require("../../../../config/database/db_initialization.js").run();
 	let path = database.collection("commands").doc("documentation-discord-javascript").collection("saves").doc(args.join("-"));
 	let docref = await GetDocumentation(path);
 

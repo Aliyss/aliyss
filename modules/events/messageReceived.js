@@ -50,7 +50,7 @@ function GetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot) 
 }
 
 exports.run = async (options, message, client, nlpManager) => {
-	let database = runFile("../../config/database/initialization.js");
+	let database = runFile("../../config/database/db_initialization.js");
 	let bot_id = client.user.id;
 	if (client._profile.database.id) {
 		bot_id = client._profile.database.id
@@ -90,7 +90,7 @@ exports.run = async (options, message, client, nlpManager) => {
 };
 
 exports.info = async (options, message, client, user) => {
-	let database = runFile("../../config/database/initialization.js");
+	let database = runFile("../../config/database/db_initialization.js");
 	let bot_id = client.user.id;
 	if (client._profile.database.id) {
 		bot_id = client._profile.database.id
@@ -103,7 +103,7 @@ exports.info = async (options, message, client, user) => {
 };
 
 exports.activity = async (options, client, message) => {
-	let database = runFile("../../config/database/initialization.js");
+	let database = runFile("../../config/database/db_initialization.js");
 	let chartData = [];
 	let bot_id = client.user.id;
 	if (client._profile.database.id) {
@@ -125,7 +125,7 @@ exports.activity = async (options, client, message) => {
 };
 
 exports.sentiment = async (options, client, message) => {
-	let database = runFile("../../config/database/initialization.js");
+	let database = runFile("../../config/database/db_initialization.js");
 	let chartData = [];
 	let bot_id = client.user.id;
 	if (client._profile.database.id) {

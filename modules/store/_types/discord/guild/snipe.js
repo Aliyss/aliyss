@@ -1,4 +1,4 @@
-const database = require("../../../../../config/database/initialization.js").run();
+const database = require("../../../../../config/database/db_initialization.js").run();
 
 /*Local Functions*/
 //Run File
