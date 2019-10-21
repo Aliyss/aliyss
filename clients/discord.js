@@ -51,7 +51,6 @@ exports.run = async (nlpManager) => {
 
 		//client: receives a message
 		client.on('message', message => {
-			runFile(command_config.main_directory + command_config.locations.messageReceived, message, nlpManager);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager);
 		});
 
@@ -64,7 +63,7 @@ exports.run = async (nlpManager) => {
 		});
 
 		//client: is ready
-		client.on('shardReady', async () => {
+		client.on('ready', async () => {
 			console.log(`DISCORD_${profile_name}: Ready.`);
 			console.log(`DISCORD_${profile_name}: Initialization complete.`);
 			let additional = await lc_initialize.initialize(client, config.options);

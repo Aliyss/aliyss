@@ -87,7 +87,6 @@ exports.run = async (nlpManager) => {
 
 		client.on('message', async message => {
 			message = await discordify.message(message);
-			runFile(command_config.main_directory + command_config.locations.messageReceived, message, nlpManager);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});
 

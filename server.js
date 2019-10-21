@@ -51,10 +51,12 @@ fs.readdir('./clients', async function(err, items) {
 
 });
 
+/*
 process.on('unhandledRejection', (error, promise) => {
 	//console.error(' Oh Lord! We forgot to handle a promise rejection here: ', promise);
 	//console.error(' The error was: ', error );
 });
+*/
 
 process.on('exit', code => {
 	if (code === 0) {

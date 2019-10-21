@@ -3,10 +3,10 @@
 exports.message = (msg) => {
 	msg.content = msg.body;
 	msg.author = {
-		id: msg.from,
+		id: msg.author || msg.from,
 		bot: false,
 		user: {
-			id: msg.from,
+			id: msg.author || msg.from,
 			bot: false
 		}
 	};

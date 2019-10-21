@@ -1,10 +1,5 @@
-/*Global Packages*/
-const watch = require("node-watch");
-const glob = require("glob");
-
 /*Local Packages*/
 const config = require('./store/command_config.json');
-const database = require('../config/database/db_initialization.js').run();
 
 /*Local Functions*/
 //Run File
@@ -120,15 +115,12 @@ exports.run = async (options, message, client, nlpManager) => {
 		}
 	}
 
-	let grmsg = msg;
-
-	if ((message.content === msg && options.type !== "whatsapp") || msg.trim() === "") {
+	if (msg.trim() === "") {
 		return;
 	} else {
 		message.content = msg;
 	}
 
-	let nlpstuff = false;
 	for (let i = 0; i < config.splitters.length; i++) {
 		if (message.content.startsWith(config.splitters[i])) {
 			message.content = message.content.replace(new RegExp(`\\\\(${config.splitters[i]})1+`,"g"), config.splitters[i]);
@@ -137,26 +129,9 @@ exports.run = async (options, message, client, nlpManager) => {
 		}
 	}
 
-	if (full_args.length === 0 && options.type === "whatsapp")  {
-		full_args = message.content.split(" ");
-		nlpstuff = true
-	}
-
-	if (nlpstuff && message.author.id !== "41786932427@c.us") {
-		let response = await nlpManager.process(full_args.join(" "));
-		if (response.answer) {
-			await runFile(options._return + "send.js", response.answer, message, client);
-			return;
-		} else {
-			return;
-		}
-	}
-
 	if (full_args.length === 0 || full_args[0] === "") {
-		return;
-	}
-
-	if ((options.type === "whatsapp" && message.body.toLowerCase() === message.content.toLowerCase()) || grmsg.trim() === "") {
+		let saveFile = require(options.main_directory + options.locations.messageReceived);
+		saveFile.run(options, message, client, nlpManager);
 		return;
 	}
 
