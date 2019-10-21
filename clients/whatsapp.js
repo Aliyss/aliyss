@@ -86,6 +86,9 @@ exports.run = async (nlpManager) => {
 		});
 
 		client.on('message', async message => {
+			if (message.type !== 'chat') {
+				return;
+			}
 			message = await discordify.message(message);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});

@@ -170,7 +170,6 @@ let searcher = async (client, full_args, options, message) => {
 
 	let files = client._files.slice(0);
 
-	/*
 	files = files.filter(item => {
 		if (item.includes("store/owner")) {
 			if (client._profile.owners.includes(message.author.id)) {
@@ -180,7 +179,6 @@ let searcher = async (client, full_args, options, message) => {
 			return item
 		}
 	});
-	*/
 
 	let used_file = parser(options, files, full_args);
 

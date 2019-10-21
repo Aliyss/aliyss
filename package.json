@@ -31,7 +31,6 @@
 		"puppeteer": "^1.20.0",
 		"request": "latest",
 		"rgb-to-int": "^1.0.0",
-		"sentiment": "^5.0.2",
 		"telegraf": "^3.33.0",
 		"treeify": "^1.1.0",
 		"turndown": "^5.0.3",

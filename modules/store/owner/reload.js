@@ -13,7 +13,7 @@ function embedder() {
 exports.information = {
 	files: async function(client, options) {
 		let oldFiles = client._files;
-		client._files = await lc_files.commandFiles(options);
+		client._files = await lc_files.files(options);
 		let difference = client._files.filter(x => !oldFiles.includes(x)).join("\n");
 		if (difference.length <= 1) {
 			difference = "No new files have been added."

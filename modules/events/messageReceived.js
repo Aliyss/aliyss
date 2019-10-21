@@ -10,7 +10,7 @@ function runFile(file) {
 
 }
 
-function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, score=0, count=0) {
+function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, score=1, count=0) {
 	//Firebase: Get Command Document
 	return path.set({
 		"messageCount": {
@@ -74,6 +74,21 @@ exports.run = async (options, message, client, nlpManager) => {
 	let input = 1;
 	let doc = await GetProfile(options, bot_id, guild_id, createdTime, input, user_id, isbot, client);
 	let response = await nlpManager.process(message.content);
+
+	if (!doc.messageCount) {
+		console.error(doc);
+	}
+
+	if (!doc.messageCount[bot_id]["guilds"][guild_id]) {
+		doc.messageCount[bot_id]["guilds"][guild_id] = {
+			"messages": input,
+			"sentiment": {
+				score: 0,
+				count: 0
+			},
+			"time_stamp": createdTime
+		}
+	}
 
 	let score = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"];
 	let count = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"];

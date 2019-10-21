@@ -22,11 +22,9 @@ exports.message = (msg) => {
 exports.guilds = async (client) => {
 	return await client.getChats().then(chats => {
 		return chats.filter(chat => {
-			if (chat.isGroup) {
-				chat.wapi_id = chat.id;
-				chat.id = chat.id._serialized;
-				return chat
-			}
+			chat.wapi_id = chat.id;
+			chat.id = chat.id._serialized;
+			return chat
 		});
 	})
 };
