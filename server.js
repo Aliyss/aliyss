@@ -44,9 +44,7 @@ fs.readdir('./clients', async function(err, items) {
 				db_deinitialization.de_initialize(all_clients[i][j].client, all_clients[i][j].config.options)
 			}
 		}
-		let today = new Date();
-		let date = today.getFullYear() +'-'+ (today.getMonth()+1) +'-'+ today.getDate() +' '+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-		console.log(`[Processes] Database updated at: ${date}`)
+		console.log(`[Processes] Database updated at: ${get_current_date_time()}`)
 	}
 
 });
@@ -71,9 +69,7 @@ process.on('exit', code => {
 					await db_deinitialization.de_initialize(all_clients[i][j].client, all_clients[i][j].config.options);
 				}
 			}
-			let today = new Date();
-			let date = today.getFullYear() +'-'+ (today.getMonth()+1) +'-'+ today.getDate() +' '+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-			console.log(`[Processes] Database updated at: ${date} with code ${code}`);
+			console.log(`[Processes] Database updated at: ${get_current_date_time()} with code ${code}`);
 			await process.emit("exit", 1)
 		})();
 	} else if (code === 130) {
@@ -98,5 +94,15 @@ process.on('exit', code => {
 		process.exit()
 	}
 });
+
+let get_current_date_time = () => {
+	let today = new Date();
+	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+	let currentHours = ('0'+today.getHours()).slice(-2);
+	let currentMins = ('0'+today.getMinutes()).slice(-2);
+	let currentSecs = ('0'+today.getSeconds()).slice(-2);
+	let time = currentHours + ":" + currentMins + ":" + currentSecs;
+	return date + ' ' + time;
+};
 
 console.log('Process ID: ', process.pid);
