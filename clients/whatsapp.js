@@ -44,16 +44,16 @@ exports.run = async (nlpManager) => {
 		client._profile.prefixes.push.apply(client._profile.prefixes, aliyssium.prefixes);
 
 		client.initialize().then(() => {
-			console.log(`WHATSAPP_${profile_name}: Initialization complete.`);
+			console.log(`[whatsapp_${profile_name}] Initialization complete.`);
 		});
 
 		client.on('qr', (qr) => {
 			// NOTE: This event will not be fired if a session is specified.
-			console.log(`WHATSAPP_${profile_name}: QR received.`, qr);
+			console.log(`[whatsapp_${profile_name}] QR received.`, qr);
 		});
 
 		client.on('authenticated', (session) => {
-			console.log(`WHATSAPP_${profile_name}: Authentication successful.`);
+			console.log(`[whatsapp_${profile_name}] Authentication successful.`);
 			for (let i = 0; i < aliyssium.profiles.whatsapp.length; i++) {
 				if (aliyssium.profiles.whatsapp[i].name === profile_name) {
 					aliyssium.profiles.whatsapp[i].session = session;
@@ -62,18 +62,18 @@ exports.run = async (nlpManager) => {
 
 			fs.writeFile('config/aliyssium.json', JSON.stringify(aliyssium, null, 4), function (err) {
 				if (err) return console.log(err);
-				console.log(`WHATSAPP_${profile_name}: Client Session has been updated.`)
+				console.log(`[whatsapp_${profile_name}] Client Session has been updated.`)
 			});
 
 		});
 
 		client.on('auth_failure', message => {
 			// Fired if session restore was unsuccessful
-			console.error(`WHATSAPP_${profile_name}: Authentication failure.`, message);
+			console.error(`[whatsapp_${profile_name}] Authentication failure.`, message);
 		});
 
 		client.on('ready', async () => {
-			console.log(`WHATSAPP_${profile_name}: Ready.`);
+			console.log(`[whatsapp_${profile_name}] Ready.`);
 			client.guilds = await discordify.guilds(client);
 			let additional = await lc_initialize.initialize(client, config.options);
 			client.user = {
@@ -94,7 +94,7 @@ exports.run = async (nlpManager) => {
 		});
 
 		client.on('disconnected', () => {
-			console.log(`WHATSAPP_${profile_name}: Client was logged out.`);
+			console.log(`[whatsapp_${profile_name}] Client was logged out.`);
 		});
 
 		await clients.push({client, config});
