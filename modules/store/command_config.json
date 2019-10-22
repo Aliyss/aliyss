@@ -5,9 +5,7 @@
 		"realpath": true
 	},
 	"splitters": [
-		" ",
-		"|",
-		"."
+		" "
 	],
 	"locations": {
 		"modules": "/modules",

@@ -36,6 +36,7 @@ fs.readdir('./clients', async function(err, items) {
 
 	}
 
+	let backup = true;
 	setInterval(() => {update()}, 30*60*1000);
 
 	function update() {
@@ -69,11 +70,11 @@ process.on('exit', code => {
 					await db_deinitialization.de_initialize(all_clients[i][j].client, all_clients[i][j].config.options);
 				}
 			}
-			console.log(`[Processes] Database updated at: ${get_current_date_time()} with code ${code}`);
+			console.log(`[Processes] Database updated at: ${get_current_date_time()} with code ${code}.`);
 			await process.emit("exit", 1)
 		})();
 	} else if (code === 130) {
-		/*
+
 		let save_data = [];
 		for (let i = 0; i < all_clients.length; i++) {
 			for (let j = 0; j < all_clients[i].length; j++) {
@@ -83,9 +84,10 @@ process.on('exit', code => {
 				save_data.push({_files, _users, _guilds, _profile, options: options});
 			}
 		}
+
 		fs.writeFileSync('./config/client/lc_database.json', JSON.stringify(save_data, null, 4));
-		 */
-		process.emit("exit", 2)
+		console.log(`[Processes] Fallback file updated at: ${get_current_date_time()} with code ${code}.`);
+		process.emit("exit", 1)
 	} else if (code === 1) {
 		console.log(`[Processes] Clean Exit with code: ${code}.`);
 		process.exit()

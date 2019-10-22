@@ -33,7 +33,7 @@ function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, 
 		}, {
 			merge: true
 		}).then(doc => {
-			resolve(doc)
+			resolve(doc.data())
 		})
 	})
 }
@@ -76,12 +76,6 @@ exports.run = async (options, message, client, nlpManager) => {
 	let input = 1;
 	let doc = await GetProfile(options, bot_id, guild_id, createdTime, input, user_id, isbot, client);
 	let response = await nlpManager.process(message.content);
-
-	if (!doc.messageCount) {
-		console.log(user_id);
-		console.log(guild_id);
-		console.log(doc);
-	}
 
 	if (!doc.messageCount[bot_id]["guilds"][guild_id]) {
 		doc.messageCount[bot_id]["guilds"][guild_id] = {

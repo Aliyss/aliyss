@@ -64,8 +64,8 @@ exports.run = async (nlpManager) => {
 
 		//client: is ready
 		client.on('ready', async () => {
-			console.log(`DISCORD_${profile_name}: Ready.`);
-			console.log(`DISCORD_${profile_name}: Initialization complete.`);
+			console.log(`[discord_${profile_name}] Ready.`);
+			console.log(`[discord_${profile_name}] Initialization complete.`);
 			let additional = await lc_initialize.initialize(client, config.options);
 			client._guilds = additional._guilds;
 			client._files = additional._files;
@@ -75,7 +75,7 @@ exports.run = async (nlpManager) => {
 
 		//client: login
 		client.login(token).then(() => {
-			console.log(`DISCORD_${profile_name}: Authentication successful.`)
+			console.log(`[discord_${profile_name}] Authentication successful.`)
 		});
 
 		await clients.push({client, config});
