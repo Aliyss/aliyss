@@ -1,15 +1,5 @@
 const merge = require('deepmerge');
 const treeify = require('treeify');
-const flatten = require("flat");
-
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	return commandFile.run(content, message, client);
-
-}
 
 function helpFile(file) {
 
