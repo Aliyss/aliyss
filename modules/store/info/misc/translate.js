@@ -1,15 +1,6 @@
 const translate = require("@vitalets/google-translate-api");
 const merge = require('deepmerge');
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	commandFile.run(content, message, client);
-
-}
-
 function embedder(member, result) {
 	return {
 		title: result.title,

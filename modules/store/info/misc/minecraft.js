@@ -1,15 +1,6 @@
 const mcping = require('minecraft-ping');
 const merge = require('deepmerge');
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	commandFile.run(content, message, client);
-
-}
-
 function embedder(member, first_result) {
 	return {
 		title: "Minecraft Server Info: " + (first_result.motd || "Error Received"),
@@ -19,6 +10,7 @@ function embedder(member, first_result) {
 	}
 }
 
+// noinspection JSUnusedGlobalSymbols
 exports.information = {
 	version: function(first_result) {
 		return {
@@ -144,7 +136,7 @@ exports.run = async (options, message, args, client) => {
 };
 
 let pingMC = (search) => {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		mcping.ping_fe01fa({host:search, port:25565}, function(err, response) {
 			resolve(response);
 		});

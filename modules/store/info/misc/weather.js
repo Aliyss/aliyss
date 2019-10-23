@@ -1,15 +1,6 @@
 const weather = require('weather-js');
 const merge = require('deepmerge');
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	commandFile.run(content, message, client);
-
-}
-
 function embedder(member, first_result) {
 	return {
 		title: first_result.title + first_result.location.name,
@@ -153,7 +144,7 @@ exports.run = async (options, message, args, client) => {
 };
 
 function weather2(search, main_title, information, function_name, message) {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		weather.find({search: `${search}`, degreeType: 'C'}, async (err, result) => {
 			if (err) {
 				resolve("``⛔ Error: " + err + "``");

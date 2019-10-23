@@ -1,15 +1,6 @@
 
 let passwords = require("./passwords.json");
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	return commandFile.run(content, message, client);
-
-}
-
 exports.help = {
 	arguments: [],
 	information: Object.keys({})

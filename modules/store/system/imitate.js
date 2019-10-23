@@ -1,12 +1,4 @@
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	return commandFile.run(content, message, client);
-
-}
 
 exports.help = {
 	name: "Imitate",
@@ -16,6 +8,7 @@ exports.help = {
 	information: Object.keys({})
 };
 
+// noinspection JSUnusedLocalSymbols
 exports.run = async (options, message, args, client) => {
 
 	return "I'm broken. ❤";

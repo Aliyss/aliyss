@@ -2,15 +2,6 @@ const merge = require('deepmerge');
 const Vibrant = require('node-vibrant');
 const rgb = require('rgb-to-int');
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	commandFile.run(content, message, client);
-
-}
-
 function embedder(guild, palette) {
 	let rgb_product = {
 		red: palette['Vibrant']['rgb'][0],
@@ -31,6 +22,7 @@ function embedder(guild, palette) {
 	}
 }
 
+// noinspection JSUnusedGlobalSymbols
 exports.information = {
 	name: function(member) {
 		return {

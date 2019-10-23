@@ -184,7 +184,6 @@ exports.information = {
 				status_icon = "<:online:549798765284950017>";
 				break;
 			case 'offline':
-			case 'invisible':
 				status_i = "Offline";
 				status_icon = "<:offline:549799125797830658>";
 				break;

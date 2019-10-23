@@ -36,7 +36,6 @@ fs.readdir('./clients', async function(err, items) {
 
 	}
 
-	let backup = true;
 	setInterval(() => {update()}, 30*60*1000);
 
 	function update() {

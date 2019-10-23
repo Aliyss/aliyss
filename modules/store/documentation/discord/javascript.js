@@ -4,13 +4,6 @@ const Doc = require('discord.js-docs');
 /*Local Variables*/
 let commandFile;
 
-/*Local Functions*/
-//Run File
-function runFile(file, client, object, embed, edit, override) {
-	commandFile = require(file);
-	commandFile.run(client, object, embed, edit, override);
-}
-
 function GetDocumentation(path) {
 	return new Promise(function(resolve) {
 		//Firebase: Get Profile Document
@@ -148,7 +141,6 @@ exports.run = async (options, message, args, client) => {
 		}
 		return embed
 	} else {
-		let embed = docref.embed;
-		return embed
+		return docref.embed
 	}
 };

@@ -1,14 +1,5 @@
 const database = require("../../../../../config/database/db_initialization.js").run();
 
-/*Local Functions*/
-//Run File
-function runFile(file, content, message, client) {
-
-	let commandFile = require(file);
-	return commandFile.run(content, message, client);
-
-}
-
 exports.help = {
 	name: "Snipe",
 	description: "Gets a list of deleted mentions of the user.",
@@ -43,7 +34,7 @@ exports.run = async (options, message, args, client) => {
 		} else {
 			content = "No messages found."
 		}
-		let embed = {
+		return {
 			title: "Snipes",
 			description: null,
 			color: 6392832,
@@ -55,6 +46,5 @@ exports.run = async (options, message, args, client) => {
 			],
 			footer: null
 		};
-		return embed;
 	});
 };

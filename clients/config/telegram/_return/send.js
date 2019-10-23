@@ -37,13 +37,13 @@ exports.run = async (content, message, client) => {
 
 		content = text;
 	} else {
-		let text = content;
+		//let text = content;
 
 		//text = text.replace(/\*\*/g, "*");
 		//text = text.replace(/``/g, "```");
 		//text = text.replace(/````/g, "```");
 
-		content = text
+		//content = text
 	}
 
 	let m = await client.sendMessage(message.chat.id, content, opts);

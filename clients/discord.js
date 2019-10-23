@@ -5,7 +5,6 @@ const aliyssium = require(`../config/aliyssium.json`);
 const command_config = require('../modules/store/command_config.json');
 const db_client = require("../config/database/db_client");
 const lc_initialize = require("../config/client/lc_initialize");
-const db_deinitialization = require("../config/database/db_deinitialization");
 
 exports.run = async (nlpManager) => {
 

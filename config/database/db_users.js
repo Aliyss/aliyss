@@ -1,6 +1,6 @@
 
 function SetProfileSimple(path, doc) {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		path.set(doc, {
 			merge: true
 		}).then(doc => {

@@ -48,6 +48,7 @@ function embedder(member, data, n, palette) {
 	}
 }
 
+// noinspection JSUnusedGlobalSymbols
 exports.information = {
 	list: function (data) {
 		let field_val = [];
@@ -279,7 +280,7 @@ let bookSearch = (search, information, function_name, message, url, options, cli
 		reverse: true
 	};
 
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		libgen.search(options_x, async (err, data) => {
 			if (err) {
 				resolve(err.toString());
@@ -334,4 +335,4 @@ let bookSearch = (search, information, function_name, message, url, options, cli
 			}
 		});
 	})
-}
+};
