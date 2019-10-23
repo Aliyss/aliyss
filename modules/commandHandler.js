@@ -135,6 +135,10 @@ exports.run = async (options, message, client, nlpManager) => {
 		return;
 	}
 
+	if (message.author.username) {
+		client.last_user = `${message.author.username}`;
+	}
+
 	await matcher(client, full_args, options, message);
 
 };
@@ -203,7 +207,7 @@ let searcher = async (client, full_args, options, message) => {
 
 	let embed = await runFile(used_file.filename, options, message, used_file.args, client);
 
-	if (embed && embed.fields && embed.fields.length > 0) {
+	if (embed && ((embed.fields && embed.fields.length > 0) || embed.image)) {
 		if (options.return_type === "string") {
 			return embed.fields[0].value
 		} else {

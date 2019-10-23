@@ -32,6 +32,14 @@ exports.run = async (nlpManager) => {
 
 		}
 
+		setInterval(async ()=>{
+			if (client.presence.activity && client.presence.activity.name !== client.last_user) {
+				await client.user.setPresence({activity: {name: client.last_user || "alice", type: 'WATCHING'}, status: 'dnd'});
+			} else if (!client.presence.activity) {
+				await client.user.setPresence({activity: {name: client.last_user || "alice", type: 'WATCHING'}, status: 'dnd'});
+			}
+		},20000);
+
 		/*Local Variables*/
 		const profile_name = profiles[i].name;
 
@@ -42,6 +50,11 @@ exports.run = async (nlpManager) => {
 		//client: joins a server
 		client.on("guildCreate", async guild => {
 			client._guilds[guild.id] = await db_client.guildSet(client, config.options, guild);
+		});
+
+		//client: ratelimit hit
+		client.on('ratelimit', ratelimit => {
+			console.info(ratelimit);
 		});
 
 		//client: leaves a server

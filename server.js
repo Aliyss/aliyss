@@ -60,11 +60,6 @@ process.on('unhandledRejection', (error, promise) => {
 process.on('exit', code => {
 	if (code === 0) {
 		(async () => {
-			try {
-				fs.unlinkSync("./config/client/lc_database.json")
-			} catch(err) {
-
-			}
 			for (let i = 0; i < all_clients.length; i++) {
 				for (let j = 0; j < all_clients[i].length; j++) {
 					await db_deinitialization.de_initialize(all_clients[i][j].client, all_clients[i][j].config.options);
@@ -107,4 +102,4 @@ let get_current_date_time = () => {
 	return date + ' ' + time;
 };
 
-console.log('Process ID: ', process.pid);
+console.log(`[Processes] ${process.pid} started at ${get_current_date_time()}`);

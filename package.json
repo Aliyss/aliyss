@@ -35,7 +35,8 @@
 		"treeify": "^1.1.0",
 		"turndown": "^5.0.3",
 		"unzalgo": "^2.1.2",
-		"weather-js": "^2.0.0"
+		"weather-js": "^2.0.0",
+		"whatsapp-web.js": "git://github.com/Aliyss/whatsapp-web.js.git#alice-dev"
 	},
 	"devDependencies": {
 		"node-vibrant": "^3.1.4"

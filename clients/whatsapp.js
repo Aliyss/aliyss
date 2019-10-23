@@ -21,7 +21,7 @@ exports.run = async (nlpManager) => {
 
 	for (let i = 0; i < profiles.length; i++) {
 
-		const { Client } = require('./config/whatsapp/wapi2/index.js');
+		const { Client } = require('whatsapp-web.js');
 
 		/*Local Functions*/
 		//Run File
@@ -85,12 +85,20 @@ exports.run = async (nlpManager) => {
 			config.options = additional.options;
 		});
 
-		client.on('message', async message => {
+		client.on('message_create', async message => {
 			if (message.type !== 'chat') {
 				return;
 			}
 			message = await discordify.message(message);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
+		});
+
+		client.on('message_revoke_everyone', async (before, after) => {
+			console.log(before.body);
+		});
+
+		client.on('message_revoke_me', async (msg) => {
+			//console.log(msg);
 		});
 
 		client.on('disconnected', () => {

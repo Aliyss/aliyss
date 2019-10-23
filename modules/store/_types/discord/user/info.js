@@ -130,6 +130,9 @@ exports.information = {
 				if (member.user.presence.activity.name) {
 					sub_status = member.user.presence.activity.name;
 				}
+				if (member.user.presence.activity.type) {
+					main_status = member.user.presence.activity.type[0] + member.user.presence.activity.type.substr(1).toLowerCase() + ":";
+				}
 			}
 		}
 		let imURL = member.user.displayAvatarURL();

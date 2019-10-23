@@ -12,30 +12,30 @@ function runFile(file) {
 
 function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, score=1, count=0) {
 	//Firebase: Get Command Document
-	return new Promise((resolve, reject) => {
-		path.set({
-			"messageCount": {
-				[bot_id]: {
-					"guilds": {
-						[guild_id]: {
-							"messages": input,
-							"sentiment": {
-								score: score,
-								count: count
-							},
-							"time_stamp": createdTime
-						}
+	let doc = {
+		"messageCount": {
+			[bot_id]: {
+				"guilds": {
+					[guild_id]: {
+						"messages": input,
+						"sentiment": {
+							score: score,
+							count: count
+						},
+						"time_stamp": createdTime
 					}
 				}
-			},
-			"id": user_id,
-			"isBot": isbot
-		}, {
-			merge: true
-		}).then(doc => {
-			resolve(doc.data())
-		})
-	})
+			}
+		},
+		"id": user_id,
+		"isBot": isbot
+	};
+	path.set(doc, {
+		merge: true
+	}).then(doc => {
+
+	});
+	return doc
 }
 
 function GetProfile(options, bot_id, guild_id, createdTime, input, user_id, isbot, client) {
