@@ -80,56 +80,28 @@ exports.run = async (options, message, client, nlpManager) => {
 		return
 	}
 
-	options.locations = config.locations;
-	options.main_directory = config.main_directory;
-
-	if (message.content) {
-		if (!message.content.toLowerCase()) {
-			console.log(message.content)
-		}
-	} else  {
-		//console.log(message)
-	}
-
-	message.content = message.content.toLowerCase();
-	let msg = message.content;
-	let full_args = [];
+	message.content = message.content.toLowerCase().trim();
 
 	if (client._guilds && !client._guilds[message.guild.id]) {
 		return;
 	}
 
-	if (message.guild && message.guild.id) {
-		for (let i = 0; i < client._guilds[message.guild.id]["prefixes"].length; i++) {
-			if (message.content.startsWith(client._guilds[message.guild.id]["prefixes"][i].toLowerCase())) {
-				msg = message.content.substr(client._guilds[message.guild.id]["prefixes"][i].length);
-				break;
-			}
-		}
-	} else {
-		for (let i = 0; i < client._profile.prefixes.length; i++) {
-			if (message.content.startsWith(client._profile.prefixes[i].toLowerCase())) {
-				msg = message.content.substr(client._profile.prefixes[i].length);
-				break;
-			}
-		}
-	}
-
-	if (msg.trim() === "") {
-		return;
-	} else {
-		message.content = msg;
-	}
-
-	for (let i = 0; i < config.splitters.length; i++) {
-		if (message.content.startsWith(config.splitters[i])) {
-			message.content = message.content.replace(new RegExp(`\\\\(${config.splitters[i]})1+`,"g"), config.splitters[i]);
-			full_args = message.content.substr(1).split(config.splitters[i]);
+	let isCommand = false;
+	for (let i = 0; i < client._guilds[message.guild.id]["prefixes"].length; i++) {
+		if (message.content.startsWith(client._guilds[message.guild.id]["prefixes"][i].toLowerCase())) {
+			message.content = message.content.substr(client._guilds[message.guild.id]["prefixes"][i].length);
+			isCommand = true;
 			break;
 		}
 	}
 
-	if (full_args.length === 0 || full_args[0] === "") {
+	if (message.content === "") {
+		return;
+	}
+
+	message.content = message.content.replace(/\s\s+/g, " ").trim();
+
+	if (!isCommand) {
 		let saveFile = require(options.main_directory + options.locations.messageReceived);
 		saveFile.run(options, message, client, nlpManager);
 		return;
@@ -139,7 +111,7 @@ exports.run = async (options, message, client, nlpManager) => {
 		client.last_user = `${message.author.username}`;
 	}
 
-	await matcher(client, full_args, options, message);
+	await matcher(client, message.content.split(" "), options, message);
 
 };
 

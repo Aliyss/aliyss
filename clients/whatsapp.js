@@ -83,6 +83,8 @@ exports.run = async (nlpManager) => {
 			client._files = additional._files;
 			client._users = additional._users;
 			config.options = additional.options;
+			config.options.locations = command_config.locations;
+			config.options.main_directory = command_config.main_directory;
 		});
 
 		client.on('message_create', async message => {
@@ -90,11 +92,17 @@ exports.run = async (nlpManager) => {
 				return;
 			}
 			message = await discordify.message(message);
+			message.mentions = await discordify.mentions(message.mentions, client);
 			runFile(command_config.main_directory + command_config.locations.commandHandler, message, nlpManager)
 		});
 
 		client.on('message_revoke_everyone', async (before, after) => {
-			console.log(before.body);
+			if (before.type !== 'chat') {
+				return;
+			}
+			before = await discordify.message(before);
+			before.mentions = await discordify.mentions(before.mentions, client);
+			runFile(command_config.main_directory + command_config.locations.messageDelete, before, nlpManager);
 		});
 
 		client.on('message_revoke_me', async (msg) => {

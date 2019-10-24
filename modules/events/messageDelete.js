@@ -12,10 +12,13 @@ function setSnipe(path, message, member) {
 }
 
 exports.run = async (options, message, client) => {
-	if (message.mentions.members.array().length !== 0) {
-
-		for (let i = 0; i < message.mentions.members.array().length; i++) {
-			let member = message.mentions.members.array()[i];
+	let members = message.mentions.members;
+	if (!Array.isArray(members)) {
+		members = message.mentions.members.array()
+	}
+	if (members.length !== 0) {
+		for (let i = 0; i < members.length; i++) {
+			let member = members[i];
 			if (!member.user.bot && member.user.id !== message.author.id) {
 				let path = database.collection(options.type).doc(client._profile.database.name).collection("users").doc(member.user.id);
 				setSnipe(path, message, member)

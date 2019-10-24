@@ -52,12 +52,11 @@ exports.run = async (content, message, client) => {
 		message.from = message.to;
 	}
 
-	for (let i = 0; i < command_config.splitters.length; i++) {
-		if (content.startsWith(command_config.splitters[i])) {
-			content = "$Q " + content;
-			break;
-		}
+
+	if (content.startsWith(" ")) {
+		content = "$Q " + content;
 	}
+
 
 	let m = await client.sendMessage(message.from, content);
 

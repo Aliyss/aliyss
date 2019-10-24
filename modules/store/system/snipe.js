@@ -1,4 +1,4 @@
-const database = require("../../../../../config/database/db_initialization.js").run();
+const database = require("../../../config/database/db_initialization.js").run();
 
 exports.help = {
 	name: "Snipe",

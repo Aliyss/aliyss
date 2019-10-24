@@ -46,6 +46,7 @@ exports.run = async (nlpManager) => {
 		client._profile.prefixes.push.apply(client._profile.prefixes, aliyssium.prefixes);
 		const token = profiles[i].token;
 
+
 		//client: joins a server
 		client.on("guildCreate", async guild => {
 			client._guilds[guild.id] = await db_client.guildSet(client, config.options, guild);
@@ -78,11 +79,16 @@ exports.run = async (nlpManager) => {
 		client.on('ready', async () => {
 			console.log(`[discord_${profile_name}] Ready.`);
 			console.log(`[discord_${profile_name}] Initialization complete.`);
-			let additional = await lc_initialize.initialize(client, config.options);
-			client._guilds = additional._guilds;
-			client._files = additional._files;
-			client._users = additional._users;
-			config.options = additional.options;
+			if (!client.initialized) {
+				let additional = await lc_initialize.initialize(client, config.options);
+				client._guilds = additional._guilds;
+				client._files = additional._files;
+				client._users = additional._users;
+				client.initialized = true;
+				config.options = additional.options;
+				config.options.locations = command_config.locations;
+				config.options.main_directory = command_config.main_directory;
+			}
 		});
 
 		//client: login

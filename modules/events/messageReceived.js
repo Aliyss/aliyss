@@ -33,6 +33,7 @@ function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, 
 	path.set(doc, {
 		merge: true
 	});
+	console.log(doc);
 	return doc
 }
 

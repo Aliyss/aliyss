@@ -4,9 +4,6 @@
 		"cwd": "/",
 		"realpath": true
 	},
-	"splitters": [
-		" "
-	],
 	"locations": {
 		"modules": "/modules",
 		"commandHandler": "/modules/commandHandler.js",

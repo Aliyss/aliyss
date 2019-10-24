@@ -77,7 +77,7 @@ exports.run = async (options, message, args, client) => {
 			function_name = "info";
 		}
 
-		let to = "en";
+		let to = client._guilds[message.guild.id].language || "en";
 		if (/to:/.test(args[args.length-1]) && args[args.length-1].split(":")[1]) {
 			to = args[args.length-1].split(":")[1];
 			args.pop()
