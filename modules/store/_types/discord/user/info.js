@@ -122,6 +122,9 @@ exports.information = {
 					main_status = member.user.presence.activity.name;
 					if (member.user.presence.activity.name === "Spotify") {
 						sub_status = sub_status + " - " + member.user.presence.activity.details
+					} else if (member.user.presence.activity.name === "Custom Status") {
+						main_status = "Playing:";
+						sub_status = "Not playing anything";
 					} else {
 						sub_status = sub_status + "\`\`\n\`\`" + member.user.presence.activity.details
 					}
@@ -198,7 +201,12 @@ exports.information = {
 				status_i = "Streaming";
 				status_icon = "<:streaming:549806312356053012>";
 			}
+			if (member.user.presence.activity.name && member.user.presence.activity.name === "Custom Status") {
+				status_i = member.user.presence.activity.state;
+			}
 		}
+
+
 
 		return {
 			fields: [

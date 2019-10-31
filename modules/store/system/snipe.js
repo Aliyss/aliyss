@@ -8,9 +8,9 @@ exports.help = {
 	information: Object.keys({})
 };
 
-function clearSnipe(path, member) {
+function clearSnipe(path, member, snipes) {
 	return path.set({
-		"snipes": null,
+		"snipes": snipes,
 		"id": member.id
 	}, {
 		merge: true
@@ -23,11 +23,26 @@ exports.run = async (options, message, args, client) => {
 	return path.get().then(doc => {
 		if (doc.exists) {
 			let docref = doc.data();
-			if (docref["snipes"]) {
-				Object.keys(docref["snipes"]).forEach(function(key) {
-					content = content + `\n**Pinged by:** <@${docref["snipes"][key].authorID}>\n**Message:** ${docref["snipes"][key].cleanContent}\n\n`
-				});
-				clearSnipe(path, message.author)
+			let snipes = docref["snipes"];
+			if (snipes && Object.keys(snipes).length > 0) {
+				let count = 0;
+				for (let key in snipes) {
+					if (snipes.hasOwnProperty(key)) {
+						//Now, object[key] is the current value
+						if (message.guild.id === snipes[key].guild.id && !snipes[key].old) {
+							content = content + `\n**Pinged by:** <@${snipes[key].authorID}>\n**Message:** ${snipes[key].cleanContent}\n\n`;
+							snipes[key].old = true;
+							count++;
+						} else if (message.guild.id === snipes[key].guild.id && snipes[key].old && args[0] === "old") {
+							content = content + `\n**Pinged by:** <@${snipes[key].authorID}>\n**Message:** ${snipes[key].cleanContent}\n\n`;
+							count++;
+						}
+					}
+				}
+				if (count === 0) {
+					content = "No messages found."
+				}
+				clearSnipe(path, message.author, snipes)
 			} else {
 				content = "No messages found."
 			}
@@ -35,7 +50,7 @@ exports.run = async (options, message, args, client) => {
 			content = "No messages found."
 		}
 		return {
-			title: "Snipes",
+			title: args[0] ? "Snipes Old" : "Snipes",
 			description: null,
 			color: 6392832,
 			fields: [

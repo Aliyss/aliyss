@@ -10,5 +10,6 @@ exports.help = {
 };
 
 exports.run = async (options, message, args, client) => {
+	//client.disconnect();
 	await process.emit('exit', 0)
 };

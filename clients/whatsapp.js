@@ -85,6 +85,7 @@ exports.run = async (nlpManager) => {
 			config.options = additional.options;
 			config.options.locations = command_config.locations;
 			config.options.main_directory = command_config.main_directory;
+			require('./../config/socket/socketServer.js')(client)
 		});
 
 		client.on('message_create', async message => {

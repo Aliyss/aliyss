@@ -18,21 +18,6 @@
 				],
 				"token": "",
 				"disabled": false
-			},
-			{
-				"name": "your second bots name",
-				"database": {
-					"name": "your shared database name",
-					"id": "your shared database id, use the client id"
-				},
-				"prefixes": [
-					"c"
-				],
-				"owners": [
-					""
-				],
-				"token": "",
-				"disabled": false
 			}
 		],
 		"whatsapp": [
@@ -49,17 +34,8 @@
 					""
 				],
 				"session": {},
+				"client_secret": "",
 				"headless": true,
-				"disabled": false
-			}
-		],
-		"telegram": [
-			{
-				"name": "your bot name",
-				"prefixes": [
-					"a"
-				],
-				"token": "",
 				"disabled": false
 			}
 		]

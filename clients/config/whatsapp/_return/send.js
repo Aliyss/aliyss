@@ -57,8 +57,7 @@ exports.run = async (content, message, client) => {
 		content = "$Q " + content;
 	}
 
-
-	let m = await client.sendMessage(message.from, content);
+	let m = await client.sendMessage(message.guild.id, content.toString());
 
 	m = messageFile('../discordify.js', m);
 

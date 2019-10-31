@@ -2,6 +2,19 @@
 
 exports.message = (msg) => {
 	msg.content = msg.body;
+	if (msg.id && msg.id.remote) {
+		msg.guild = {
+			id: msg.id.remote
+		};
+		msg.id = msg.id.id
+	}
+	if (!msg.fromMe) {
+		if (msg.guild && msg.author && msg.author === msg.guild.id) {
+			msg.mentions.push(msg.to)
+		} else if (msg.guild && !msg.author && msg.from === msg.guild.id) {
+			msg.mentions.push(msg.to)
+		}
+	}
 	msg.author = {
 		id: msg.author || msg.from,
 		bot: false,
@@ -10,11 +23,6 @@ exports.message = (msg) => {
 			bot: false
 		}
 	};
-	if (msg.id && msg.id.remote) {
-		msg.guild = {
-			id: msg.id.remote
-		};
-	}
 	msg.cleanContent = msg.body;
 	msg.authorID = msg.author.id;
 	msg.createdTimestamp = Date.now();
@@ -38,8 +46,16 @@ exports.mentions = async (mentions, client) => {
 		]
 	};
 	for (let i = 0; i < mentions.length; i++) {
-		let member = await client.getContactById(mentions[i]);
-		mentionList.members.push(this.member(member))
+		if (client._profile.owners.includes(mentions[i])) {
+			mentionList.members.push(this.member({
+				id : {
+					_serialized: mentions[i]
+				}
+			}))
+		} else {
+			let member = await client.getContactById(mentions[i]);
+			mentionList.members.push(this.member(member))
+		}
 	}
 	return mentionList
 };
