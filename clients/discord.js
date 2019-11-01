@@ -84,6 +84,7 @@ exports.run = async (nlpManager) => {
 				client._guilds = additional._guilds;
 				client._files = additional._files;
 				client._users = additional._users;
+				client._commands = additional._commands;
 				client.initialized = true;
 				config.options = additional.options;
 				config.options.locations = command_config.locations;

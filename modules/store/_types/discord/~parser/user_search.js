@@ -1,6 +1,6 @@
 const Unzalgo = require("unzalgo");
 
-exports.run = async (users, message, client) => {
+exports.run = async (users, message) => {
 	let members = [];
 	let b = 0;
 	for (let i = 0; i < users.length; i++) {

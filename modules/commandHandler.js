@@ -95,7 +95,7 @@ exports.run = async (options, message, client, nlpManager) => {
 		}
 	}
 
-	if (message.content === "") {
+	if (message.content === "" && !message.author.bot) {
 		return;
 	}
 
@@ -147,7 +147,7 @@ let searcher = async (client, full_args, options, message) => {
 	let files = client._files.slice(0);
 
 	files = files.filter(item => {
-		if (item.includes("store/owner")) {
+		if (item.includes("owner")) {
 			if (client._profile.owners.includes(message.author.id)) {
 				return item
 			}
@@ -168,14 +168,6 @@ let searcher = async (client, full_args, options, message) => {
 			"additional": files
 		}
 	}
-
-	/*
-	watch(`${options.main_directory}/modules${used_file.filename.replace(".", "")}`, (event, filename) => {
-		if (filename) {
-			delete require.cache[require.resolve(used_file.filename)];
-		}
-	});
-	*/
 
 	let embed = await runFile(used_file.filename, options, message, used_file.args, client);
 

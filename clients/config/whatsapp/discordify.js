@@ -6,6 +6,7 @@ exports.message = (msg) => {
 		msg.guild = {
 			id: msg.id.remote
 		};
+		msg.guildID = msg.id.remote;
 		msg.id = msg.id.id
 	}
 	if (!msg.fromMe) {

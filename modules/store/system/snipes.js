@@ -29,11 +29,11 @@ exports.run = async (options, message, args, client) => {
 				for (let key in snipes) {
 					if (snipes.hasOwnProperty(key)) {
 						//Now, object[key] is the current value
-						if (message.guild.id === snipes[key].guild.id && !snipes[key].old) {
+						if ((message.guild.id === snipes[key].guildID || snipes[key].guild && message.guild.id === snipes[key].guild.id) && !snipes[key].old) {
 							content = content + `\n**Pinged by:** <@${snipes[key].authorID}>\n**Message:** ${snipes[key].cleanContent}\n\n`;
 							snipes[key].old = true;
 							count++;
-						} else if (message.guild.id === snipes[key].guild.id && snipes[key].old && args[0] === "old") {
+						} else if ((message.guild.id === snipes[key].guildID || snipes[key].guild && message.guild.id === snipes[key].guild.id) && snipes[key].old && args[0] === "old") {
 							content = content + `\n**Pinged by:** <@${snipes[key].authorID}>\n**Message:** ${snipes[key].cleanContent}\n\n`;
 							count++;
 						}

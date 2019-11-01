@@ -16,7 +16,8 @@ exports.guildSet = async (client, options, guild) => {
 
 	let guildData = {
 		"prefixes": [],
-		"id": guild.id
+		"id": guild.id,
+		"capturer": {}
 	};
 
 	await database.collection(options.type).doc(client._profile.database.name).collection("guilds").doc(guild.id).set(guildData, {

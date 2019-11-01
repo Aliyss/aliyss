@@ -27,6 +27,7 @@ exports.help = {
 
 exports.run = async (options, message, args, client) => {
 
+	return;
 	let lang = "en";
 	let ctx = "context.unknown";
 

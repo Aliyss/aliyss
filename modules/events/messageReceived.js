@@ -10,6 +10,37 @@ function runFile(file) {
 
 }
 
+function SetCommand(path) {
+	//Firebase: Get Command Document
+	let doc = {
+		"captured": []
+	};
+	path.set(doc, {
+		merge: true
+	});
+	return doc
+}
+
+function GetCommand(options, client, command) {
+	if (!!!client._commands[command]) {
+		let database = runFile("../../config/database/db_initialization.js");
+		let path = database.collection("commands").doc(command);
+		return new Promise(function(resolve) {
+			//Firebase: Get Profile Document
+			path.get().then(doc => {
+				if (doc.exists) {
+					resolve(doc.data())
+				} else {
+					resolve(SetCommand(path));
+				}
+			});
+		});
+	} else {
+		return client._commands[command]
+	}
+
+}
+
 function SetProfile(path, bot_id, guild_id, createdTime, input, user_id, isbot, score=1, count=0) {
 	//Firebase: Get Command Document
 	let doc = {
@@ -98,6 +129,39 @@ exports.run = async (options, message, client, nlpManager) => {
 		doc.messageCount[bot_id]["guilds"][guild_id]["messages"] += 1;
 	}
 
+	if (client._guilds[message.guild.id]["capturer"] && client._guilds[message.guild.id]["capturer"][message.author.id]) {
+		let capturestuff = client._guilds[message.guild.id]["capturer"][message.author.id];
+		let index = capturestuff.embed.index.split(".");
+		let value = capturestuff.value.index.split(".");
+		let content = message.embeds[0];
+		for (let i = 0; i < index.length; i++) {
+			if (content[index[i]]) {
+				content = content[index[i]]
+			} else {
+				content = false;
+				break;
+			}
+		}
+		let regexp = new RegExp(capturestuff.search, "g");
+		if (content && !!content.match(regexp)[0]) {
+			let returnval = message.embeds[0];
+			for (let i = 0; i < value.length; i++) {
+				if (returnval[value[i]]) {
+					returnval = returnval[value[i]]
+				} else {
+					returnval = false;
+					break;
+				}
+			}
+			if (returnval) {
+				let comdoc = await GetCommand(options, client, capturestuff.command);
+				comdoc["captured"].push(returnval);
+				client._commands[capturestuff.command] = comdoc
+			}
+		}
+
+	}
+
 	client._users[user_id] = doc;
 };
 
@@ -111,6 +175,10 @@ exports.info = async (options, message, client, user) => {
 	let input = 0;
 	let user_id = user.user.id;
 	return await GetProfile(options, bot_id, guild_id, 0, input, user_id, isBot, client)
+};
+
+exports.commands = async (options, client, commandname) => {
+	return await GetCommand(options, client, commandname)
 };
 
 exports.activity = async (options, client, message) => {
