@@ -82,7 +82,7 @@ exports.run = async (options, message, client, nlpManager) => {
 
 	message.content = message.content.toLowerCase().trim();
 
-	if (client._guilds && !client._guilds[message.guild.id]) {
+	if (!client._guilds || !client._guilds[message.guild.id]) {
 		return;
 	}
 
