@@ -30,6 +30,7 @@ exports.guilds = async (client, options) => {
 		if (_guilds[guild.id]["prefixes"].length === 0) {
 			_guilds[guild.id]["prefixes"] = client._profile.prefixes
 		}
+		_guilds[guild.id]["prefixes"] = [...new Set(_guilds[guild.id]["prefixes"])];
 	});
 
 	return _guilds

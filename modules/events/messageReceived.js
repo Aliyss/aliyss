@@ -118,16 +118,23 @@ exports.run = async (options, message, client, nlpManager) => {
 		}
 	}
 
-	let score = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"];
-	let count = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"];
+	try {
+		let score = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"];
+		let count = doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"];
 
-	doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"] = (score * count + response.sentiment.score) / (count+1);
-	doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"]++;
+		doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["score"] = (score * count + response.sentiment.score) / (count+1);
+		doc.messageCount[bot_id]["guilds"][guild_id]["sentiment"]["count"]++;
 
-	if (doc.messageCount[bot_id]["guilds"][guild_id] && doc.messageCount[bot_id]["guilds"][guild_id]["time_stamp"] + cooldown <= createdTime) {
-		doc.messageCount[bot_id]["guilds"][guild_id]["time_stamp"] = createdTime;
-		doc.messageCount[bot_id]["guilds"][guild_id]["messages"] += 1;
+		if (doc.messageCount[bot_id]["guilds"][guild_id] && doc.messageCount[bot_id]["guilds"][guild_id]["time_stamp"] + cooldown <= createdTime) {
+			doc.messageCount[bot_id]["guilds"][guild_id]["time_stamp"] = createdTime;
+			doc.messageCount[bot_id]["guilds"][guild_id]["messages"] += 1;
+		}
+	} catch (e) {
+		//TODO: Find the fix.
+		console.log("Standard Error: User Docs")
 	}
+
+	client._users[user_id] = doc;
 
 	if (client._guilds[message.guild.id]["capturer"] && client._guilds[message.guild.id]["capturer"][message.author.id]) {
 		let capturestuff = client._guilds[message.guild.id]["capturer"][message.author.id];
@@ -143,7 +150,7 @@ exports.run = async (options, message, client, nlpManager) => {
 			}
 		}
 		let regexp = new RegExp(capturestuff.search, "g");
-		if (content && !!content.match(regexp)[0]) {
+		if (content && !!content.match(regexp) && !!content.match(regexp)[0]) {
 			let returnval = message.embeds[0];
 			for (let i = 0; i < value.length; i++) {
 				if (returnval[value[i]]) {
@@ -161,8 +168,6 @@ exports.run = async (options, message, client, nlpManager) => {
 		}
 
 	}
-
-	client._users[user_id] = doc;
 };
 
 exports.info = async (options, message, client, user) => {
