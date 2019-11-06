@@ -74,8 +74,8 @@ process.on('exit', code => {
 			for (let j = 0; j < all_clients[i].length; j++) {
 				let client = all_clients[i][j].client;
 				let options = all_clients[i][j].config.options;
-				let {_files, _users, _guilds, _profile} = client;
-				save_data.push({_files, _users, _guilds, _profile, options: options});
+				let {_files, _users, _guilds, _commands, _profile} = client;
+				save_data.push({_files, _users, _guilds, _commands, _profile, options: options});
 			}
 		}
 

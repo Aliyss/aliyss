@@ -226,6 +226,24 @@ exports.information = {
 			},
 		}
 	},
+	name: function (member) {
+		let main_nickname = "No name found?";
+
+		if (member.user.username) {
+			main_nickname = member.user.username
+		}
+
+		return {
+			fields: [
+				{
+					name: "_\n_**Name**".padEnd(24, `~`).replace(/~/g, "⠀"),
+					value: `\`\`${main_nickname}\`\``,
+					inline: true
+				}
+			]
+		}
+
+	},
 	nickname: function (member) {
 		let main_nickname = "No nickname set.";
 
@@ -245,8 +263,9 @@ exports.information = {
 
 	},
 	info: async function (member, function_name, options, client, message) {
+
 		let override_embed = {
-			description: `\`\`Created: ${member.user.createdTimestamp}\`\`\n\`\`Joined: ${member.joinedTimestamp}\`\``,
+			description: `\`\`Created: ${get_current_date_time(member.user.createdTimestamp)}\`\`\n\`\`Joined: ${get_current_date_time(member.joinedTimestamp)}\`\``,
 			timestamp: null,
 			thumbnail: {
 				url: member.user.displayAvatarURL()
@@ -353,4 +372,14 @@ exports.run = async (options, message, args, client) => {
 		console.log(e)
 	}
 
+};
+
+let get_current_date_time = (time2) => {
+	let today = new Date(time2);
+	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+	let currentHours = ('0'+today.getHours()).slice(-2);
+	let currentMins = ('0'+today.getMinutes()).slice(-2);
+	let currentSecs = ('0'+today.getSeconds()).slice(-2);
+	let time = currentHours + ":" + currentMins + ":" + currentSecs;
+	return date + ' ' + time;
 };

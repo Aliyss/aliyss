@@ -1,4 +1,4 @@
-const socketUtil = require('../../../config/rest/socketUtil.js');
+//const socketUtil = require('../../../config/rest/socketUtil.js');
 exports.information = {};
 
 exports.help = {
@@ -10,5 +10,5 @@ exports.help = {
 };
 
 exports.run = async (options, message, args, client) => {
-	return socketUtil.createToken(client, message.author.id);
+	//return socketUtil.createToken(client, message.author.id);
 };
